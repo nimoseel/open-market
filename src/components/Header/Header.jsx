@@ -44,7 +44,7 @@ const Header = () => {
                                 판매자 센터
                             </S.SellerBtn> 
                             {isOpenMyPageDropdown && 
-                                <MyPageDropdown isOpen={isOpenMyPageDropdown} left={-46}/>
+                                <MyPageDropdown isOpen={isOpenMyPageDropdown} setIsOpen={setIsOpenMyPageDropdown} left={-46}/>
                             }
                         </S.HeaderBtnDiv>
 
@@ -58,7 +58,7 @@ const Header = () => {
                                 <HeaderBtn text={'로그인'} src={profileIcon} link={'/login'}/>
                             }
                             {isOpenMyPageDropdown && 
-                                <MyPageDropdown isOpen={isOpenMyPageDropdown} left={35}/>
+                                <MyPageDropdown isOpen={isOpenMyPageDropdown} setIsOpen={setIsOpenMyPageDropdown} left={35}/>
                             }
                         </S.HeaderBtnDiv>
                     }         

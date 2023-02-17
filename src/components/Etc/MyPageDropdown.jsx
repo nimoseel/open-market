@@ -50,7 +50,7 @@ const OptionBtn = styled.button`
     }
 `
 
-const MyPageDropdown = ({isOpen, left}) => {
+const MyPageDropdown = ({isOpen,setIsOpen, left}) => {
     const navigate = useNavigate();
 
     const handleOpenMypage = () => {
@@ -61,12 +61,14 @@ const MyPageDropdown = ({isOpen, left}) => {
         localStorage.removeItem('token');
         localStorage.removeItem('user_type');
         alert('로그아웃 되었습니다.');
+        setIsOpen(false)
         navigate('/')
     }
 
     return (
-        <OptionUl isOpen={isOpen} left={left}>
-            <li><OptionBtn onClick={()=>{handleOpenMypage()}}>마이페이지</OptionBtn></li>                <li><OptionBtn onClick={()=>{handleLogout()}}>로그아웃</OptionBtn></li>
+        <OptionUl isOpen={isOpen} setIsOpen={setIsOpen} left={left}>
+            <li><OptionBtn onClick={()=>{handleOpenMypage()}}>마이페이지</OptionBtn></li>
+            <li><OptionBtn onClick={()=>{handleLogout()}}>로그아웃</OptionBtn></li>
         </OptionUl>
     );
 };
