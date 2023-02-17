@@ -33,7 +33,7 @@ const SellerItem = (props) => {
         try{
             await deleteProduct(product_id, token);
             setIsOpenModal(false);
-            window.location.reload();
+            window.location.href= 'https://sominopenmarket.netlify.app/sellercenter';
         }catch(error){
             console.error(error)
         }
