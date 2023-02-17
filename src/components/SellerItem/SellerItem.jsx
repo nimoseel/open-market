@@ -33,7 +33,7 @@ const SellerItem = (props) => {
         try{
             await deleteProduct(product_id, token);
             setIsOpenModal(false);
-            window.location.href= '/sellercenter';
+            window.location.reload();
         }catch(error){
             console.error(error)
         }

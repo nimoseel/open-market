@@ -53,7 +53,7 @@ const CartItem = (props) => {
         try{
             await editItemAmount(editData, cart_item_id, token);
             setIsOpenAmountModal(false);
-            window.location.href= '/cart';
+            window.location.reload() 
         }catch(error){
             console.error(error)
         }
@@ -63,7 +63,7 @@ const CartItem = (props) => {
         try{
             await deleteCartItem(cart_item_id, token);
             setIsOpenModal(false);
-            window.location.href= '/cart';
+            window.location.reload() 
         }catch(error){
             console.error(error)
         }
@@ -80,7 +80,7 @@ const CartItem = (props) => {
         
         try{
             await editItemAmount(editData, cart_item_id, token);
-            window.location.href= '/cart';
+            window.location.reload() 
         }catch(error){
             console.error(error)
         }
