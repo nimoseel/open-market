@@ -59,7 +59,7 @@ const Login = () => {
                     localStorage.setItem('token', response.token);
                     localStorage.setItem('user_type', response.user_type);
                     setErrTxt('');
-                    navigate(-1);
+                    navigate('/');
                 }
             }
         }
