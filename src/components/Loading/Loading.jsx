@@ -1,5 +1,5 @@
 import React from "react";
-import Loader from "react-spinners/PulseLoader";
+import Loader from "react-spinners/RotateLoader";
 import * as S from '../Loading/_style';
 
 function Loading() {
@@ -7,7 +7,7 @@ function Loading() {
         <S.LoadingBg>
             <S.LoadingDiv>
                 <Loader
-                    size={10}
+                    size={12}
                     margin={15}
                     color="var(--green)"
                     />
