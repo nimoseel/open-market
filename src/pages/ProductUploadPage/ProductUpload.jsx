@@ -88,22 +88,14 @@ const ProductUpload = () => {
 
     // 유효성 검사
     const btnValid  = () => {
-        const price_stockReg = /^[1-9]+$/;
-        const numReg = /^[0-9]+$/;
-
-        if(
-            data && product_name && product_info &&
+        const commonValid = 
+            product_name && product_info && 
             price && shipping_fee && stock && 
-            price > 0 && stock > 0 && shipping_fee >= 0
-        ){
+            price > 0 && shipping_fee >= 0 && stock > 0
+
+        if(data && commonValid){
             return true;
-        }else if(
-            !data && product_name && image && 
-            shipping_method && product_info &&
-            String(price).match(price_stockReg) && 
-            String(shipping_fee).match(numReg) && 
-            String(stock).match(price_stockReg)
-        ){ 
+        }else if(!data && image && shipping_method && commonValid){ 
             return true;
         }else{
             return false;
