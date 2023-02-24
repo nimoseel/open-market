@@ -87,6 +87,7 @@ export const BtnDiv = styled.div`
 export const TabDiv = styled.div`
     display: flex;
     width: 1280px;
+    height: 200px;
     margin: 0 auto;
 `
 
