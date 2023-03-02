@@ -83,6 +83,8 @@ react-daum-postcode 사용
 ![Mar-02-2023 19-30-54](https://user-images.githubusercontent.com/85738589/222403414-715be1af-a08e-4dd4-b977-6c2912f721ad.gif)
 
 #### 판매 상품 삭제 
+![Mar-02-2023 19-32-52](https://user-images.githubusercontent.com/85738589/222403958-28711456-75d5-4ec2-8200-7327e3e95cd5.gif)
 
 #### 로그아웃
+![Mar-02-2023 19-36-24](https://user-images.githubusercontent.com/85738589/222404574-11e66378-373c-4ebc-ba94-9124fd4511f9.gif)
 
