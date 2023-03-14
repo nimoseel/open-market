@@ -53,7 +53,7 @@
 
 |                           2. 구매회원 로그인                           |                          3. 장바구니                          |
 | :-------------------------------------------------------------: | :-------------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/85738589/222367778-f37afedc-9b0f-45a5-b0fd-9c1c0b349611.gif"/>| <img src="https://user-images.githubusercontent.com/85738589/222376629-fab7cd1d-c4bf-4b11-a3a1-4c4a2524a489.gif" width="1500px"/> |
+| <img src="https://user-images.githubusercontent.com/85738589/222367778-f37afedc-9b0f-45a5-b0fd-9c1c0b349611.gif"/>| <img src="https://user-images.githubusercontent.com/85738589/222376629-fab7cd1d-c4bf-4b11-a3a1-4c4a2524a489.gif" width="50%"/> |
 
 |                        4. 상품 주문하기                        |                     5. 상품 결제하기                     |
 | :-------------------------------------------------------------: | :-------------------------------------------------------------: |
