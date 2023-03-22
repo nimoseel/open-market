@@ -22,24 +22,24 @@ const Footer = () => {
                         <li>
                             {/* 외부페이지로 넘어가기 때문에 a 태그 사용 */}
                             <a href='https://www.instagram.com/'> 
-                                <img src={InstaImg} alt='호두샵 인스타그램'/>
+                                <img src={InstaImg} alt='호두마켓 인스타그램'/>
                             </a>
                         </li>
                         <li>
                             <a href='https://ko-kr.facebook.com/'>
-                                <img src={FacebookImg} alt='호두샵 페이스북'/>
+                                <img src={FacebookImg} alt='호두마켓 페이스북'/>
                             </a>
                         </li>
                         <li>
                             <a href='https://www.youtube.com/'>
-                                <img src={YoutubeImg} alt='호두샵 유튜브'/>
+                                <img src={YoutubeImg} alt='호두마켓 유튜브'/>
                             </a>
                         </li>
                     </S.SnsUl>
                 </S.FooterLinkDiv>
                 <S.ContactDiv>
-                    <S.ContactP>(주) HODU SHOP</S.ContactP>
-                    <S.ContactP>제주특별자치도 제주시 동광고 137 제주코딩베이스캠프</S.ContactP>
+                    <S.ContactP>(주) HODU MARKET</S.ContactP>
+                    <S.ContactP>호두특별시 호두구 호두로</S.ContactP>
                     <S.ContactP>사업자 번호 : 000-0000-0000 | 통신 판매업</S.ContactP>
                     <S.ContactP>대표: 김호두</S.ContactP>
                 </S.ContactDiv>
