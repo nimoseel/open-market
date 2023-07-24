@@ -149,7 +149,7 @@ return (
 </>
 ```
 
-### 3. 로그인 타입에 따른 다른 로그인 인증 로직 실행
+### 3. 로그인 타입에 따른 로그인 인증 로직 실행
 - 기본적인 로그인 타입은 buyer로 설정
 ```js
 const [ loginType, setLoginType ] = useState('BUYER');
@@ -181,7 +181,7 @@ const [ loginType, setLoginType ] = useState('BUYER');
 ```
 
 - 로그인 버튼 클릭시 실행되는 loginCheck 함수
-    - seller 버튼 클릭시 setSLoginType을 통해 로그인 타입의 상태를 변경하고, 해당 값을 loginCheck 내부 로그인 로직에서 사용한다.
+    - seller 버튼 클릭시 setSLoginType을 통해 로그인 타입의 상태를 변경하고, 해당 값을 loginCheck 내부 로그인 로직에서 사용
 ```js
 // 로그인 체크
 const loginCheck = async() => {
