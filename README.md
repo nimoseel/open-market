@@ -2,7 +2,7 @@
 <br>
 
 ### [ 프로젝트 기간 ] <br>
-    22년 12월 22일 ~ 진행중
+    22년 12월 22일 ~ 2월 24일
 
 <br>
 
@@ -80,3 +80,199 @@
 |                     12. 로그아웃                      |
 | :-------------------------------------------------------------:|
 | <img src="https://user-images.githubusercontent.com/85738589/222404574-11e66378-373c-4ebc-ba94-9124fd4511f9.gif" width="50%"/> |
+
+
+
+### [ 주요 코드 ]
+#### 1. 스타일드 컴포넌트 임포트시 컴포넌트 앞에 S. 붙여 구분이 용이하도록 함. 
+```js
+//Home.jsx
+return (
+        <>
+            <Header/>
+            <Carousel/>
+            <S.Main>
+            {loading && <Loading/>}
+                <S.ProductUl>
+                    {products && products.map((item) => 
+                        <Link 
+                            key={item.product_id} 
+                            to={`/product/${item.product_id}`}
+                        >
+                            <ProductCard
+                                {...item}
+                                key={item.product_id}
+                            />
+                        </Link>
+                    )}
+                </S.ProductUl>
+            </S.Main>
+            <Footer/>
+        </>
+    )
+```
+
+#### 2. react-daum-postcode 사용
+```js
+    // 우편번호 검색 관련
+    const [ isOpenPostCode, setIsOpenPostCode ] = useState(false);
+
+    const onCompletePost = (post) => {
+        setInputs({
+            ...inputs,
+            post_code : post.zonecode,
+            address_1 : post.buildingName ? post.address + ' ('+ post.buildingName +')' : post.address ,
+        })
+        setIsOpenPostCode(false);
+    }
+
+    const postCodeStyle = {
+        width: '450px',
+        height: '450px',
+    }
+```
+
+```js
+<> ...
+
+    {isOpenPostCode && 
+    <ModalPortal>
+        <S.ModalBg isOpenPostCode={isOpenPostCode}>
+            <S.PostCodeContent>
+                <S.PostCodeTitle>주소찾기</S.PostCodeTitle>
+                <S.DeleteBtn onClick={()=>{setIsOpenPostCode(false)}}/>
+                <DaumPostCode style={postCodeStyle} autoClose onComplete={onCompletePost}/>
+            </S.PostCodeContent>
+        </S.ModalBg>
+    </ModalPortal>
+    }
+</>
+```
+
+### 3. 로그인 타입에 따른 다른 로그인 인증 로직 실행
+- 기본적인 로그인 타입은 buyer로 설정
+```js
+const [ loginType, setLoginType ] = useState('BUYER');
+```
+
+- 로그인 메뉴 클릭에 따라 loginType 값 변경
+```js
+<SC.MenuUl>
+    <SC.MenuLi 
+        isSelected={isSelected} 
+        onClick={()=>{ 
+            setIsSelected(true); 
+            setLoginType('BUYER'); 
+    }}>
+        구매회원 로그인
+    </SC.MenuLi>
+    <SC.MenuLi 
+        isSelected={!isSelected} 
+        onClick={()=>{ 
+            setIsSelected(false); 
+            setLoginType('SELLER'); 
+    }}>
+        판매회원 로그인
+    </SC.MenuLi>
+</SC.MenuUl>
+```
+```js
+<S.LoginBtn type='button' onClick={()=>{loginCheck()}}>로그인</S.LoginBtn>
+```
+
+- 로그인 버튼 클릭시 실행되는 loginCheck 함수
+    - seller 버튼 클릭시 setSLoginType을 통해 로그인 타입의 상태를 변경하고, 해당 값을 loginCheck 내부 로그인 로직에서 사용한다.
+```js
+// 로그인 체크
+const loginCheck = async() => {
+    const username = id;
+    const password = pw;
+    const login_type = loginType;
+
+    const loginData = {
+        username,
+        password,
+        login_type,
+    };
+
+    try{
+        const response = await login(loginData);
+
+        if(loginData.username === '' && loginData.password === ''){
+            setIsValid(false);
+            setErrTxt('아이디 또는 비밀번호를 입력해주세요.');
+            idInput.current.focus();
+        } else if(loginData.username === ''){
+            setIsValid(false);
+            setErrTxt('아이디를 입력해주세요');
+            idInput.current.focus();
+        } else if(loginData.password === ''){
+            setIsValid(false);
+            setErrTxt('비밀번호를 입력해주세요');
+            pwInput.current.focus();
+        }
+
+        if(loginData.username !== '' && loginData.password !== ''){
+            if(response.FAIL_Message){
+                setIsValid(false);
+                setErrTxt(response.FAIL_Message);
+                setId('');
+                setPw('');
+                idInput.current.focus();
+            }else if(response.token && response.status !== 422){
+                localStorage.setItem('token', response.token);
+                localStorage.setItem('user_type', response.user_type);
+                setErrTxt('');
+                navigate('/');
+            }
+        }
+    }
+    catch(error){
+        console.error(error);
+    }
+}
+```
+<br/>
+
+### [ 폴더 트리 ]
+```
+📦OpenMarket
+ 📂 src
+ ┣ 📂 API
+ ┃ ┣ cartApi.jsx
+ ┃ ┣ orderApi.jsx
+ ┃ ┣ productApi.jsx
+ ┃ ┣ sellerApi.jsx
+ ┃ ┗ userApi.jsx
+ ┣ 📂 assets
+ ┣ 📂 components
+ ┃ ┣ 📂 Carousel
+ ┃ ┣ 📂 CartItem
+ ┃ ┣ 📂 CartTotal
+ ┃ ┣ 📂 DetailContent
+ ┃ ┣ 📂 Etc
+ ┃ ┣ 📂 Footer
+ ┃ ┣ 📂 Header
+ ┃ ┣ 📂 HeaderBtn
+ ┃ ┣ 📂 PaymentItem
+ ┃ ┣ 📂 ProductCard
+ ┃ ┗ 📂 SellerItem
+ ┣ 📂 constants
+ ┃ ┣ API_URL.js
+ ┃ ┗ token.js
+ ┣ 📂 pages
+ ┃ ┣ 📂 404Page
+ ┃ ┣ 📂 CartPage
+ ┃ ┣ 📂 DetailPage
+ ┃ ┣ 📂 HomePage
+ ┃ ┣ 📂 JoinPage
+ ┃ ┣ 📂 LoginPage
+ ┃ ┣ 📂 PaymentPage
+ ┃ ┣ 📂 ProductUploadPage
+ ┃ ┣ 📂 SearchResultPage
+ ┃ ┗ 📂 SellerCenterPage
+ ┣ App.jsx
+ ┣ GlobalStyle.jsx
+ ┣ index.js
+ ┗ Portal.js
+ ```
