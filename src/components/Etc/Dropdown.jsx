@@ -16,7 +16,7 @@ const Title = styled.button`
     background-position: right 12px center;
     background-repeat: no-repeat;
     &:focus{
-        border-color: var(--green);
+        border-color: var(--main);
     }
 `
 

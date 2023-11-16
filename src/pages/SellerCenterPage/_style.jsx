@@ -19,7 +19,7 @@ export const Title = styled.h1`
 
 export const StoreName = styled.strong`
     margin-left: 16px;
-    color: var(--green);
+    color: var(--main);
     font-weight: var(--semi-bold);
 `
 
@@ -67,7 +67,7 @@ const StyledMenuLi = styled.button`
     text-align: left;
     width: 250px;
     height: 50px;
-    background-color: var(${(props) => props.isFocused === true ? '--green': '--white'});
+    background-color: var(${(props) => props.isFocused === true ? '--main': '--white'});
     color: var(${(props) => props.isFocused === true ? '--white': '--black'});
     font-size: 16px;
     font-weight: var(--semi-bold);

@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { joinIdValid, join, companyNumVaild, sellerJoin } from '../../API/userApi';
-import LogoHodu from '../../assets/Logo-hodu.svg';
 import Dropdown from '../../components/Etc/Dropdown';
 import CheckBox from '../../components/Etc/CheckBox';
 import * as SC from '../LoginPage/_styleLoginJoin';
@@ -333,8 +332,8 @@ const Join = () => {
 
     return (
         <SC.ContentSection>
-            <Link to={'/'} className='logo_img'>
-                <img src={LogoHodu} alt='호두마켓' />
+            <Link to={'/'}>
+                <SC.LogoIcon alt='로고 이미지' />
             </Link>
             <SC.ContentWrapper>
                 <SC.MenuUl>

@@ -9,7 +9,7 @@ function Loading() {
                 <Loader
                     size={12}
                     margin={15}
-                    color="var(--green)"
+                    color="var(--main)"
                     />
             </S.LoadingDiv>
         </S.LoadingBg>

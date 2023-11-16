@@ -1,7 +1,18 @@
 import styled from 'styled-components';
+import mainLogo from '../../assets/Logo-our.svg';
 
 // 로그인과 회원가입 화면에서 공통적으로 사용하는 UI - SC.컴포넌트명으로 사용
 // S.컴포넌트명은 해당 페이지에서만 사용하는 UI에만 사용
+
+export const LogoIcon = styled.div`
+    display: inline-block;
+    width: 256px;
+    height: 130px;
+    background-image: url(${mainLogo}) ;
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+`
 
 export const ContentSection = styled.section`
     display: flex;
@@ -12,7 +23,7 @@ export const ContentSection = styled.section`
 
 export const ContentWrapper = styled.div`
     width: 550px;
-    margin: 70px auto 0;
+    margin: 50px auto 0;
 `
 
 export const MenuUl = styled.ul`
@@ -44,7 +55,7 @@ export const Err = styled.strong`
     margin: ${props => `${props.margin}px`} 0;
     font-weight: var(--regular);
     font-size: 16px;
-    color: var(${(props) => props.valid ? '--green': '--red'});
+    color: var(${(props) => props.valid ? '--main': '--red'});
 `
 
 export const ErrMsg = styled(Err)`

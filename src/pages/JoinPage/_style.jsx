@@ -121,7 +121,7 @@ export const Err = styled.strong`
     margin: ${props => `${props.margin}px`} 0;
     font-weight: var(--regular);
     font-size: 16px;
-    color: var(${(props) => props.valid ? '--green': '--red'});
+    color: var(${(props) => props.valid ? '--main': '--red'});
 `
 
 export const ErrMsg = styled(Err)`

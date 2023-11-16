@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
 
     :root{
         /* color */
-        --green : #21BF48;
+        --main :#5D23A8;
         --red : #EB5757;
         --black : #000000;
         --dark-gray : #767676;
@@ -38,7 +38,7 @@ export const GlobalStyle = createGlobalStyle`
 
     input:focus{
         outline: none;
-        border-color: var(--green);
+        border-color: var(--main);
     }
 
     input:-webkit-autofill,
@@ -64,7 +64,7 @@ export const GlobalStyle = createGlobalStyle`
 
     button:focus{
         outline: none;
-        border-color: var(--green);
+        border-color: var(--main);
     }
 
     select {
@@ -88,7 +88,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     select:focus{
-        border-color: var(--green);
+        border-color: var(--main);
     }
 
     .ellipsis{

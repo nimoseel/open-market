@@ -159,7 +159,7 @@ export const ShippingMsgInput = styled(PaymentInput)`
 export const PostNumSearchBtn = styled(BtnS)`
     width: 154px;
     margin-left: 10px;
-    background-color: var(--green);
+    background-color: var(--main);
 `
 
 export const PaymentBtn = styled(BtnL)`
@@ -236,7 +236,7 @@ export const FinalContentDiv = styled.div`
     height: 400px;
     margin-bottom: 100px;
     box-sizing: border-box;
-    border: 2px solid var(--green);
+    border: 2px solid var(--main);
     border-radius: 10px;
 `
 

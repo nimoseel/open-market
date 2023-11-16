@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { BtnMS } from '../Etc/Button';
 import SearchIconImg from '../../assets/icon-search.svg';
-import LogoHodu from '../../assets/Logo-hodu.svg';
+import mainLogo from '../../assets/Logo-our.svg';
 
 
 export const HeaderDiv = styled.div`
@@ -23,17 +23,16 @@ export const HeaderContent = styled.header`
 export const SearchInput = styled.input`
     width: 400px;
     height: 46px;
-    margin: 0 30px;
     padding: 0 62px 0 22px;
-    border: 2px solid var(--green);
+    border: 2px solid var(--main);
     border-radius: 50px;
 `
 
 export const LogoIcon = styled.div`
     display: inline-block;
     width: 124px;
-    height: 38px;
-    background-image: url(${LogoHodu}) ;
+    height: 47px;
+    background-image: url(${mainLogo}) ;
     background-repeat: no-repeat;
     background-size: contain;
     vertical-align: middle;
@@ -43,7 +42,7 @@ export const SearchIcon = styled.div`
     display: inline-block;
     position: relative;
     top: 9px;
-    right: 80px;
+    right: 50px;
     width: 28px;
     height: 28px;
     background-image: url(${SearchIconImg});

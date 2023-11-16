@@ -137,7 +137,7 @@ export const Btn = styled(BtnMS)`
 
 export const ShippingBtn = styled(BtnMS)`
     width: 220px;
-    background-color: var(${(props) => props.isFocused ? '--green': '--white'});
+    background-color: var(${(props) => props.isFocused ? '--main': '--white'});
     color: var(${(props) => props.isFocused ? '--white': '--dark-gray'});
 
     border: ${(props) => props.isFocused ? 'none': '1px solid var(--disabled)'};

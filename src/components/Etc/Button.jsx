@@ -9,7 +9,7 @@ const Btn_common = styled.button`
             (props.type === 'disabled' && '--disabled') ||
             (props.type === 'dark' && '--dark-gray') ||
             (props.type === 'white' && '--white') ||
-            ('--green')});
+            ('--main')});
     &:hover {
         border: ${(props) => props.type === 'white' && '1px solid var(--dark-gray)'};
         color: ${(props) => props.type === 'white' && 'var(--black)'};
@@ -49,11 +49,11 @@ export const BtnTab = styled.button`
     width: 320px;
     height: 54px;
     border-radius: 0;
-    border-bottom: 6px solid var(${(props) => props.type === 'disabled' ? '--disabled': '--green'});
-    color: var(${(props) => props.type === 'disabled' ? '--dark-gray': '--green'});
+    border-bottom: 6px solid var(${(props) => props.type === 'disabled' ? '--disabled': '--main'});
+    color: var(${(props) => props.type === 'disabled' ? '--dark-gray': '--main'});
     background-color: var(--white);
     font-size: 18px;
     &:focus{
-        color: var(--green);
+        color: var(--main);
     }
 `

@@ -11,7 +11,7 @@ const Footer = () => {
             <S.FooterContentDiv>
                 <S.FooterLinkDiv>
                     <S.InfoUl>
-                        <S.InfoLi><Link>호두샵 소개</Link></S.InfoLi>
+                        <S.InfoLi><Link>아우어마켓 소개</Link></S.InfoLi>
                         <S.InfoLi><Link>이용약관</Link></S.InfoLi>
                         <S.InfoBoldLi><Link>개인정보처리방침</Link></S.InfoBoldLi>
                         <S.InfoLi><Link>전자금융거래약관</Link></S.InfoLi>
@@ -22,26 +22,26 @@ const Footer = () => {
                         <li>
                             {/* 외부페이지로 넘어가기 때문에 a 태그 사용 */}
                             <a href='https://www.instagram.com/'> 
-                                <img src={InstaImg} alt='호두마켓 인스타그램'/>
+                                <img src={InstaImg} alt='아우어마켓 인스타그램'/>
                             </a>
                         </li>
                         <li>
                             <a href='https://ko-kr.facebook.com/'>
-                                <img src={FacebookImg} alt='호두마켓 페이스북'/>
+                                <img src={FacebookImg} alt='아우어마켓 페이스북'/>
                             </a>
                         </li>
                         <li>
                             <a href='https://www.youtube.com/'>
-                                <img src={YoutubeImg} alt='호두마켓 유튜브'/>
+                                <img src={YoutubeImg} alt='아우어마켓 유튜브'/>
                             </a>
                         </li>
                     </S.SnsUl>
                 </S.FooterLinkDiv>
                 <S.ContactDiv>
-                    <S.ContactP>(주) HODU MARKET</S.ContactP>
-                    <S.ContactP>호두특별시 호두구 호두로</S.ContactP>
+                    <S.ContactP>(주) OUR MARKET</S.ContactP>
+                    <S.ContactP>사랑시 고백구 행복동</S.ContactP>
                     <S.ContactP>사업자 번호 : 000-0000-0000 | 통신 판매업</S.ContactP>
-                    <S.ContactP>대표: 김호두</S.ContactP>
+                    <S.ContactP>대표: 김우리</S.ContactP>
                 </S.ContactDiv>
             </S.FooterContentDiv>
         </S.Footer>
