@@ -2,10 +2,10 @@ import { API_URL } from '../constants/API_URL';
 import axios from 'axios';
 
 // 상품 불러오기
-export const getData = async() => {
+export const getData = async(activePage) => {
     try{
-        const res = await axios.get(API_URL + '/products/')
-        return res.data.results;
+        const res = await axios.get(API_URL + `/products/?page=${activePage}`)
+        return res.data;
     }catch(error){
         return error;
     }
