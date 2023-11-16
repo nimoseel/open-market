@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getData } from '../../API/productApi';
+import { getDetail } from '../../API/productApi';
 import { getCart } from '../../API/cartApi';
 import { getToken } from '../../constants/token'
 import Header from '../../components/Header/Header';
@@ -13,56 +13,51 @@ import * as S from '../CartPage/_style';
 
 const Cart = () => {
     const navigate = useNavigate();
-    const token = getToken();
     
     const [ cartLists, setCartLists] = useState([]);
-    const [ detail, setDetail ] = useState([]);
-
     const [ loading, setLoading ] = useState(null);
     
-    let cartArr = [];
-
     useEffect(()=>{
         setLoading(true);
-        getData().then(res => {
-            setDetail(res);
-        });
         
-        getCart(token).then(res => {
-            setCartLists(res.results);
-            setLoading(false);
-        });
-        
-    },[])
-    
-    for(let d of detail){
-        for(let c of cartLists){
-            if(d.product_id === c.product_id){
-                d.cart_item_id = c.cart_item_id;
-                d.quantity = c.quantity;
-                d.is_active = c.is_active;
-                cartArr.push(d);
+        const fetchCart = async () => {
+            try {
+                // 장바구니 정보 가져오기
+                const token = getToken();
+                const cartData = await getCart(token).then(res=>res.results);
+
+                // 장바구니 상품 상세 정보 가져오기
+                const detailPromises = cartData.map(async (item) => {
+                    const detailData = await getDetail(item.product_id);
+                    return detailData;
+                });
+                const resolvedDetails = await Promise.all(detailPromises);
+
+                // 장바구니 상품 정보 업데이트 
+                const updatedCartList = cartData.map((item, index) => ({
+                    ...item,
+                    ...resolvedDetails[index],
+                }));
+
+                setCartLists(updatedCartList);
+                setLoading(false);
+            } catch (error) {
+                console.error(error);
             }
-        }
+        };
+        fetchCart();
+    },[])
+
+    const calculateTotal = (array) => {
+        return array.reduce((acc, cur)=>acc+cur, 0);
     }
 
-    const total = (array) => {
-        const total_result = array.reduce((acc, cur)=>{
-            acc = acc+cur;
-            return acc;
-        },0)
-        return total_result;
-    }
+    const totalPrice = calculateTotal(cartLists.map((item) => item.is_active && item.price * item.quantity));
+    const totalFee = calculateTotal(cartLists.map((item) => item.is_active && item.shipping_fee));
 
-    const product_price_arr = cartArr.map(i => i.is_active && i.price * i.quantity);
-    const shipping_fee_arr = cartArr.map(i => i.is_active && i.shipping_fee);
-
-    const totalPrice = total(product_price_arr);
-    const totalFee = total(shipping_fee_arr);
-
-
+    // 결제 페이지 이동
     const turnPaymentPage = () => {
-        const selected = cartArr.filter(
+        const selected = cartLists.filter(
             x => x.is_active === true && (x.order_kind = 'cart_order'));
         navigate('/payment', {
             state : { 
@@ -90,9 +85,9 @@ const Cart = () => {
                 </S.MenuUl>
             </S.CartTitleDiv>
             { loading && <Loading/> }
-            { cartArr.length !== 0 ? 
+            { cartLists.length !== 0 ? 
                 <>
-                    { cartArr.map((item)=>
+                    { cartLists.map((item)=>
                         <CartItem 
                             {...item}
                             key={item.product_id} 
@@ -100,7 +95,7 @@ const Cart = () => {
                     )}
                     <CartTotal totalPrice={totalPrice} totalFee={totalFee}/>
                     
-                    {cartArr.filter(x => x.is_active).length ?
+                    {cartLists.filter(x => x.is_active).length ?
                         <S.OrderBtn type={'green'} onClick={()=>{turnPaymentPage()}}>주문하기</S.OrderBtn>
                     :
                         <S.OrderBtn type={'disabled'} disabled>주문하기</S.OrderBtn>
