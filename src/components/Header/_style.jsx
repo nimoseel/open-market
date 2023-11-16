@@ -75,7 +75,6 @@ export const SellerHeaderDiv = styled(HeaderDiv)`
 export const SellerHeaderContent = styled.div`
     display: flex;
     align-items: center;
-    gap: 30px;
     width: 1280px;
     margin: 0 auto;
 `
