@@ -52,10 +52,10 @@ export const InputWrapper = styled.form`
 
 export const Err = styled.strong`
     display: block;
-    margin: ${props => `${props.margin}px`} 0;
+    margin: 12px 0;
     font-weight: var(--regular);
     font-size: 16px;
-    color: var(${(props) => props.valid ? '--main': '--red'});
+    color: var(${(props) => props.valid ? '--green': '--red'});
 `
 
 export const ErrMsg = styled(Err)`

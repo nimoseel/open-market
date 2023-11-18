@@ -34,6 +34,14 @@ export const FindLi = styled.li`
     }
 `
 
+export const LoginErrMsg = styled.strong`
+    display: block;
+    margin: 26px 0;
+    font-weight: var(--regular);
+    font-size: 16px;
+    color: var(--red);
+`
+
 export const LoginBtn = styled(BtnM)`
     width: 480px;
 `
