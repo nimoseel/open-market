@@ -1,14 +1,13 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { login } from '../../API/userApi';
+import useInput from '../../hooks/useInput';
 import * as SC from '../LoginPage/_styleLoginJoin';
 import * as S from '../LoginPage/_style';
 
 const Login = () => {
     const navigate = useNavigate();
-
-    const [ id, setId ] = useState('');
-    const [ pw, setPw ] = useState('');
+    // 상단 탭 변경
     const [ isSelected, setIsSelected ] = useState(true)
     const [ loginType, setLoginType ] = useState('BUYER')
 
@@ -18,10 +17,14 @@ const Login = () => {
     const [ isValid, setIsValid ] = useState(true);
     const [ errTxt, setErrTxt ] = useState('');
 
+    useEffect(()=>{
+        idInput.current.focus();                
+    },[])
+
     // 로그인 체크
     const loginCheck = async() => {
-        const username = id;
-        const password = pw;
+        const username = id.value;
+        const password = pw.value;
         const login_type = loginType;
 
         const loginData = {
@@ -33,28 +36,29 @@ const Login = () => {
         try{
             const response = await login(loginData);
 
-            if(loginData.username === '' && loginData.password === ''){
+            if(username === '' && password === ''){
                 setIsValid(false);
                 setErrTxt('아이디 또는 비밀번호를 입력해주세요.');
                 idInput.current.focus();
-            } else if(loginData.username === ''){
+            }
+            if(username === '' && password !== ''){
                 setIsValid(false);
                 setErrTxt('아이디를 입력해주세요');
                 idInput.current.focus();
-            } else if(loginData.password === ''){
+            }
+            if(username !== '' && password === ''){
                 setIsValid(false);
                 setErrTxt('비밀번호를 입력해주세요');
                 pwInput.current.focus();
             }
-
-            if(loginData.username !== '' && loginData.password !== ''){
+            if(username !== '' && password !== ''){
                 if(response.FAIL_Message){
                     setIsValid(false);
                     setErrTxt(response.FAIL_Message);
-                    setId('');
-                    setPw('');
+                    id.setValue('');
+                    pw.setValue('');
                     idInput.current.focus();
-                }else if(response.token && response.status !== 422){
+                }if(response.token && response.status !== 422){
                     localStorage.setItem('token', response.token);
                     localStorage.setItem('user_type', response.user_type);
                     setErrTxt('');
@@ -66,6 +70,9 @@ const Login = () => {
             console.error(error);
         }
     }
+
+    const id = useInput('', null, 'id');
+    const pw = useInput('', null, 'pw');
 
     return (
         <SC.ContentSection>
@@ -96,19 +103,17 @@ const Login = () => {
                         <S.LoginInput 
                             type='text' 
                             placeholder='아이디' 
-                            id='ID' 
-                            value={id} 
-                            onChange={(e)=>setId(e.target.value)}
-                            ref={idInput}/>
+                            ref={idInput}
+                            {...id}
+                            />
                         <S.LoginInput 
                             type='password' 
                             placeholder='비밀번호' 
-                            id='Password' 
-                            value={pw} 
-                            onChange={(e)=>setPw(e.target.value)}
-                            ref={pwInput}/>
+                            ref={pwInput}
+                            {...pw}
+                            />
                     </S.InputDiv>
-                    <SC.ErrMsg valid={isValid} margin={26}>{errTxt}</SC.ErrMsg>
+                    <S.LoginErrMsg valid={isValid}>{errTxt}</S.LoginErrMsg>
                     <S.LoginBtn type='button' onClick={()=>{loginCheck()}}>로그인</S.LoginBtn>
                 </SC.InputWrapper>
             </SC.ContentWrapper>
