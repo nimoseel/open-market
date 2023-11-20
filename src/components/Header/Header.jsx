@@ -8,6 +8,8 @@ import MyPageDropdown from '../Etc/MyPageDropdown';
 import Modal from '../Etc/Modal';
 import bagIcon from '../../assets/icon-shopping-bag.svg'
 import * as S from '../Header/_style';
+import { getSearchData } from '../../API/searchApi';
+import useInput from '../../hooks/useInput';
 
 const Header = () => {
     const navigate = useNavigate();
@@ -24,6 +26,27 @@ const Header = () => {
             setIsOpenLoginModal(true);
         }
     }
+
+    const searchWord = useInput('', null, 'searchWord');
+
+    const searchData = async() => {
+        try {
+            const response = await getSearchData(searchWord.value);
+            console.log(response.data);
+
+            // 검색 결과 페이지로 이동
+            navigate('/search', 
+                { state: { searchData: response.data }});
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            searchData();
+        }
+    };
     
     return (
         <S.HeaderDiv>
@@ -32,8 +55,8 @@ const Header = () => {
                     <Link to={'/'}>
                         <S.LogoIcon alt='로고 이미지' />
                     </Link>
-                    <S.SearchInput type='text' placeholder='상품을 검색해보세요 !' />
-                    <S.SearchIcon/>
+                    <S.SearchInput type='text' placeholder='상품을 검색해보세요 !' onKeyPress={handleKeyPress} {...searchWord}/>
+                    <S.SearchButton onClick={searchData}/> 
                 </div>
 
                     {localStorage.getItem('user_type') === 'SELLER' ?
