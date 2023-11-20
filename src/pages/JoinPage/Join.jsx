@@ -19,6 +19,7 @@ const Join = () => {
     // 분할된 인풋 관련 에러메세지
     const [ mobileErr, setMobileErr ] = useState('');
     const [ emailErr, setEmailErr ] = useState('');
+    const [ pwChkErr, setPwChkErr ] = useState('');
     const [ companyNameErr, setCompanyNameErr ] = useState('');
     // pw 아이콘 
     const [ pwIcon, setPwIcon ] = useState(false);
@@ -31,11 +32,11 @@ const Join = () => {
     },[])
 
     const idValidator = () => {
-        if (id.value.length === 0) {
+        if(id.value.length === 0) {
             id.setIsValid(false);
             setIdErr('필수 정보입니다.');
         }
-        if (!id.value.match(regex.id)) {
+        if(id.value.length !== 0 && !id.value.match(regex.id)) {
             id.setIsValid(false);
             setIdErr('20자 이내의 영문 소문자, 대문자, 숫자만 사용 가능합니다.');
         }
@@ -51,14 +52,13 @@ const Join = () => {
         }
         try {
             const response = await joinIdValid(idData);
-
             if(response.FAIL_Message === 'username 필드를 추가해주세요 :)'){
                 id.setIsValid(false);
                 setIdErr('필수 정보입니다.');
             }
-            if(!id.value.match(regex.id)){
+            if(response.FAIL_Message){
                 id.setIsValid(false);
-                setIdErr('20자 이내의 영문 소문자, 대문자, 숫자만 사용 가능합니다.');
+                setIdErr(response.FAIL_Message);
             }
             if(response.Success && id.value.match(regex.id)){
                 id.setIsValid(true);
@@ -69,8 +69,22 @@ const Join = () => {
         }
     };
 
+    const checkPwMatch = () => {
+        if(pw.value !== pw_chk.value){
+            pw_chk.setIsValid(false);
+            setPwChkIcon(false);
+            setPwChkErr('비밀번호가 일치하지 않습니다.');
+        }
+        if(pw.value.match(regex.pw) && pw.value === pw_chk.value){ 
+            pw_chk.setIsValid(true);
+            setPwChkIcon(true);
+            setPwChkErr('');
+        }
+    }
+
     const pwValidator = () => {
         if(pw.value.length === 0){ 
+            pw.setIsValid(false);
             setPwIcon(false);
             setPwChkIcon(false);
             throw new Error('필수 정보입니다.');
@@ -80,33 +94,9 @@ const Join = () => {
             setPwIcon(false);
             throw new Error('8자 이상, 영문 대 소문자, 숫자, 특수문자를 사용하세요.');
         }
-        if(pw.value !== pw_chk.value){ 
-            pw_chk.setIsValid(false);
-            setPwChkIcon(false);
-        }
-        if(pw.value.match(regex.pw) && pw.value === pw_chk.value){ 
-            pw_chk.setIsValid(true);
-            setPwChkIcon(true);
-        }
+        checkPwMatch();
         pw.setIsValid(true);
         setPwIcon(true);
-    }
-
-    const pwChkValidator = () => {
-        if (pw_chk.value.length === 0) {
-            pw_chk.setIsValid(false);
-            setPwChkIcon(false);
-            throw new Error('필수 정보입니다.');
-        }
-        if (pw.value !== pw_chk.value) {
-            pw_chk.setIsValid(false);
-            setPwChkIcon(false);
-            throw new Error('비밀번호가 일치하지 않습니다.');
-        }
-        if(pw.value.match(regex.pw) && pw.value === pw_chk.value){
-            pw_chk.setIsValid(true);
-            setPwChkIcon(true);
-        }
     }
 
     const nameValidator = () => {
@@ -128,7 +118,6 @@ const Join = () => {
 
     const emailValidator = () => {
         const email = [email_1.value,'@',email_2.value].join('');
-
         if(!email.match(regex.email)){
             setEmailErr('잘못된 이메일 형식입니다.');
         }else{
@@ -180,17 +169,27 @@ const Join = () => {
         }
     }
 
-    const ValidWholeCheck = () =>{
-        if(isSelected){
-            return (id.isValid && pw.isValid && pw_chk.isValid && user_name.isValid && !mobileErr && !emailErr) && isCheck
-        }else{
-            return (id.isValid && pw.isValid && pw_chk.isValid && user_name.isValid && !mobileErr && !emailErr && company_num.isValid && company_name.isValid) && isCheck
+    const ValidWholeCheck = () => {
+        const inputs = [
+            id.isValid,
+            pw.isValid,
+            pw_chk.isValid,
+            user_name.isValid,
+            !mobileErr,
+            !emailErr,
+            isCheck,
+        ];
+        
+        if(!isSelected){
+            inputs.push(company_num.isValid, company_name.isValid);
         }
-    }
+
+        return inputs.every(input => input);
+    };
 
     const id = useInput('', idValidator, 'id');
     const pw = useInput('', pwValidator, 'pw');
-    const pw_chk = useInput('', pwChkValidator, 'pw_chk');
+    const pw_chk = useInput('', checkPwMatch, 'pw_chk');
     const user_name = useInput('', nameValidator, 'user_name');
     const mobile_1 = useInput('010', mobileValidator, 'mobile_1');
     const mobile_2 = useInput('', mobileValidator, 'mobile_2');
@@ -217,40 +216,22 @@ const Join = () => {
             name,
         };
 
-        const sellerJoinData = {
-            username,
-            password,
-            password2,
-            phone_number,
-            name,
-            company_registration_number,
-            store_name,
+        if(!isSelected){
+            Object.assign(joinData, {
+                company_registration_number,
+                store_name,
+            });
         }
 
-        // 구매회원가입
-        if(isSelected){
-            try{
-                const response = await join(joinData)
-                if(response.username){
-                    id.setIsValid(false);
-                    setIdErr('이미 사용 중인 아이디입니다.');
-                }
-                if(response.phone_number){
-                    setMobileErr('해당 사용자 전화번호는 이미 존재합니다.');
-                }
-                if(response.user_type){
-                    alert('구매회원가입 성공!')
-                    navigate('/login');
-                }
+        try{
+            let response;
+            if(isSelected){
+                response = await join(joinData);
             }
-            catch(error){
-                console.error(error);
+            if(!isSelected){
+                response = await sellerJoin(joinData);
             }
-        }
-        // 판매회원가입
-        if(!isSelected){
-            try{
-                const response = await sellerJoin(sellerJoinData)
+            if(response){
                 if(response.username){
                     id.setIsValid(false);
                     setIdErr('이미 사용 중인 아이디입니다.');
@@ -266,14 +247,17 @@ const Join = () => {
                     company_name.setIsValid(false);
                     setCompanyNameErr('해당 스토어이름은 이미 존재합니다.');
                 }
-                if(response.status === 201){
+                if(response.user_type && isSelected){
+                    alert('구매회원가입 성공!');
+                    navigate('/login');
+                }
+                if(response.status === 201 && !isSelected){
                     alert('판매회원가입 성공!');
                     navigate('/login');
                 }
             }
-            catch(error){
-                console.error(error);
-            }
+        }catch(e){
+            console.error(e);
         }
     };
 
@@ -319,7 +303,7 @@ const Join = () => {
                                 <S.CheckIcon valid={pwChkIcon}/>
                             </S.PwDiv>
                         </S.InputDiv>
-                        <SC.ErrMsg valid={pw_chk.isValid}>{pw_chk.error}</SC.ErrMsg>
+                        <SC.ErrMsg valid={pw_chk.isValid}>{pwChkErr}</SC.ErrMsg>
                     </div>
                     
 
