@@ -32,11 +32,13 @@ const Header = () => {
     const searchData = async() => {
         try {
             const response = await getSearchData(searchWord.value);
-            console.log(response.data);
-
-            // 검색 결과 페이지로 이동
-            navigate('/search', 
-                { state: { searchData: response.data }});
+            navigate('/search', { 
+                state: { 
+                    searchData: response.data,
+                    searchWord: searchWord.value 
+                }
+            });
+            searchWord.setValue('');
         } catch (error) {
             console.error(error);
         }
