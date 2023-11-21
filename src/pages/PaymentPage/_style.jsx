@@ -279,7 +279,7 @@ export const FinalPriceInfo = ({title, price}) => {
         <FinalPriceInfoDiv>
             <FinalInfoP>{`- ${title}`}</FinalInfoP>
             <div>
-                <Price price={price} numsize={24} margin={0} txtsize={24} color={'--red'}/>
+                <Price price={price} numsize={24} margin={0} txtsize={24} color={'--main'}/>
             </div>
         </FinalPriceInfoDiv>
     )

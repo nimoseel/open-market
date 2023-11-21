@@ -136,7 +136,7 @@ const CartItem = (props) => {
                 <AmountBtn num={quantity} isMax={quantity < stock ? 0 : 1} handleMinus={()=>{setIsOpenAmountModal(true)}} handlePlus={()=>{setIsOpenAmountModal(true)}} />
                 <S.OrderDiv>
                     <div>
-                    <Price price={price*quantity} numsize={18} margin={0} txtsize={18} color={'--red'} />
+                    <Price price={price*quantity} numsize={18} margin={0} txtsize={18} color={'--main'} />
                     </div>
                     <S.OrderBtn type={'green'} onClick={()=>{turnPaymentPage()}}>주문하기</S.OrderBtn>
                 </S.OrderDiv>

@@ -23,7 +23,7 @@ const total = ({totalPrice, totalFee}) => {
             </S.TotalLi>
             <S.TotalLi>
                 <S.TotalTxt>결제 예정 금액</S.TotalTxt>
-                <Price price={totalPrice+totalFee} numsize={36} margin={2} txtsize={18} color={'--red'} />
+                <Price price={totalPrice+totalFee} numsize={36} margin={2} txtsize={18} color={'--main'} />
             </S.TotalLi>
         </S.TotalUl>
     );
