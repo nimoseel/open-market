@@ -73,7 +73,7 @@ const StyledMenuLi = styled.button`
     font-weight: var(--semi-bold);
     &:hover{
         color: var(--black);
-        background-color: #f7efff;
+        background-color: var(--main-light);
     }
 `
 
