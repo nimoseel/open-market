@@ -1,5 +1,5 @@
-import React,{ useState, useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import React,{ useState, useEffect } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { getData } from '../../API/productApi';
 import Header from '../../components/Header/Header';
 import Carousel from '../../components/Carousel/Carousel';
@@ -10,9 +10,12 @@ import Paging from '../../components/Paging/Paging';
 import * as S from '../HomePage/_style';
 
 const Home = () => {
+    const { page } = useParams(); 
+    const naviagate = useNavigate();
+
     const [ products, setProducts ] = useState([]);
     const [ loading, setLoading ] = useState(null);
-    const [ activePage, setActivePage ] = useState(1);
+    const [ activePage, setActivePage ] = useState(parseInt(page) || 1);
     const [ itemcount, setItemCount ] = useState(null);
     
     useEffect(()=>{
@@ -20,13 +23,14 @@ const Home = () => {
         getData(activePage).then(res => {
             setItemCount(res.count);
             setProducts(res.results);
-            setLoading(false)
+            setLoading(false);
         });
-    },[activePage])
+    },[activePage]);
 
     const handlePageChange = (e) => {
         setActivePage(e);
-    }
+        naviagate(`/page/${e}`);
+    };
 
     return (
         <>

@@ -18,7 +18,8 @@ function App() {
       <GlobalStyle/>
         <div className='App'>
           <Routes>
-            <Route path='/' element={<Home/>}></Route>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/page/:page" element={<Home />}></Route>
             <Route path='/product/:product_id' element={<Detail/>}></Route>
             <Route path='/join' element={<Join/>}></Route>
             <Route path='/login' element={<Login/>}></Route>
