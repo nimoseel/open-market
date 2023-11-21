@@ -13,6 +13,10 @@ export const ItemImg = styled.img`
     border: 1px solid #C4C4C4;
     border-radius: 10px;
     object-fit: cover;
+    transition: filter 0.3s ease-in-out;
+    &:hover {
+        filter: brightness(85%);
+    }
 `
 
 export const StoreName = styled.p`
