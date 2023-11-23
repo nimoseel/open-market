@@ -23,26 +23,30 @@ const SearchResult = () => {
                         {searchValue}
                     </S.SearchTxt>
                     <S.SearchResultTxt>
-                        {searchData.count ? 
+                        {searchData && searchData.count ? 
                             `총 ${searchData.count}개의 상품이 검색되었습니다.` 
                             : 
-                            `앗! 찾으시는 결과가 없네요.`
+                            '앗! 찾으시는 상품이 없네요.'
                         }
                     </S.SearchResultTxt>
                 </S.SearchCount>
-                <S.ProductUl>
-                    {searchResults.map((item) => 
-                        <Link 
-                            key={item.product_id} 
-                            to={`/product/${item.product_id}`}
-                        >
-                            <ProductCard
-                                {...item}
-                                key={item.product_id}
-                                />
-                        </Link>
-                    )}
-                </S.ProductUl>
+                { !searchData.count ? 
+                    <S.NoResult/>
+                    :
+                    <S.ProductUl>
+                        {searchResults.map((item) => 
+                            <Link 
+                                key={item.product_id} 
+                                to={`/product/${item.product_id}`}
+                            >
+                                <ProductCard
+                                    {...item}
+                                    key={item.product_id}
+                                    />
+                            </Link>
+                        )}
+                    </S.ProductUl>
+                }
             </S.Main>
             <Footer/>
         </>

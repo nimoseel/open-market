@@ -1,7 +1,9 @@
+import noresult from '../../assets/noresult.png';
 import styled from 'styled-components';
 
 export const Main = styled.main`
-    margin: 50px 0;
+    width: 1280px;
+    margin: 50px auto;
 `
 
 export const SearchCount = styled.div`
@@ -40,4 +42,17 @@ export const ProductUl = styled.ul`
     width: 1280px;
     margin: 0 auto;
     gap: 70px;
+`
+
+export const NoResult = styled.div`
+    width: 300px;
+    height: calc(100vh - 630px);
+    margin: 0 auto;
+    background-image: url(${noresult}) ;
+    background-repeat: no-repeat;
+    background-size: contain;
+`
+
+export const NoResultTxt = styled(SearchResultTxt)`
+    color: var(--main);
 `
