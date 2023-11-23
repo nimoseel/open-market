@@ -11,7 +11,7 @@ import * as S from '../HomePage/_style';
 
 const Home = () => {
     const { page } = useParams(); 
-    const naviagate = useNavigate();
+    const navigate = useNavigate();
 
     const [ products, setProducts ] = useState([]);
     const [ loading, setLoading ] = useState(null);
@@ -29,7 +29,7 @@ const Home = () => {
 
     const handlePageChange = (e) => {
         setActivePage(e);
-        naviagate(`/page/${e}`);
+        navigate(`/page/${e}`);
     };
 
     return (
