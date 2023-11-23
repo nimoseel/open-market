@@ -42,15 +42,23 @@ export const ProductUl = styled.ul`
     width: 1280px;
     margin: 0 auto;
     gap: 70px;
+    
+    @media (min-width: 1500px) {
+        min-height: 800px; 
+    }
 `
 
 export const NoResult = styled.div`
-    width: 300px;
-    height: calc(100vh - 630px);
+    width: 250px;
+    height: 300px;
     margin: 0 auto;
     background-image: url(${noresult}) ;
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center center;
+    @media (min-width: 1280px) {
+        height: 800px;
+    }
 `
 
 export const NoResultTxt = styled(SearchResultTxt)`
