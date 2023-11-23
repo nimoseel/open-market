@@ -2,14 +2,16 @@ import styled from 'styled-components';
 import Slider from 'react-slick';
 
 export const Image = styled.img`
-    height: 500px;
+    height: 450px;
     object-fit: cover;
+    margin-top: 50px;
 `
 
 export const NextDiv = styled.div`
     width: 30px;
     height: 30px;
     position: absolute;
+    padding-top: 50px;
     right: 30px;
     z-index: 99;
     text-align: right;
@@ -22,8 +24,8 @@ export const PrevDiv = styled(NextDiv)`
 `
 
 export const StyledSlider = styled(Slider)`
-    height: 500px;
-    width: 100%;
+    width: 1280px;
+    margin: 0 auto;
     position: relative;
     .slick-prev::before,
     .slick-next::before {
@@ -36,15 +38,15 @@ export const StyledSlider = styled(Slider)`
 `
 
 export const DotsDiv = styled.div`
-    bottom: 20px;
+    bottom: 30px;
 
     & ul li.slick-active button::before{
         opacity: 0.9;
-        color: var(--white);
+        color: var(--main);
     }
 
     & > ul li button::before{
         opacity: 0.4;
-        color: var(--white);
+        color: var(--main-light);
     }
 `
