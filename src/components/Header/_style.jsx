@@ -3,7 +3,6 @@ import { BtnMS } from '../Etc/Button';
 import SearchIconImg from '../../assets/icon-search.svg';
 import mainLogo from '../../assets/Logo-our.svg';
 
-
 export const HeaderDiv = styled.div`
     box-sizing: border-box;
     width: 100%;
@@ -39,17 +38,17 @@ export const LogoIcon = styled.div`
 `
 
 export const SearchButton = styled.button`
-  display: inline-block;
-  position: relative;
-  top: 9px;
-  right: 50px;
-  width: 28px;
-  height: 28px;
-  background-image: url(${SearchIconImg});
-  background-repeat: no-repeat;
-  background-size: contain;
-  border: none; 
-  cursor: pointer;
+    display: inline-block;
+    position: relative;
+    top: 9px;
+    right: 50px;
+    width: 28px;
+    height: 28px;
+    background-image: url(${SearchIconImg});
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none; 
+    cursor: pointer;
 `;
 
 export const HeaderBtnDiv = styled.div`
@@ -77,7 +76,6 @@ export const SellerHeaderDiv = styled(HeaderDiv)`
 export const SellerHeaderContent = styled.div`
     display: flex;
     align-items: center;
-
     width: 1280px;
     margin: 0 auto;
 `
