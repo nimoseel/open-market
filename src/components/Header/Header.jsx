@@ -7,9 +7,8 @@ import profileIcon from '../../assets/icon-user.svg';
 import MyPageDropdown from '../Etc/MyPageDropdown';
 import Modal from '../Etc/Modal';
 import bagIcon from '../../assets/icon-shopping-bag.svg'
-import * as S from '../Header/_style';
-import { getSearchData } from '../../API/searchApi';
 import useInput from '../../hooks/useInput';
+import * as S from '../Header/_style';
 
 const Header = () => {
     const navigate = useNavigate();
@@ -31,13 +30,7 @@ const Header = () => {
 
     const searchData = async() => {
         try {
-            const response = await getSearchData(searchWord.value);
-            navigate('/search', { 
-                state: { 
-                    searchData: response.data,
-                    searchWord: searchWord.value 
-                }
-            });
+            navigate(`/search?search=${searchWord.value}`);
             searchWord.setValue('');
         } catch (error) {
             console.error(error);
