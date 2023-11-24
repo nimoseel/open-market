@@ -24,7 +24,6 @@ const SearchResult = () => {
     useEffect(()=>{
         const fetchData = async () => {
             setLoading(true);
-
             if (searchValue) {
                 try {
                     getSearchData(activePage, searchValue).then(res => {
@@ -35,6 +34,10 @@ const SearchResult = () => {
                 } catch (error) {
                     console.error(error);
                 }
+            }else{
+                setSearchData({});
+                setSearchResults([]);
+                setLoading(false);
             }
         };
         fetchData();
@@ -62,7 +65,7 @@ const SearchResult = () => {
                         }
                     </S.SearchResultTxt>
                 </S.SearchCount>
-                { searchData.count === 0 ? 
+                { searchData.count === 0 || !searchValue? 
                     <S.NoResult/>
                     :
                     <S.ProductUl>
