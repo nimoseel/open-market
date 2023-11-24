@@ -1,15 +1,12 @@
 import React,{useState, useEffect} from "react";
-import { Link, useNavigate } from 'react-router-dom';
-import { useLocation } from "react-router-dom";
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { getSearchData } from "../../API/searchApi";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import Loading from '../../components/Loading/Loading';
+import Paging from '../../components/Paging/Paging';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import * as S from '../SearchResultPage/_style'
-import { getSearchData } from "../../API/searchApi";
-import Paging from '../../components/Paging/Paging';
-import Loading from '../../components/Loading/Loading';
-
-
 
 const SearchResult = () => {
     const navigate = useNavigate();
