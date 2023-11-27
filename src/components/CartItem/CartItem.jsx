@@ -29,7 +29,8 @@ const CartItem = (props) => {
 
         if(num > 1){
             setNum(num - 1);
-        }else if(num === 1){
+        }
+        if(num === 1){
             alert('최소 수량은 1개입니다.');
         }
     }
@@ -138,7 +139,7 @@ const CartItem = (props) => {
                     <div>
                     <Price price={price*quantity} numsize={18} margin={0} txtsize={18} color={'--main'} />
                     </div>
-                    <S.OrderBtn type={'green'} onClick={()=>{turnPaymentPage()}}>주문하기</S.OrderBtn>
+                    <S.OrderBtn type={'green'} onClick={turnPaymentPage}>주문하기</S.OrderBtn>
                 </S.OrderDiv>
 
             </S.Div>

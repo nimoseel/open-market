@@ -67,8 +67,8 @@ const MyPageDropdown = ({isOpen,setIsOpen, left}) => {
 
     return (
         <OptionUl isOpen={isOpen} setIsOpen={setIsOpen} left={left}>
-            <li><OptionBtn onClick={()=>{handleOpenMypage()}}>마이페이지</OptionBtn></li>
-            <li><OptionBtn onClick={()=>{handleLogout()}}>로그아웃</OptionBtn></li>
+            <li><OptionBtn onClick={handleOpenMypage}>마이페이지</OptionBtn></li>
+            <li><OptionBtn onClick={handleLogout}>로그아웃</OptionBtn></li>
         </OptionUl>
     );
 };

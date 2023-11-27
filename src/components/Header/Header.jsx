@@ -69,7 +69,7 @@ const Header = () => {
                         :
                         //유저가 buyer일 경우  
                         <S.HeaderBtnDiv>
-                            <HeaderBtn text={'장바구니'} src={cartIcon} onClick={()=>{checkToken()}}/>
+                            <HeaderBtn text={'장바구니'} src={cartIcon} onClick={checkToken}/>
                             { token ? 
                                 <MyPageBtn text={'마이페이지'} src={profileIcon} onClick={()=>{setIsOpenMyPageDropdown(!isOpenMyPageDropdown)}}/>
                                 : 

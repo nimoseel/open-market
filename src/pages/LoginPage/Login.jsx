@@ -114,7 +114,7 @@ const Login = () => {
                             />
                     </S.InputDiv>
                     <S.LoginErrMsg valid={isValid}>{errTxt}</S.LoginErrMsg>
-                    <S.LoginBtn type='button' onClick={()=>{loginCheck()}}>로그인</S.LoginBtn>
+                    <S.LoginBtn type='button' onClick={loginCheck}>로그인</S.LoginBtn>
                 </SC.InputWrapper>
             </SC.ContentWrapper>
             <S.FindUl>

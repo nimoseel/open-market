@@ -46,12 +46,9 @@ const Cart = () => {
             }
         };
         fetchCart();
-    },[])
-
-    const calculateTotal = (array) => {
-        return array.reduce((acc, cur)=>acc+cur, 0);
-    }
-
+    },[]);
+    
+    const calculateTotal = (array) => array.reduce((acc, cur) => acc+cur, 0);
     const totalPrice = calculateTotal(cartLists.map((item) => item.is_active && item.price * item.quantity));
     const totalFee = calculateTotal(cartLists.map((item) => item.is_active && item.shipping_fee));
 
@@ -84,30 +81,35 @@ const Cart = () => {
                     <S.MenuLi>상품금액</S.MenuLi>
                 </S.MenuUl>
             </S.CartTitleDiv>
-            { loading && <Loading/> }
-            { cartLists.length !== 0 ? 
+            {loading ? (
+                <Loading />
+            ) : (
                 <>
-                    { cartLists.map((item)=>
-                        <CartItem 
-                            {...item}
-                            key={item.product_id} 
-                        />
+                    {cartLists.length !== 0 ? (
+                        <>
+                            {cartLists.map((item) => (
+                                <CartItem {...item} key={item.product_id} />
+                            ))}
+                            <CartTotal totalPrice={totalPrice} totalFee={totalFee} />
+
+                            {cartLists.filter((x) => x.is_active).length ? (
+                                <S.OrderBtn type={'green'} onClick={turnPaymentPage}>
+                                    주문하기
+                                </S.OrderBtn>
+                            ) : (
+                                <S.OrderBtn type={'disabled'} disabled>
+                                    주문하기
+                                </S.OrderBtn>
+                            )}
+                        </>
+                    ) : (
+                        <S.EmptyDiv>
+                            <S.EmptyBoldTxt>장바구니에 담긴 상품이 없습니다.</S.EmptyBoldTxt>
+                            <S.EmptyTxt>원하는 상품을 장바구니에 담아보세요!</S.EmptyTxt>
+                        </S.EmptyDiv>
                     )}
-                    <CartTotal totalPrice={totalPrice} totalFee={totalFee}/>
-                    
-                    {cartLists.filter(x => x.is_active).length ?
-                        <S.OrderBtn type={'green'} onClick={()=>{turnPaymentPage()}}>주문하기</S.OrderBtn>
-                    :
-                        <S.OrderBtn type={'disabled'} disabled>주문하기</S.OrderBtn>
-                    }
                 </>
-            :
-                <S.EmptyDiv>
-                    <S.EmptyBoldTxt>장바구니에 담긴 상품이 없습니다.</S.EmptyBoldTxt>
-                    <S.EmptyTxt>원하는 상품을 장바구니에 담아보세요!</S.EmptyTxt>
-                </S.EmptyDiv>
-            
-            }
+            )}
         </>
     );
 };
