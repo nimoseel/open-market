@@ -49,7 +49,7 @@ const SellerItem = (props) => {
                 </S.ItemTxtDiv>
             </S.ItemInfoDiv>
             <S.Price price={price}/>
-            <S.ItemBtn  onClick={()=>{turnProductEditPage()}}>수정</S.ItemBtn>
+            <S.ItemBtn  onClick={turnProductEditPage}>수정</S.ItemBtn>
             <S.ItemBtn type={'white'} onClick={()=>{setIsOpenModal(true)}}>삭제</S.ItemBtn>
 
             { isOpenModal && 

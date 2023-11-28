@@ -172,7 +172,7 @@ const ProductUpload = () => {
                 <S.Btn type='white' onClick={()=>{navigate(-1)}}>취소</S.Btn>
 
                 { btnValid()  ?
-                    <S.Btn type='green' onClick={()=>{handlePostProduct()}}>저장하기</S.Btn>
+                    <S.Btn type='green' onClick={handlePostProduct}>저장하기</S.Btn>
                     :
                     <S.Btn type='disabled' disabled>저장하기</S.Btn>
                 }
