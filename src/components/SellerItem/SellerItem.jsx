@@ -2,7 +2,6 @@ import React,{ useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { deleteProduct } from '../../API/sellerApi';
 import { getToken } from '../../constants/token'
-import Modal from '../Etc/Modal';
 import * as S from '../SellerItem/_style';
 
 const SellerItem = (props) => {
@@ -39,9 +38,17 @@ const SellerItem = (props) => {
         }
     }
 
+    const navigateToProduct = () => {
+        navigate(`/product/${product_id}`);
+    }
+
+    const handleDelete = () => {
+        deleteSellerItem(product_id, token);
+    }
+
     return (
         <S.ItemLi key={product_id}>
-            <S.ItemInfoDiv onClick={()=>{navigate(`/product/${product_id}`)}}>
+            <S.ItemInfoDiv onClick={navigateToProduct}>
                 <S.ItemImg src={image}/>
                 <S.ItemTxtDiv>
                     <S.ItemName>{product_name}</S.ItemName>
@@ -49,20 +56,14 @@ const SellerItem = (props) => {
                 </S.ItemTxtDiv>
             </S.ItemInfoDiv>
             <S.Price price={price}/>
-            <S.ItemBtn  onClick={turnProductEditPage}>수정</S.ItemBtn>
+            <S.ItemBtn onClick={turnProductEditPage}>수정</S.ItemBtn>
             <S.ItemBtn type={'white'} onClick={()=>{setIsOpenModal(true)}}>삭제</S.ItemBtn>
 
-            { isOpenModal && 
-                <Modal 
-                    isOpenModal={isOpenModal}
-                    setIsOpenModal={setIsOpenModal}
-                    padding_top={60} 
-                    content={'상품을 삭제하시겠습니까?'}
-                    whiteBtn={'취소'} 
-                    greenBtn={'삭제'}
-                    onClickYes={()=>{deleteSellerItem(product_id, token)}}
-                />
-            }
+            <S.DeleteModal 
+                isOpenModal={isOpenModal}
+                setIsOpenModal={setIsOpenModal}
+                onClickYes={handleDelete}
+            />
         </S.ItemLi>
     );
 };

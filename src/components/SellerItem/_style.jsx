@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { BtnS } from '../Etc/Button';
+import Modal from '../Etc/Modal';
 
 export const ItemLi = styled.li`
     display: flex;
@@ -65,8 +66,21 @@ export const Price = ({price}) => {
     )
 };
 
-
 export const ItemInfoDiv = styled.div`
     display: flex;
     align-items: center;
 `
+
+export const DeleteModal = ({isOpenModal, setIsOpenModal, onClickYes}) => {
+    return (
+        <Modal 
+            isOpenModal={isOpenModal}
+            setIsOpenModal={setIsOpenModal}
+            padding_top={60} 
+            content={'상품을 삭제하시겠습니까?'}
+            whiteBtn={'취소'} 
+            greenBtn={'삭제'}
+            onClickYes={onClickYes}
+        />
+    )
+}
