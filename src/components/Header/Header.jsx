@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { HeaderBtn, MyPageBtn } from '../HeaderBtn/HeaderBtn';
 import { getToken } from '../../constants/token'
-import cartIcon from '../../assets/icon-shopping-cart.svg';
-import profileIcon from '../../assets/icon-user.svg';
 import MyPageDropdown from '../Etc/MyPageDropdown';
-import Modal from '../Etc/Modal';
-import bagIcon from '../../assets/icon-shopping-bag.svg'
 import useInput from '../../hooks/useInput';
+import * as Btn from '../HeaderBtn/HeaderBtn';
 import * as S from '../Header/_style';
 
 const Header = () => {
@@ -16,6 +12,8 @@ const Header = () => {
     
     const [ isOpenMyPageDropdown, setIsOpenMyPageDropdown ] = useState(false);
     const [ isOpenLoginModal, setIsOpenLoginModal ] = useState(false);
+    
+    const searchWord = useInput('', null, 'searchWord');
 
     const checkToken = () => {
         if(token){
@@ -26,8 +24,6 @@ const Header = () => {
         }
     }
 
-    const searchWord = useInput('', null, 'searchWord');
-
     const searchData = async() => {
         try {
             navigate(`/search?search=${searchWord.value}`);
@@ -37,59 +33,65 @@ const Header = () => {
         }
     }
 
-    const handleKeyPress = (e) => {
+    const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
             searchData();
         }
     };
-    
+
+    const clickMyPageBtn = () => {
+        setIsOpenMyPageDropdown(!isOpenMyPageDropdown);
+    }
+
+    const clickSellerBtn = () => {
+        navigate('/sellercenter');
+    }
+
+    const isSeller = () => {
+        return localStorage.getItem('user_type') === 'SELLER';
+    };
+
     return (
         <S.HeaderDiv>
             <S.HeaderContent>
                 <div>
                     <Link to={'/'}>
-                        <S.LogoIcon alt='로고 이미지' />
+                        <S.LogoIcon alt='로고 이미지'/>
                     </Link>
-                    <S.SearchInput type='text' placeholder='상품을 검색해보세요 !' onKeyPress={handleKeyPress} {...searchWord}/>
-                    <S.SearchButton onClick={searchData}/> 
+                    <S.SearchInput 
+                        type='text' 
+                        placeholder='상품을 검색해보세요 !' 
+                        onKeyDown={handleKeyDown} 
+                        {...searchWord}
+                    />
+                    <S.SearchButton onClick={searchData}/>
                 </div>
 
-                    {localStorage.getItem('user_type') === 'SELLER' ?
-                        <S.HeaderBtnDiv>
-                            <MyPageBtn text={'마이페이지'} src={profileIcon} onClick={()=>{setIsOpenMyPageDropdown(!isOpenMyPageDropdown)}}/>
-                            <S.SellerBtn type='button' onClick={()=>{navigate('/sellercenter')}}>
-                                <img src={bagIcon} alt='판매자 센터 버튼' />
-                                판매자 센터
-                            </S.SellerBtn> 
-                            {isOpenMyPageDropdown && 
-                                <MyPageDropdown isOpen={isOpenMyPageDropdown} setIsOpen={setIsOpenMyPageDropdown} left={-46}/>
-                            }
-                        </S.HeaderBtnDiv>
-
-                        :
-                        //유저가 buyer일 경우  
-                        <S.HeaderBtnDiv>
-                            <HeaderBtn text={'장바구니'} src={cartIcon} onClick={checkToken}/>
-                            { token ? 
-                                <MyPageBtn text={'마이페이지'} src={profileIcon} onClick={()=>{setIsOpenMyPageDropdown(!isOpenMyPageDropdown)}}/>
-                                : 
-                                <HeaderBtn text={'로그인'} src={profileIcon} link={'/login'}/>
-                            }
-                            {isOpenMyPageDropdown && 
-                                <MyPageDropdown isOpen={isOpenMyPageDropdown} setIsOpen={setIsOpenMyPageDropdown} left={35}/>
-                            }
-                        </S.HeaderBtnDiv>
-                    }         
-
+                {isSeller() ?
+                    <S.HeaderBtnDiv>
+                        <Btn.MyPage onClick={clickMyPageBtn}/>
+                        <Btn.Seller onClick={clickSellerBtn}/>
+                    </S.HeaderBtnDiv>
+                    :
+                    <S.HeaderBtnDiv>
+                        <Btn.Cart onClick={checkToken}/>
+                        { token ? 
+                            <Btn.MyPage onClick={clickMyPageBtn}/>
+                            : 
+                            <Btn.Login/>
+                        }
+                    </S.HeaderBtnDiv>
+                }         
+                <MyPageDropdown 
+                    isOpen={isOpenMyPageDropdown} 
+                    setIsOpen={setIsOpenMyPageDropdown} 
+                    isSeller={isSeller()}
+                />
             </S.HeaderContent>
-            <Modal 
+            
+            <S.LoginModal 
                 isOpenModal={isOpenLoginModal}
                 setIsOpenModal={setIsOpenLoginModal}
-                padding_top={50} 
-                content={<p>로그인이 필요한 서비스입니다.<br/>로그인 하시겠습니까?</p>}
-                whiteBtn={'아니오'} 
-                greenBtn={'예'}
-                onClickYes={()=>{navigate('/login')}}
             />
         </S.HeaderDiv>
     )

@@ -1,7 +1,8 @@
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { BtnMS } from '../Etc/Button';
 import SearchIconImg from '../../assets/icon-search.svg';
 import mainLogo from '../../assets/Logo-our.svg';
+import Modal from '../Etc/Modal';
 
 export const HeaderDiv = styled.div`
     box-sizing: border-box;
@@ -57,22 +58,7 @@ export const HeaderBtnDiv = styled.div`
     gap: 26px;
 `
 
-// seller style
-export const SellerBtn = styled(BtnMS)`
-    display: flex;
-    justify-content: space-around;
-    width: 168px;
-    padding: 11px 20px;
-    box-sizing: border-box;
-    font-size: 18px;
-    line-height: 22.54px;
-    align-items: center;
-`
-
-export const SellerHeaderDiv = styled(HeaderDiv)`
-    padding: 26px 0;
-`
-
+// 판매자 센터 헤더 css
 export const SellerHeaderContent = styled.div`
     display: flex;
     align-items: center;
@@ -87,3 +73,19 @@ export const SellerHeaderTitle = styled.p`
     font-size: 30px;
     line-height: 38px;
 `
+
+export const LoginModal = ({isOpenModal, setIsOpenModal}) => {
+    const navigate = useNavigate();
+
+    return (
+        <Modal 
+            isOpenModal={isOpenModal}
+            setIsOpenModal={setIsOpenModal}
+            padding_top={50} 
+            content={<p>로그인이 필요한 서비스입니다.<br/>로그인 하시겠습니까?</p>}
+            whiteBtn={'아니오'} 
+            greenBtn={'예'}
+            onClickYes={()=>{navigate('/login')}}
+        />
+    )
+}
