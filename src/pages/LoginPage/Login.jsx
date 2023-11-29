@@ -71,6 +71,12 @@ const Login = () => {
         }
     }
 
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            loginCheck();
+        }
+    };
+
     const id = useInput('', null, 'id');
     const pw = useInput('', null, 'pw');
 
@@ -105,12 +111,14 @@ const Login = () => {
                             placeholder='아이디' 
                             ref={idInput}
                             {...id}
+                            onKeyDown={handleKeyDown}
                             />
                         <S.LoginInput 
                             type='password' 
                             placeholder='비밀번호' 
                             ref={pwInput}
                             {...pw}
+                            onKeyDown={handleKeyDown}
                             />
                     </S.InputDiv>
                     <S.LoginErrMsg valid={isValid}>{errTxt}</S.LoginErrMsg>
