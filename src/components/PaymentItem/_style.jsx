@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import BasePrice from '../Etc/Price';
 
 export const ItemLi = styled.li`
     display: flex;
@@ -61,7 +62,12 @@ export const Shipping = styled.p`
     margin-left: 75px;
 `
 
-export const Price = styled.div`
+export const ProductPriceDiv = styled.div`
     width: 200px;
     margin-left: 47px;
 `
+export const Price = ({price}) => {
+    return (
+        <BasePrice price={price} numsize={18} margin={0} txtsize={18} color={'--black'}/>
+    )
+}

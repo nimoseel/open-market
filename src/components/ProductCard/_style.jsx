@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import BasePrice from '../Etc/Price';
 
 export const ProductLi = styled.li`
     width: 380px;
@@ -29,3 +30,9 @@ export const ProductName = styled.p`
     margin: 10px 0;
     font-size: 18px;
 `
+
+export const Price = ({price}) => {
+    return (
+        <BasePrice price={price} numsize={24} margin={2} txtsize={16} color={'--black'}/>
+    )
+}

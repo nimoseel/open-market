@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import BasePrice from '../Etc/Price';
 
 export const TotalUl = styled.ul`
     display: flex;
@@ -23,3 +24,15 @@ export const TotalTxt = styled.p`
 export const TotalLi = styled.li`
     width: 303px;
 `
+
+export const Price = ({price}) => {
+    return (
+        <BasePrice price={price} numsize={24} margin={2} txtsize={16} color={'--black'}/>
+    )
+}
+
+export const TotalPrice = ({price}) => {
+    return (
+        <BasePrice price={price} numsize={36} margin={2} txtsize={18} color={'--main'} />
+    )
+}

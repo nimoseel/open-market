@@ -1,5 +1,4 @@
 import React from 'react';
-import Price from '../Etc/Price';
 import * as S from '../PaymentItem/_style';
 
 const PaymentItem = (props) => {
@@ -15,15 +14,14 @@ const PaymentItem = (props) => {
             </S.ItemInfoDiv>
             <S.Discount>-</S.Discount>
             <S.PriceDiv>
-                {
-                    shipping_fee ? 
+                { shipping_fee ? 
                     <S.Shipping>{shipping_fee}원</S.Shipping>
                     :
                     <S.Shipping>무료배송</S.Shipping>
                 }
-                <S.Price>
-                    <Price price={price} numsize={18} margin={0} txtsize={18} color={'--black'}/>
-                </S.Price>
+                <S.ProductPriceDiv>
+                    <S.Price price={price}/>
+                </S.ProductPriceDiv>
             </S.PriceDiv>
         </S.ItemLi>
     );

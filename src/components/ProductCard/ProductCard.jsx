@@ -1,5 +1,4 @@
 import React from 'react';
-import Price from '../Etc/Price';
 import * as S from '../ProductCard/_style';
 
 const ProductCard = (props) => {
@@ -10,7 +9,7 @@ const ProductCard = (props) => {
             <S.ItemImg src={image} alt={product_name}/>
             <S.StoreName>{store_name}</S.StoreName>
             <S.ProductName>{product_name}</S.ProductName>
-            <Price price={price} numsize={24} margin={2} txtsize={16} color={'--black'}/>
+            <S.Price price={price}/>
         </S.ProductLi>
     );
 };
