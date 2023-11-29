@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { BtnMS } from '../Etc/Button';
 
 export const Button = styled.button`
     display: flex;
@@ -28,4 +29,15 @@ export const Span = styled.span`
 
 export const MyPageSpan = styled(Span)`
     margin-top: 7px;
+`
+
+export const SellerBtn = styled(BtnMS)`
+    display: flex;
+    justify-content: space-around;
+    width: 168px;
+    padding: 11px 20px;
+    box-sizing: border-box;
+    font-size: 18px;
+    line-height: 22.54px;
+    align-items: center;
 `
