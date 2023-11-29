@@ -22,25 +22,22 @@ const SearchResult = () => {
     const [ loading, setLoading ] = useState(false);
 
     useEffect(()=>{
-        const fetchData = async () => {
-            setLoading(true);
-            if (searchValue) {
-                try {
-                    getSearchData(activePage, searchValue).then(res => {
-                        setSearchData(res.data);
-                        setSearchResults(res.data.results);
-                        setLoading(false);
-                    });
-                } catch (error) {
-                    console.error(error);
-                }
-            }else{
-                setSearchData({});
-                setSearchResults([]);
-                setLoading(false);
+        setLoading(true);
+        if (searchValue){
+            try {
+                getSearchData(activePage, searchValue).then(res => {
+                    setSearchData(res.data);
+                    setSearchResults(res.data.results);
+                    setLoading(false);
+                });
+            } catch (error) {
+                console.error(error);
             }
-        };
-        fetchData();
+        }else{
+            setSearchData({});
+            setSearchResults([]);
+            setLoading(false);
+        }
     },[searchValue, activePage]);
 
     const handlePageChange = (e) => {
