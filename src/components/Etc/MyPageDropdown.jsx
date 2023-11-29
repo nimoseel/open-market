@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 const OptionUl = styled.ul`
     position: absolute;
-    top: 75px;
-    left: ${props => `${props.left}px`};
+    top: 90px;
+    left: ${(props) => (props.isSeller ? '1107px' : '1300px')};
     width: 130px;
     padding: 10px;
     display: ${(props) => props.isOpen ? 'block' : 'none'};
@@ -50,7 +50,7 @@ const OptionBtn = styled.button`
     }
 `
 
-const MyPageDropdown = ({isOpen,setIsOpen, left}) => {
+const MyPageDropdown = ({isOpen, setIsOpen, isSeller}) => {
     const navigate = useNavigate();
 
     const handleOpenMypage = () => {
@@ -61,12 +61,12 @@ const MyPageDropdown = ({isOpen,setIsOpen, left}) => {
         localStorage.removeItem('token');
         localStorage.removeItem('user_type');
         alert('로그아웃 되었습니다.');
-        setIsOpen(false)
-        navigate('/')
+        setIsOpen(false);
+        navigate('/');
     }
 
     return (
-        <OptionUl isOpen={isOpen} setIsOpen={setIsOpen} left={left}>
+        <OptionUl isOpen={isOpen} setIsOpen={setIsOpen} isSeller={isSeller}>
             <li><OptionBtn onClick={handleOpenMypage}>마이페이지</OptionBtn></li>
             <li><OptionBtn onClick={handleLogout}>로그아웃</OptionBtn></li>
         </OptionUl>
