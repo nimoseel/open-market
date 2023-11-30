@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { BtnS } from '../Etc/Button';
 import DelIcon from '../../assets/icon-delete.svg';
+import BasePrice from '../Etc/Price';
+import Modal from '../Etc/Modal';
 
 export const Li = styled.li`
     display: flex;
@@ -77,3 +79,46 @@ export const DeleteBtn = styled.button`
     height: 22px;
     background: url(${DelIcon}) no-repeat;
 `
+
+export const ProductPrice = ({price}) => {
+    return (
+        <BasePrice price={price} numsize={16} margin={0} txtsize={16} color={'--black'} />
+    )
+}
+
+export const TotalPrice = ({price}) => {
+    return (
+        <div>
+            <BasePrice price={price} numsize={18} margin={0} txtsize={18} color={'--main'} />
+        </div>
+    )
+}
+
+export const DeleteModal = ({isOpenModal, setIsOpenModal, onClickYes}) => {
+    return (
+        <Modal 
+            isOpenModal={isOpenModal}
+            setIsOpenModal={setIsOpenModal}
+            padding_top={60} 
+            content={'상품을 삭제하시겠습니까?'}
+            whiteBtn={'취소'} 
+            greenBtn={'삭제'}
+            onClickYes={onClickYes}
+        />
+    )
+}
+
+export const EditAmountModal = ({isOpenModal, setIsOpenModal, content, onClickYes, onClickNo}) => {
+    return (
+        <Modal 
+                isOpenModal={isOpenModal}
+                setIsOpenModal={setIsOpenModal}
+                padding_top={44} 
+                content={content}
+                whiteBtn={'취소'} 
+                greenBtn={'수정'}
+                onClickYes={onClickYes}
+                onClickNo={onClickNo}
+            />
+    )
+}
