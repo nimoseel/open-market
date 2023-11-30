@@ -32,8 +32,8 @@ export const postCart = async(reqData,token) => {
     }
 };
 
-// 장바구니 수량 수정하기
-export const editItemAmount = async(reqData, cart_item_id, token) => {
+// 장바구니 수정하기
+export const editCartItem = async(reqData, cart_item_id, token) => {
     try{
         const res = await axios(API_URL + `/cart/${cart_item_id}/`,{
             method: 'PUT',
