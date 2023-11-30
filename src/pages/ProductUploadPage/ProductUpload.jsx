@@ -1,14 +1,13 @@
-import React,{ useState,useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthContext';
 import { postProduct, editProduct } from '../../API/sellerApi';
-import { getToken } from '../../constants/token'
-import SellerHeader from '../../components/Header/SellerHeader';
+import Header from '../../components/Header/SellerCenterHeader';
 import * as S from '../ProductUploadPage/_style';
 
 const ProductUpload = () => {
-    const token = getToken();
+    const { token } = useContext(AuthContext);
     const navigate = useNavigate();
-    
     const location = useLocation();
     const data = location.state;
     
@@ -72,7 +71,7 @@ const ProductUpload = () => {
             image,
             price,
             shipping_method,
-            shipping_fee,
+            shipping_fee : shipping_fee || 0,
             stock,
             product_info,
         };
@@ -86,25 +85,30 @@ const ProductUpload = () => {
         }
     }
 
+    const isCommonValid = () => {
+        return (
+            product_name &&
+            product_info &&
+            price > 0 &&
+            shipping_fee >= 0 &&
+            stock > 0
+        );
+    }
+
     // 유효성 검사
     const btnValid  = () => {
-        const commonValid = 
-            product_name && product_info && 
-            price && shipping_fee && stock && 
-            price > 0 && shipping_fee >= 0 && stock > 0
-
-        if(data && commonValid){
-            return true;
-        }else if(!data && image && shipping_method && commonValid){ 
-            return true;
-        }else{
-            return false;
+        if (data) {
+            return isCommonValid();
         }
+        if (!data && image && shipping_method) {
+            return isCommonValid();
+        }
+        return false;
     }
 
     return (
         <>
-            <SellerHeader/>
+            <Header/>
             <S.TitleDiv>
                 <S.Title>상품 등록</S.Title>
             </S.TitleDiv>
