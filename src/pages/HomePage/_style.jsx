@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Main = styled.main`
-    margin: 80px 0;
+    margin: 50px 0;
 `
 
 export const ProductUl = styled.ul`
