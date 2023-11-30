@@ -261,6 +261,10 @@ const Join = () => {
         }
     };
 
+    const handleMenuClick = () =>{
+        setIsSelected(!isSelected);
+    }
+
     return (
         <SC.ContentSection>
             <Link to={'/'}>
@@ -268,10 +272,10 @@ const Join = () => {
             </Link>
             <SC.ContentWrapper>
                 <SC.MenuUl>
-                    <SC.MenuLi isSelected={isSelected} onClick={()=>{setIsSelected(true)}}>
+                    <SC.MenuLi isSelected={isSelected} onClick={handleMenuClick}>
                         구매회원가입
                     </SC.MenuLi>
-                    <SC.MenuLi isSelected={!isSelected} onClick={()=>{setIsSelected(false)}}>
+                    <SC.MenuLi isSelected={!isSelected} onClick={handleMenuClick}>
                         판매회원가입
                     </SC.MenuLi>
                 </SC.MenuUl>
