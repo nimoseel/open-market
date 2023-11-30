@@ -1,19 +1,18 @@
-import React,{ useState } from 'react';
+import React,{ useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthContext';
 import { deleteProduct } from '../../API/sellerApi';
-import { getToken } from '../../constants/token'
 import * as S from '../SellerItem/_style';
 
 const SellerItem = (props) => {
     const {product_id, product_name, image, price, shipping_method, shipping_fee, stock, product_info} = props;
     
+    const { token } = useContext(AuthContext);
     const navigate = useNavigate();
-    const token = getToken();
 
     const [ isOpenModal, setIsOpenModal ] = useState(false)
 
-    //수정하기 -> navigate로 값 전달
-    const turnProductEditPage = () => {
+    const navigateToProductEdit = () => {
         navigate('/productupload', {
             state : { 
                     product_id,
@@ -38,7 +37,7 @@ const SellerItem = (props) => {
         }
     }
 
-    const navigateToProduct = () => {
+    const navigateToProductDetail = () => {
         navigate(`/product/${product_id}`);
     }
 
@@ -48,7 +47,7 @@ const SellerItem = (props) => {
 
     return (
         <S.ItemLi key={product_id}>
-            <S.ItemInfoDiv onClick={navigateToProduct}>
+            <S.ItemInfoDiv onClick={navigateToProductDetail}>
                 <S.ItemImg src={image}/>
                 <S.ItemTxtDiv>
                     <S.ItemName>{product_name}</S.ItemName>
@@ -56,7 +55,7 @@ const SellerItem = (props) => {
                 </S.ItemTxtDiv>
             </S.ItemInfoDiv>
             <S.Price price={price}/>
-            <S.ItemBtn onClick={turnProductEditPage}>수정</S.ItemBtn>
+            <S.ItemBtn onClick={navigateToProductEdit}>수정</S.ItemBtn>
             <S.ItemBtn type={'white'} onClick={()=>{setIsOpenModal(true)}}>삭제</S.ItemBtn>
 
             <S.DeleteModal 
