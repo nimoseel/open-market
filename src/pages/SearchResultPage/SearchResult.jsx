@@ -45,6 +45,8 @@ const SearchResult = () => {
         navigate(`/search?page=${e}&search=${searchValue}`);
     };
 
+    const searchCount = searchData && searchData.count;
+
     return (
         <>
             <Header/>
@@ -55,14 +57,14 @@ const SearchResult = () => {
                         {searchValue}
                     </S.SearchTxt>
                     <S.SearchResultTxt>
-                        {searchData && searchData.count ? 
-                            `총 ${searchData.count}개의 상품이 검색되었습니다.` 
+                        {searchCount ? 
+                            `총 ${searchCount}개의 상품이 검색되었습니다.` 
                             : 
                             '앗! 찾으시는 상품이 없네요.'
                         }
                     </S.SearchResultTxt>
                 </S.SearchCount>
-                { searchData.count === 0 || !searchValue? 
+                {!searchCount || !searchValue? 
                     <S.NoResult/>
                     :
                     <S.ProductUl>
@@ -80,14 +82,13 @@ const SearchResult = () => {
                     </S.ProductUl>
                 }
             </S.Main>
-            {searchData && searchData.count > 15 &&
+            {searchCount > 15 &&
                 <Paging
                     page={activePage}
-                    count={searchData.count}
+                    count={searchCount}
                     setPage={handlePageChange}
                 />
             }
-
             <Footer/>
         </>
     )
