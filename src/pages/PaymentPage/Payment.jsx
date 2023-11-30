@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthContext';
 import { postOrder } from '../../API/orderApi';
-import { getToken } from '../../constants/token';
 import DaumPostCode from 'react-daum-postcode';
 import Header from '../../components/Header/Header';
 import PaymentItem from '../../components/PaymentItem/PaymentItem';
@@ -13,7 +13,7 @@ import { regex } from '../../constants/regex';
 import * as S from '../PaymentPage/_style';
 
 const Payment = () => {
-    const token = getToken();
+    const { token } = useContext(AuthContext);
     const navigate = useNavigate();
 
     // 결제 아이템 가져오기
@@ -44,7 +44,7 @@ const Payment = () => {
     const [ isCheckAgree, setIsCheckAgree ] = useState(false);
 
     // 금액 계산
-    const calculateTotal = (array) => array.reduce((acc, cur)=>acc+cur, 0);
+    const calculateTotal = (array) => array.reduce((acc, cur) => acc+cur, 0);
     const total_product_price = calculateTotal(data.map(i => i.price * i.quantity));
     const total_shipping_fee = calculateTotal(data.map(i => i.shipping_fee));
     const total_price = total_product_price + total_shipping_fee ;
@@ -144,6 +144,10 @@ const Payment = () => {
         }
     }
 
+    const handlePostCodeModal = () => {
+        setIsOpenPostCode(!isOpenPostCode);
+    }
+
     return (
         <>
             <Header/>
@@ -206,7 +210,7 @@ const Payment = () => {
                     <S.AddressTitle>배송주소</S.AddressTitle>
                     <div>
                         <S.PostNumInput placeholder='우편번호' {...post_code} disabled/>
-                        <S.PostNumSearchBtn onClick={()=>{setIsOpenPostCode(!isOpenPostCode)}}>우편번호 조회</S.PostNumSearchBtn>
+                        <S.PostNumSearchBtn onClick={handlePostCodeModal}>우편번호 조회</S.PostNumSearchBtn>
                         <S.AddressInput placeholder='주소' {...address_1} disabled/>
                         <S.AddressInput placeholder='상세주소' {...address_2}/>
                     </div>
@@ -216,7 +220,7 @@ const Payment = () => {
                             <S.ModalBg isOpenPostCode={isOpenPostCode}>
                                 <S.PostCodeContent>
                                     <S.PostCodeTitle>주소찾기</S.PostCodeTitle>
-                                    <S.DeleteBtn onClick={()=>{setIsOpenPostCode(false)}}/>
+                                    <S.DeleteBtn onClick={handlePostCodeModal}/>
                                     <DaumPostCode style={postCodeStyle} autoClose onComplete={onCompletePost}/>
                                 </S.PostCodeContent>
                             </S.ModalBg>
@@ -258,9 +262,9 @@ const Payment = () => {
                             <CheckBox isCheck={isCheckAgree} setIsCheck={setIsCheckAgree}/>
                             <S.AgreementSpan>주문 내용을 확인하였으며, 정보 제공 등에 동의합니다.</S.AgreementSpan>
                             { isAllInputsValid() ?
-                            <S.PaymentBtn type={'active'} onClick={()=>{postOrderData()}}>결제하기</S.PaymentBtn>
-                            :
-                            <S.PaymentBtn type={'disabled'} disabled>결제하기</S.PaymentBtn>
+                                <S.PaymentBtn type={'active'} onClick={postOrderData}>결제하기</S.PaymentBtn>
+                                :
+                                <S.PaymentBtn type={'disabled'} disabled>결제하기</S.PaymentBtn>
                             }
                         </S.AgreementDiv>
                     </S.FinalContentDiv>
