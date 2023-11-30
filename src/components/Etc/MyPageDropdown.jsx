@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthContext';
 import styled from 'styled-components';
 
 const OptionUl = styled.ul`
@@ -52,14 +53,14 @@ const OptionBtn = styled.button`
 
 const MyPageDropdown = ({isOpen, setIsOpen, isSeller}) => {
     const navigate = useNavigate();
+    const { logout } = useContext(AuthContext);
 
     const handleOpenMypage = () => {
         alert('페이지 준비중 입니다.');
     }
     
     const handleLogout = () => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('user_type');
+        logout();
         alert('로그아웃 되었습니다.');
         setIsOpen(false);
         navigate('/');
