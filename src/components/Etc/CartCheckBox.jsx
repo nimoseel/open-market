@@ -16,10 +16,17 @@ const CartCheckInput = styled.input`
     display: none;
 `
 
-const CartCheckBox = ({setIsCheck, isCheck, handleClick}) => {
+const CartCheckBox = ({ isCheck, setIsCheck, handleClick }) => {
+    const handleCheckBoxClick = () => {
+        setIsCheck(!isCheck);
+        if (handleClick) {
+            handleClick();
+        }
+    };
+
     return (
         <>
-            <CartCheckLabel htmlFor='chk_box' onClick={handleClick} isCheck={isCheck} setIsCheck={setIsCheck}/>
+            <CartCheckLabel htmlFor='chk_box' isCheck={isCheck} onClick={handleCheckBoxClick} />
             <CartCheckInput type='checkbox' id='chk_box'/>   
         </>
     )
