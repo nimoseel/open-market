@@ -15,10 +15,10 @@ const CheckInput = styled.input`
     display: none;
 `
 
-const CheckBox = ({setIsCheck, isCheck}) => {
+const CheckBox = ({isCheck, setIsCheck}) => {
     return (
         <>
-            <CheckLabel htmlFor='chk_box' onClick={()=>{setIsCheck(!isCheck)}} isCheck={isCheck} />
+            <CheckLabel htmlFor='chk_box' isCheck={isCheck} onClick={()=>{setIsCheck(!isCheck)}}  />
             <CheckInput type='checkbox' id='chk_box'/>   
         </>
     )
