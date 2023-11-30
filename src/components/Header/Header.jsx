@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { getToken } from '../../constants/token'
+import { AuthContext } from '../../contexts/AuthContext';
 import MyPageDropdown from '../Etc/MyPageDropdown';
 import useInput from '../../hooks/useInput';
 import * as Btn from '../HeaderBtn/HeaderBtn';
 import * as S from '../Header/_style';
 
+
 const Header = () => {
     const navigate = useNavigate();
-    const token = getToken();
+    const { token, userType } = useContext(AuthContext);
     
     const [ isOpenMyPageDropdown, setIsOpenMyPageDropdown ] = useState(false);
     const [ isOpenLoginModal, setIsOpenLoginModal ] = useState(false);
@@ -48,7 +49,7 @@ const Header = () => {
     }
 
     const isSeller = () => {
-        return localStorage.getItem('user_type') === 'SELLER';
+        return userType === 'SELLER';
     };
 
     return (

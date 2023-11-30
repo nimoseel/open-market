@@ -1,12 +1,15 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { login } from '../../API/userApi';
 import useInput from '../../hooks/useInput';
 import * as SC from '../LoginPage/_styleLoginJoin';
 import * as S from '../LoginPage/_style';
+import { AuthContext } from '../../contexts/AuthContext';
 
 const Login = () => {
     const navigate = useNavigate();
+    const { setAuthToken } = useContext(AuthContext);
+
     // 상단 탭 변경
     const [ isSelected, setIsSelected ] = useState(true)
     const [ loginType, setLoginType ] = useState('BUYER')
@@ -59,8 +62,7 @@ const Login = () => {
                     pw.setValue('');
                     idInput.current.focus();
                 }if(response.token && response.status !== 422){
-                    localStorage.setItem('token', response.token);
-                    localStorage.setItem('user_type', response.user_type);
+                    setAuthToken(response.token, response.user_type);
                     setErrTxt('');
                     navigate('/');
                 }

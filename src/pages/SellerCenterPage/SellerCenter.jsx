@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthContext';
 import { getSellerProduct } from '../../API/sellerApi';
-import { getToken } from '../../constants/token'
-import SellerHeader from '../../components/Header/SellerHeader';
+import Header from '../../components/Header/SellerCenterHeader';
 import SellerItem from '../../components/SellerItem/SellerItem';
 import Loading from '../../components/Loading/Loading';
 import * as S from '../SellerCenterPage/_style';
 
 const SellerCenter = () => {            
+    const { token } = useContext(AuthContext);
     const navigate = useNavigate();
-    const token = getToken();
-
+    
     const [ sellerItems, setSellerItems ] = useState([]);
     const [ isFocused, setIsFocused ] = useState(false);
-
     const [ loading, setLoading ] = useState(null);
-
+    
     useEffect(()=>{
+        
         setLoading(true);
         getSellerProduct(token).then(res => {
             setSellerItems(res.results);
@@ -35,7 +35,7 @@ const SellerCenter = () => {
 
     return (
         <>
-            <SellerHeader/>
+            <Header/>
             {loading && <Loading/>}
             <S.TitleDiv>
                 <S.Title>대시보드<S.StoreName>{store_name}</S.StoreName></S.Title>
@@ -58,12 +58,12 @@ const SellerCenter = () => {
                     </S.ItemIndexUl>
                     <S.UlWrapper>
                         <S.SellerItemUl>
-                        {sellerItems?.map((item) => 
+                            {sellerItems?.map((item) => 
                                 <SellerItem
                                     {...item}
                                     key={item.product_id}
                                 />
-                        )}
+                            )}
                         </S.SellerItemUl>
                     </S.UlWrapper>
                 </S.ContentDiv>
