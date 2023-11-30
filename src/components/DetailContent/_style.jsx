@@ -1,5 +1,8 @@
-import styled from 'styled-components'
-import { BtnM } from '../Etc/Button'
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import { BtnM } from '../Etc/Button';
+import BasePrice from '../Etc/Price';
+import Modal from '../Etc/Modal';
 
 export const DetailDiv = styled.div`
     display: flex;
@@ -7,6 +10,11 @@ export const DetailDiv = styled.div`
     height: 600px;
     margin: 80px auto 140px;
     gap: 50px;
+    opacity: 0;
+    transition: opacity 2s;
+    &.show{
+        opacity: 1;
+    }
 `
 
 export const TotalDiv = styled.div`
@@ -76,7 +84,7 @@ export const Amount = styled(StoreName)`
 
 export const AmountSpan = styled.span`
     font-weight: var(--bold);
-    color: var(--green);
+    color: var(--main);
 `
 
 export const BtnDiv = styled.div`
@@ -98,3 +106,42 @@ export const OrderBtn = styled(BtnM)`
 export const CartBtn = styled(BtnM)`
     width: 200px;
 `
+
+export const Price = ({price, color}) => {
+    return (
+        <BasePrice price={price} numsize={36} margin={2} txtsize={18} color={color} />
+    )
+}
+
+export const CartModal = ({isOpenModal, setIsOpenModal}) => {
+    const navigate = useNavigate();
+
+    return (
+        <Modal 
+            isOpenModal={isOpenModal}
+            setIsOpenModal={setIsOpenModal}
+            padding_top={50} 
+            content={<p>이미 장바구니에 있는 상품입니다.<br/>장바구니로 이동하시겠습니까?</p>}
+            whiteBtn={'아니오'} 
+            greenBtn={'예'}
+            onClickYes={()=>{navigate('/cart')}}
+        />
+    )
+}
+
+export const LoginModal = ({isOpenModal, setIsOpenModal}) => {
+    const navigate = useNavigate();
+
+    return (
+        <Modal 
+            isOpenModal={isOpenModal}
+            setIsOpenModal={setIsOpenModal}
+            padding_top={50} 
+            content={<p>로그인이 필요한 서비스입니다.<br/>로그인 하시겠습니까?</p>}
+            whiteBtn={'아니오'} 
+            greenBtn={'예'}
+            onClickYes={()=>{navigate('/login')}}
+        />
+    )
+}
+
