@@ -27,7 +27,8 @@ const Header = () => {
 
     const searchData = async() => {
         try {
-            navigate(`/search?search=${searchWord.value}`);
+            const encodedSearchValue = encodeURIComponent(searchWord.value);
+            navigate(`/search?search=${encodedSearchValue}`);
             searchWord.setValue('');
         } catch (error) {
             console.error(error);
@@ -36,7 +37,9 @@ const Header = () => {
 
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
-            searchData();
+            if(e.nativeEvent.isComposing === false){ 
+                searchData();
+            }
         }
     };
 
