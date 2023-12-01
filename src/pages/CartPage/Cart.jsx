@@ -49,14 +49,13 @@ const Cart = () => {
             }
         };
         fetchCartData();
-    },[]);
+    },[token]);
     
     const calculateTotal = (array) => array.reduce((acc, cur) => acc+cur, 0);
     const totalPrice = calculateTotal(cartLists.map(item => item.is_active && item.price * item.quantity));
     const totalFee = calculateTotal(cartLists.map(item => item.is_active && item.shipping_fee));
 
-    // 결제 페이지 이동
-    const turnPaymentPage = () => {
+    const navigateToPayment = () => {
         const selected = cartLists.filter(
             item => (item.is_active === true) && (item.order_kind = 'cart_order'));
         navigate('/payment', {
@@ -82,7 +81,7 @@ const Cart = () => {
 
     const handleItemCheck = (productId) => {
         const updatedCartLists = cartLists.map(item => {
-            if (item.product_id === productId) { // 해당 productId
+            if (item.product_id === productId) {
                 return {
                     ...item,
                     is_active: !item.is_active,
@@ -115,8 +114,13 @@ const Cart = () => {
                     <S.MenuLi>상품금액</S.MenuLi>
                 </S.MenuUl>
             </S.CartTitleDiv>
-            {cartLists.length !== 0 ? 
-                <>
+            {!loading && cartLists && cartLists.length === 0 ? 
+                <S.EmptyDiv className={loading ? '' : 'show'}>
+                    <S.EmptyBoldTxt>장바구니에 담긴 상품이 없습니다.</S.EmptyBoldTxt>
+                    <S.EmptyTxt>원하는 상품을 장바구니에 담아보세요!</S.EmptyTxt>
+                </S.EmptyDiv>
+                :
+                <S.CartContentDiv className={loading ? '' : 'show'}>
                     {cartLists.map((item) => (
                         <CartItem 
                             {...item} 
@@ -126,20 +130,14 @@ const Cart = () => {
                         />
                     ))}
                     <CartTotal totalPrice={totalPrice} totalFee={totalFee}/>
-
                     <S.OrderBtn 
                         type={isAnyItemSelected() ? 'green' : 'disabled'} 
                         disabled={!isAnyItemSelected()} 
-                        onClick={isAnyItemSelected() ? turnPaymentPage : null}
+                        onClick={isAnyItemSelected() ? navigateToPayment : null}
                     >
                     주문하기
                     </S.OrderBtn>
-                </>
-            : 
-                <S.EmptyDiv>
-                    <S.EmptyBoldTxt>장바구니에 담긴 상품이 없습니다.</S.EmptyBoldTxt>
-                    <S.EmptyTxt>원하는 상품을 장바구니에 담아보세요!</S.EmptyTxt>
-                </S.EmptyDiv>
+                </S.CartContentDiv>
             }
         </>
     );
