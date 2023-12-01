@@ -59,7 +59,7 @@ const DetailContent = () => {
         }
     }
 
-    const turnPaymentPage = () => {
+    const navigateToPayment = () => {
         if(token){
             navigate('/payment', {
                 state : { 
@@ -124,7 +124,7 @@ const DetailContent = () => {
         if(userType === 'BUYER' && detail.stock !== 0){
             return (
                 <>
-                    <S.OrderBtn type={'green'} onClick={turnPaymentPage}>바로 구매</S.OrderBtn>
+                    <S.OrderBtn type={'green'} onClick={navigateToPayment}>바로 구매</S.OrderBtn>
                     <S.CartBtn type={'dark'} onClick={postItemToCart}>장바구니</S.CartBtn>
                 </>
             )
@@ -133,59 +133,54 @@ const DetailContent = () => {
 
     return (
         <>
-            { loading ?
-                <Loading/> 
-                : 
-                <>
-                    <S.DetailDiv className={loading ? '' : 'show'}> 
-                        <S.DetailImg src={detail.image} alt={detail.product_name}/>
-                        <div>
-                            <S.StoreName>{detail.store_name}</S.StoreName> 
-                            <S.ProductName>{detail.product_name}</S.ProductName>
-                            <S.Price price={parseInt(detail.price)} color={'--black'}/>
-                            { detail.shipping_fee !== 0 ? 
-                                <S.Shipping>배송비 {detail.shipping_fee}원</S.Shipping>
-                                :
-                                <S.Shipping>무료배송</S.Shipping>
-                            }
-                            <S.Line/>
-                            { userType === 'SELLER' ?
-                                <AmountBtn num={1} isMax={1}/>
-                                :
-                                <AmountBtn num={num} isMax={isMax} handleMinus={handleMinus} handlePlus={handlePlus}/>
-                            }
-                            <S.Line2/>
+            {loading && <Loading/>} 
+            <S.DetailDiv className={loading ? '' : 'show'}> 
+                <S.DetailImg src={detail.image} alt={detail.product_name}/>
+                <div>
+                    <S.StoreName>{detail.store_name}</S.StoreName> 
+                    <S.ProductName>{detail.product_name}</S.ProductName>
+                    <S.Price price={parseInt(detail.price)} color={'--black'}/>
+                    { detail.shipping_fee !== 0 ? 
+                        <S.Shipping>배송비 {detail.shipping_fee}원</S.Shipping>
+                        :
+                        <S.Shipping>무료배송</S.Shipping>
+                    }
+                    <S.Line/>
+                    { userType === 'SELLER' ?
+                        <AmountBtn num={1} isMax={1}/>
+                        :
+                        <AmountBtn num={num} isMax={isMax} handleMinus={handleMinus} handlePlus={handlePlus}/>
+                    }
+                    <S.Line2/>
 
-                            <S.TotalDiv>
-                                <S.TotalPrice>총 상품 금액</S.TotalPrice>
-                                <S.PriceDiv>
-                                    <S.Amount>총 수량 <S.AmountSpan>{num}</S.AmountSpan>개</S.Amount>
-                                    <S.Price price={parseInt(detail.price)*num} color={'--main'}/>
-                                </S.PriceDiv>
-                            </S.TotalDiv>
-                                    
-                            <S.BtnDiv>
-                                {returnBtnDiv()}
-                            </S.BtnDiv>
+                    <S.TotalDiv>
+                        <S.TotalPrice>총 상품 금액</S.TotalPrice>
+                        <S.PriceDiv>
+                            <S.Amount>총 수량 <S.AmountSpan>{num}</S.AmountSpan>개</S.Amount>
+                            <S.Price price={parseInt(detail.price)*num} color={'--main'}/>
+                        </S.PriceDiv>
+                    </S.TotalDiv>
+                            
+                    <S.BtnDiv>
+                        {returnBtnDiv()}
+                    </S.BtnDiv>
 
-                            <S.CartModal 
-                                isOpenModal={isOpenCartModal} 
-                                setIsOpenModal={setIsOpenCartModal}
-                            />
-                            <S.LoginModal 
-                                isOpenModal={isOpenLoginModal} 
-                                setIsOpenModal={setIsOpenLoginModal}
-                            />
-                        </div>
-                    </S.DetailDiv>
-                    <S.TabDiv>
-                        <BtnTab type={'disabled'}>버튼</BtnTab>
-                        <BtnTab type={'disabled'}>리뷰</BtnTab>
-                        <BtnTab type={'disabled'}>Q&A</BtnTab>
-                        <BtnTab type={'disabled'}>반품/교환정보</BtnTab>
-                    </S.TabDiv>
-                </>
-            }
+                    <S.CartModal 
+                        isOpenModal={isOpenCartModal} 
+                        setIsOpenModal={setIsOpenCartModal}
+                    />
+                    <S.LoginModal 
+                        isOpenModal={isOpenLoginModal} 
+                        setIsOpenModal={setIsOpenLoginModal}
+                    />
+                </div>
+            </S.DetailDiv>
+            <S.TabDiv>
+                <BtnTab type={'disabled'}>버튼</BtnTab>
+                <BtnTab type={'disabled'}>리뷰</BtnTab>
+                <BtnTab type={'disabled'}>Q&A</BtnTab>
+                <BtnTab type={'disabled'}>반품/교환정보</BtnTab>
+            </S.TabDiv>
         </>
     );
 };
