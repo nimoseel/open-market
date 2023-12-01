@@ -42,7 +42,13 @@ export const ProductUl = styled.ul`
     width: 1280px;
     margin: 0 auto;
     gap: 70px;
-    
+    opacity: 0;
+    transition: opacity 1s, transform 1s;
+    transform: translateY(10px); 
+    &.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
     @media (min-width: 1500px) {
         min-height: 800px; 
     }
