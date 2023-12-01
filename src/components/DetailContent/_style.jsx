@@ -11,11 +11,13 @@ export const DetailDiv = styled.div`
     margin: 80px auto 140px;
     gap: 50px;
     opacity: 0;
-    transition: opacity 2s;
+    transition: opacity 1s, transform 1s; 
+    transform: translateY(10px);
     &.show{
         opacity: 1;
+        transform: translateY(0);
     }
-`
+`;
 
 export const TotalDiv = styled.div`
     display: flex;
