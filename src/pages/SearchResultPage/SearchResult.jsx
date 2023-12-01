@@ -11,7 +11,6 @@ import * as S from '../SearchResultPage/_style'
 const SearchResult = () => {
     const navigate = useNavigate();
     const location = useLocation(); 
-
     const queryParams = new URLSearchParams(location.search);
     const searchValue = queryParams.get('search');
     const page = queryParams.get('page');
@@ -25,7 +24,8 @@ const SearchResult = () => {
         setLoading(true);
         if (searchValue){
             try {
-                getSearchData(activePage, searchValue).then(res => {
+                const encodedSearchValue = encodeURIComponent(searchValue);
+                getSearchData(activePage, encodedSearchValue).then(res => {
                     setSearchData(res.data);
                     setSearchResults(res.data.results);
                     setLoading(false);
@@ -42,7 +42,8 @@ const SearchResult = () => {
 
     const handlePageChange = (e) => {
         setActivePage(e);
-        navigate(`/search?page=${e}&search=${searchValue}`);
+        const encodedSearchValue = encodeURIComponent(searchValue);
+        navigate(`/search?page=${e}&search=${encodedSearchValue}`);
     };
 
     const searchCount = searchData && searchData.count;
@@ -50,8 +51,8 @@ const SearchResult = () => {
     return (
         <>
             <Header/>
-            <S.Main>
             {loading && <Loading/>}
+            <S.Main>
                 <S.SearchCount>
                     <S.SearchTxt>
                         {searchValue}
@@ -64,10 +65,10 @@ const SearchResult = () => {
                         }
                     </S.SearchResultTxt>
                 </S.SearchCount>
-                {!searchCount || !searchValue? 
+                {!loading && (!searchCount || !searchValue)? 
                     <S.NoResult/>
                     :
-                    <S.ProductUl>
+                    <S.ProductUl className={loading ? '' : 'show'}>
                         {searchResults.map((item) => 
                             <Link 
                                 key={item.product_id} 
