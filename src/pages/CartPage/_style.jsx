@@ -44,7 +44,17 @@ export const MenuLi = styled.li`
     };
 `
 
-export const EmptyDiv = styled.div`
+export const CartContentDiv = styled.div`
+    opacity: 0;
+    transition: opacity 1s, transform 1s;
+    transform: translateY(10px);
+    &.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+`
+
+export const EmptyDiv = styled(CartContentDiv)`
     width: 250px;
     margin: 200px auto 0;
     text-align: center;
