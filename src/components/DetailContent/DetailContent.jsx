@@ -23,19 +23,27 @@ const DetailContent = () => {
 
     useEffect(()=>{
         setLoading(true);
-        
-        Promise.all([getDetail(product_id), getCart(token)])
-        .then(([detailData, cartData]) => {
-                setDetail(detailData);
-                setCartLists(cartData);
-                setLoading(false);
-            })
-            .catch((error) => {
-                console.error(error);
-                setLoading(false);
-            });
 
-    },[product_id, token])
+        const fetchData = async () => {
+            try {
+                if (userType === 'BUYER') {
+                    const [ detailData, cartData ] = await Promise.all([
+                        getDetail(product_id),
+                        getCart(token),
+                    ]);
+                    setDetail(detailData);
+                    setCartLists(cartData);
+                } else {
+                    const detailData = await getDetail(product_id);
+                    setDetail(detailData);
+                }
+            } catch (error) {
+                console.error(error);
+            }
+            setLoading(false);
+        };
+        fetchData();
+    },[product_id, token, userType])
 
     const [ num, setNum ] = useState('1');
     const [ isMax, setIsMax ] = useState(false);
@@ -121,7 +129,7 @@ const DetailContent = () => {
                 </>
             )
         }
-        if(userType === 'BUYER' && detail.stock !== 0){
+        if((userType === 'BUYER' && detail.stock !== 0) || !token){
             return (
                 <>
                     <S.OrderBtn type={'green'} onClick={navigateToPayment}>바로 구매</S.OrderBtn>
