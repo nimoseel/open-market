@@ -5,8 +5,8 @@ import styled from 'styled-components';
 
 const OptionUl = styled.ul`
     position: absolute;
-    top: 90px;
-    left: ${(props) => (props.isSeller ? '1107px' : '1300px')};
+    top: 75px;
+    left: ${(props) => (props.isSeller ? '-46px' : '35px')};
     width: 130px;
     padding: 10px;
     display: ${(props) => props.isOpen ? 'block' : 'none'};

@@ -75,6 +75,11 @@ const Header = () => {
                     <S.HeaderBtnDiv>
                         <Btn.MyPage onClick={clickMyPageBtn}/>
                         <Btn.Seller onClick={clickSellerBtn}/>
+                        <MyPageDropdown 
+                            isOpen={isOpenMyPageDropdown} 
+                            setIsOpen={setIsOpenMyPageDropdown} 
+                            isSeller={isSeller()}
+                        />
                     </S.HeaderBtnDiv>
                     :
                     <S.HeaderBtnDiv>
@@ -84,13 +89,13 @@ const Header = () => {
                             : 
                             <Btn.Login/>
                         }
+                        <MyPageDropdown 
+                            isOpen={isOpenMyPageDropdown} 
+                            setIsOpen={setIsOpenMyPageDropdown} 
+                            isSeller={isSeller()}
+                        />
                     </S.HeaderBtnDiv>
                 }         
-                <MyPageDropdown 
-                    isOpen={isOpenMyPageDropdown} 
-                    setIsOpen={setIsOpenMyPageDropdown} 
-                    isSeller={isSeller()}
-                />
             </S.HeaderContent>
             
             <S.LoginModal 
