@@ -2,14 +2,15 @@ import noresult from '../../assets/noresult.png';
 import styled from 'styled-components';
 
 export const Main = styled.main`
-    width: 1280px;
+    width: 100%;
+    max-width: 1280px;
     margin: 50px auto;
 `
 
 export const SearchCount = styled.div`
     display: flex;
     flex-direction: column;
-    width: 1280px;
+    width: 100%;
     height: 110px;
     border-bottom: 1px dotted var(--main);
     margin: 0 auto 50px;
@@ -49,8 +50,10 @@ export const ProductUl = styled.ul`
         opacity: 1;
         transform: translateY(0);
     }
-    @media (min-width: 1500px) {
-        min-height: 800px; 
+    @media screen and (max-width: 768px) {
+        max-width: 500px;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
     }
 `
 

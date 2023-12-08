@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import BasePrice from '../Etc/Price';
 
 export const ProductLi = styled.li`
-    width: 380px;
-    max-height: 490px;
     cursor: pointer;
 `
 
@@ -18,17 +16,23 @@ export const ItemImg = styled.img`
     &:hover {
         filter: brightness(85%);
     }
+
+    @media screen and (max-width: 768px) {
+        width: 220px;
+        height: 220px;
+    }
 `
 
 export const StoreName = styled.p`
     margin: 16px 0 10px;    
+    font-size: 1rem;
     font-weight: var(--regular);
     color: var(--dark-gray);
 `
 
 export const ProductName = styled.p`
     margin: 10px 0;
-    font-size: 18px;
+    font-size: 1.125rem;
 `
 
 export const Price = ({price}) => {
