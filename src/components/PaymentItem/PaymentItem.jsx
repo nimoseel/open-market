@@ -12,16 +12,15 @@ const PaymentItem = (props) => {
                 <S.ProductName>{product_name}</S.ProductName>
                 <S.GrayTxt>수량: {quantity}개</S.GrayTxt>
             </S.ItemInfoDiv>
-            <S.Discount>-</S.Discount>
+
             <S.PriceDiv>
-                { shipping_fee ? 
-                    <S.Shipping>{shipping_fee}원</S.Shipping>
-                    :
-                    <S.Shipping>무료배송</S.Shipping>
-                }
-                <S.ProductPriceDiv>
+                <S.ShippingDiv>
+                    <S.Shipping>{shipping_fee ? `${shipping_fee}원` :`무료배송`}</S.Shipping>
+                </S.ShippingDiv> 
+
+                <div>
                     <S.Price price={price}/>
-                </S.ProductPriceDiv>
+                </div>
             </S.PriceDiv>
         </S.ItemLi>
     );

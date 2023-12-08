@@ -153,12 +153,6 @@ const Payment = () => {
             <Header/>
             <S.PaymentTitleDiv>
                 <S.PaymentHeader>주문/결제하기</S.PaymentHeader>
-                <S.MenuUl>
-                    <S.MenuLi>상품정보</S.MenuLi>
-                    <S.MenuLi>할인</S.MenuLi>
-                    <S.MenuLi>배송비</S.MenuLi>
-                    <S.MenuLi>상품금액</S.MenuLi>
-                </S.MenuUl>
             </S.PaymentTitleDiv>
             <S.ItemUl>
                 {data?.map((item) => 

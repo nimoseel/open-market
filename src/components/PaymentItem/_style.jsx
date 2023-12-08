@@ -1,73 +1,93 @@
 import styled from 'styled-components';
 import BasePrice from '../Etc/Price';
+import LogisticsIcon from '../../assets/icon-logistics.svg';
 
 export const ItemLi = styled.li`
     display: flex;
-    width: 100%;
-    height: 130px;
-    margin-bottom: 16px;
-    padding: 8px 10px 18px 8px;
-    box-sizing: border-box;
-    border-bottom: 1px solid var(--disabled);
     align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom: 1px solid var(--disabled);
+    padding: 10px 0;
 `
 
 export const ItemImg = styled.img`
-    width: 104px;
-    height: 104px;
+    width: 130px;
+    height: 130px;
     margin-right: 36px;
     border-radius: 10px;
     object-fit: cover;
+    
+    @media screen and (max-width: 768px) {
+        min-width: 130px;
+        min-height: 130px;
+    }
 `
 
 export const ItemInfoDiv = styled.div`
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
 `
 
 export const GrayTxt  = styled.p`
-    font-weight: var(--regular);
     font-size: 14px;
-    color: var(--dark-gray);
+    font-weight: var(--regular);
     line-height: 17.53px;
+    color: var(--dark-gray);
 `
 
 export const ProductName = styled.p`
-    margin: 6px 0 10px;
-    font-weight: var(--regular);
+    margin-bottom: 10px;
     font-size: 18px;
-    color: var(--black);
+    font-weight: var(--regular);
     line-height: 22px;
+    color: var(--black);
 `
 
 export const Discount = styled.p`
     width: 100px;
     font-size: 18px;
     line-height: 22.54px;
-    color: var(--dark-gray);
     text-align: center;
-`
+    color: var(--dark-gray);
 
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+`
 export const PriceDiv = styled.div`
     display: flex;
+    justify-content: space-between;
+    width: 600px;
     line-height: 22.54px;
-    align-items: center;
-    text-align: center;
+
+    @media screen and (max-width: 768px) {
+        width: 200px;
+        flex-direction: column;
+        align-items: end;
+        gap: 10px;
+    }
+`
+
+export const ShippingDiv = styled.div`
+    background-image: url(${LogisticsIcon}) ;
+    background-repeat: no-repeat;
+    background-size: contain;
 `
 
 export const Shipping = styled.p`
-    font-weight: var(--regular);
+    margin-left: 35px;
     font-size: 18px;
+    font-weight: var(--regular);
     color: var(--dark-gray);
-    width: 200px;
-    margin-left: 75px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 16px;
+    }
 `
 
-export const ProductPriceDiv = styled.div`
-    width: 200px;
-    margin-left: 47px;
-`
 export const Price = ({price}) => {
     return (
-        <BasePrice price={price} numsize={18} margin={0} txtsize={18} color={'--black'}/>
+        <BasePrice price={price} numsize={20} margin={0} txtsize={18} color={'--black'}/>
     )
 }

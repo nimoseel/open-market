@@ -4,7 +4,8 @@ import Price from '../../components/Etc/Price';
 import DelIcon from '../../assets/icon-delete.svg';
 
 export const PaymentTitleDiv = styled.div`
-    width: 1280px;
+    width: 100%;
+    max-width: 1280px;
     margin: 0 auto 16px;
     text-align: center;
 `
@@ -15,6 +16,10 @@ export const PaymentHeader = styled.h1`
     font-weight: var(--bold);
     font-size: 36px;
     line-height: 44px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 24px;
+    }
 `
 
 export const MenuUl = styled.ul`
@@ -29,33 +34,27 @@ export const MenuUl = styled.ul`
     background-color: var(--menu);
 `
 
-export const MenuLi = styled.li`
-    &:first-child{
-        margin: 0 360px 0 261px;
-    }
-    &:nth-child(2){
-        margin-right: 188px;
-    }
-    &:nth-child(3){
-        margin-right: 186px;
-    }
-    &:last-child{
-        margin-right: 82px;
-    }
-`
-
 export const ItemUl = styled.ul`
-    width: 1280px;
+    width: 100%;
+    max-width: 1280px;
     margin: 0 auto;
+
+    @media screen and (max-width: 768px) {
+        width: 500px;
+    }
 `
 
 export const TotalPriceDiv = styled.div`
     display: flex;
     justify-content: flex-end;
-    width: 1280px;
+    max-width: 1280px;
     margin: 0 auto;
     padding-top: 14px;
     align-items: center;
+
+    @media screen and (max-width: 768px) {
+        width: 500px;
+    }
 `
 
 export const TotalSpan = styled.span`
@@ -68,6 +67,10 @@ export const TotalSpan = styled.span`
 export const InfoInputDiv = styled.div`
     width: 1280px;
     margin: 96px auto 70px;    
+
+    @media screen and (max-width: 768px) {
+        width: 500px;
+    }
 `
 
 export const InfoTitle = styled.h2`
@@ -91,6 +94,10 @@ export const InputTitle = styled.p`
     font-weight: var(--regular);
     font-size: 16px;
     line-height: 20.03px;
+
+    @media screen and (max-width: 768px) {
+        width: 120px;
+    }
 `
 
 export const AddressTitle = styled(InputTitle)`
@@ -111,17 +118,26 @@ export const Hr = styled.div`
 
 export const BoldHr = styled(Hr)`
     height: 2px;
+
+    @media screen and (max-width: 768px) {
+        max-width: 500px;
+    }
 `
 
 // input
 export const PaymentInput = styled.input`
     display: inline-block;
-    width: 334px;
+    width: 100%;
+    max-width: 334px;
     height: 40px;
     margin: 8px 0;
     padding: 10px;
     box-sizing: border-box;
     border: 1px solid var(--disabled);
+
+    @media screen and (max-width: 768px) {
+        max-width: 234px;
+    }
 `
 
 export const MobileInput1 = styled(PaymentInput)`
@@ -152,7 +168,11 @@ export const AddressInput = styled(PaymentInput)`
 `
 
 export const ShippingMsgInput = styled(PaymentInput)`
-    width: 800px;
+    max-width: 800px;
+    
+    @media screen and (max-width: 768px) {
+        max-width: 334px;
+    }
 `
 
 // button
@@ -185,19 +205,30 @@ export const Hyphen = () => {
 // 결제수단
 export const PaymentDiv = styled.div`
     display: flex;
-    width: 1280px;
+    width: 100%;
+    max-width: 1280px;
     margin: 0 auto;
+
+    @media screen and (max-width: 768px) {
+        max-width: 500px;
+        flex-direction: column;
+    }
 `
 
 export const MethodDiv = styled.div`
     width: 760px;
-    height: 56px;
 `
 
 export const MethodUl = styled.ul`
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     gap: 20px;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        gap: 0;
+    }
 `
 
 const MethodLi = styled.li`
@@ -208,7 +239,11 @@ const MethodLi = styled.li`
     line-height: 20.03px;
     align-items: flex-end;
     gap: 10px;
-    `
+
+    @media screen and (max-width: 768px) {
+        margin: 8px 0;
+    }
+`
 
 export const MethodInput = styled.input`
     width: 20px;
@@ -229,6 +264,12 @@ export const MethodItem = ({itemName,content, onClick}) => {
 export const FinalDiv = styled.div`
     width: 480px;
     margin-left: 40px;
+
+    @media screen and (max-width: 768px) {
+        margin-left: 0;
+        width: 500px;
+        margin-top: 70px;
+    }
 `
 
 export const FinalContentDiv = styled.div`
@@ -336,4 +377,4 @@ export const ModalBg = styled.section`
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.1);
     visibility: ${(props) => props.isOpenPostCode === false ? 'hidden' : 'visible'};
-`
+`   
