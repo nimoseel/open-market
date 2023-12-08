@@ -7,8 +7,13 @@ export const Footer = styled.footer`
 `
 
 export const FooterContentDiv = styled.div`
-    width: 1280px;
+    width: 100%;
+    max-width: 1280px;
     margin: 0 auto;
+
+    @media screen and (max-width: 768px) {
+        max-width: 500px;
+    }
 `
 
 export const FooterLinkDiv = styled.div`
@@ -23,6 +28,12 @@ export const InfoUl = styled.ul`
     display: flex;
     position: relative;
     gap: 32px;
+
+    @media screen and (max-width: 768px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
 `
 
 export const InfoLi = styled.li`
@@ -40,6 +51,12 @@ export const InfoLi = styled.li`
     &:last-child::after{
         display: none;
     };
+
+    @media screen and (max-width: 768px) {
+        &::after{
+            content:none;
+        };
+    }
 `
 export const InfoBoldLi = styled(InfoLi)`
     font-weight: var(--bold);
