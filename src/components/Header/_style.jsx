@@ -3,8 +3,12 @@ import styled from 'styled-components';
 import SearchIconImg from '../../assets/icon-search.svg';
 import mainLogo from '../../assets/Logo-our.svg';
 import Modal from '../Etc/Modal';
+import Menu from '../../assets/icon-hamburger.svg';
+import Close from '../../assets/icon-delete-colored.svg';
 
 export const HeaderDiv = styled.div`
+    display: flex;
+    justify-content: center;
     box-sizing: border-box;
     width: 100%;
     height: 90px;
@@ -15,9 +19,27 @@ export const HeaderDiv = styled.div`
 export const HeaderContent = styled.header`
     display: flex;
     justify-content: space-between;
-    width: 1280px;
-    margin: 0 auto;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    max-width: 1280px;
     box-sizing: border-box;
+    
+    @media screen and (max-width: 768px) {
+        width: 540px;
+        margin: 0;
+    }
+`
+
+export const MainDiv = styled.div`
+    display: flex;
+    align-items: center;
+    height: 47px;
+    gap: 30px;
+    
+    @media screen and (max-width: 768px) {
+        gap: 0px;
+    }
 `
 
 export const SearchInput = styled.input`
@@ -26,36 +48,65 @@ export const SearchInput = styled.input`
     padding: 0 62px 0 22px;
     border: 2px solid var(--main);
     border-radius: 50px;
+
+    @media screen and (max-width: 768px) {
+        width: 340px;
+        margin-left: 30px;
+    }
 `
 
 export const LogoIcon = styled.div`
-    display: inline-block;
-    width: 124px;
+    display: flex;
+    align-items: center;
+    width: 94px;
     height: 47px;
     background-image: url(${mainLogo}) ;
     background-repeat: no-repeat;
     background-size: contain;
     vertical-align: middle;
+
+    @media screen and (max-width: 768px) {
+        width: 60px;
+        height: 30px;
+    }
 `
 
 export const SearchButton = styled.button`
     display: inline-block;
     position: relative;
-    top: 9px;
-    right: 50px;
+    right: 80px;
     width: 28px;
     height: 28px;
     background-image: url(${SearchIconImg});
-    background-repeat: no-repeat;
-    background-size: contain;
-    border: none; 
     cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+        right: 50px;
+    }
 `;
 
 export const HeaderBtnDiv = styled.div`
     display: flex;
     position: relative;
     gap: 26px;
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+`
+
+export const MenuBtn = styled.button`
+    display: none;
+    width: 30px; 
+    height: 30px;
+    background-image: url(${props => props.isOpen ? Close : Menu});
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
 `
 
 // 판매자 센터 헤더 css
@@ -87,5 +138,42 @@ export const LoginModal = ({isOpenModal, setIsOpenModal}) => {
             greenBtn={'예'}
             onClickYes={()=>{navigate('/login')}}
         />
+    )
+}
+
+const MenuUl = styled.ul`
+    position: relative;
+    width: 100%;
+    height: ${props => (props.isOpen ? 'fit-content' : '0')};
+    top: 70px;
+    border-top: 1px solid var(--main);
+    transition: opacity 0.3s linear, height 0.3s linear;
+    background-color: white;
+    opacity: ${props => (props.isOpen ? '0.8' : '0')};
+    z-index: 1;
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+`
+
+const MenuLi = styled.li`
+    height: 60px;
+    border-bottom: 1px solid var(--main);
+    text-align: center;
+    line-height: 60px;
+
+    &:hover {
+        background-color: var(--main-light);
+    }
+`
+
+export const MenuList = ({list, isOpen}) => {
+
+    return (
+        <MenuUl isOpen={isOpen}>
+            <MenuLi>장바구니</MenuLi>
+            <MenuLi>로그인</MenuLi>
+        </MenuUl>
     )
 }
