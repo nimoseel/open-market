@@ -20,11 +20,16 @@ const Home = () => {
     
     useEffect(()=>{
         setLoading(true);
-        getData(activePage).then(res => {
-            setItemCount(res.count);
-            setProducts(res.results);
-            setLoading(false);
-        });
+        try {
+            getData(activePage).then(res => {
+                setItemCount(res.count);
+                setProducts(res.results);
+                setLoading(false);
+            });
+        } catch (error) {
+            console.error(error);
+            setLoading(false); 
+        }
     },[activePage]);
 
     const handlePageChange = (e) => {
@@ -34,11 +39,12 @@ const Home = () => {
 
     return (
         <>
+            {loading && <Loading/>}
             <Header/>
             <Carousel/>
             <S.Main>
-            {loading && <Loading/>}
-                <S.ProductUl>
+                {(!loading && products) &&
+                <S.ProductUl className={loading ? '' : 'show'}>
                     {products.map((item) => 
                         <Link 
                             key={item.product_id} 
@@ -51,6 +57,7 @@ const Home = () => {
                         </Link>
                     )}
                 </S.ProductUl>
+                }
             </S.Main>
 
             {itemcount > 15 &&
@@ -60,7 +67,6 @@ const Home = () => {
                     setPage={handlePageChange}
                 />
             }
-
             <Footer/>
         </>
     )
