@@ -21,9 +21,13 @@ export const ProductUl = styled.ul`
         transform: translateY(0);
     }
 
-    @media screen and (max-width: 768px) {
-        max-width: 500px;
+    @media screen and (max-width: 1024px) {
+        max-width: 700px;
         grid-template-columns: 1fr 1fr;
-        gap: 30px;
+        gap: 50px;
+    }
+
+    @media screen and (max-width: 768px) {
+        max-width: 540px;
     }
 `
