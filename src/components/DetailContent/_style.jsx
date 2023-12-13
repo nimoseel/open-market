@@ -6,7 +6,8 @@ import Modal from '../Etc/Modal';
 
 export const DetailDiv = styled.div`
     display: flex;
-    width: 1280px;
+    width: 100%;
+    max-width: 1280px;
     height: 600px;
     margin: 80px auto 140px;
     gap: 50px;
@@ -17,15 +18,32 @@ export const DetailDiv = styled.div`
         opacity: 1;
         transform: translateY(0);
     }
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;
+
+export const InfoDiv = styled.div`
+    display: inline-block;
+    width: 100%;
+    max-width: 630px;
+
+    @media screen and (max-width: 768px) {
+        max-width: 540px;
+    }
+`
 
 export const TotalDiv = styled.div`
     display: flex;
     justify-content: space-between;
+    width: 100%;
     height: 45px;
     margin: 32px 0 30px;
     box-sizing: border-box;
     align-items: flex-end;
+
 `
 
 export const PriceDiv = styled.div`
@@ -34,14 +52,19 @@ export const PriceDiv = styled.div`
 `
 
 export const DetailImg = styled.img`
-    width: 600px;
-    height: 600px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 600px;
     box-sizing: border-box;
     object-fit: cover;
+
+    @media screen and (max-width: 768px) {
+        max-width: 540px;
+    }
 `
 
 export const Line = styled.div`
-    width: 630px;
+    width: 100%;
     height: 2px;
     margin-top: 20px;
     margin-bottom: 30px;
@@ -71,6 +94,10 @@ export const Shipping = styled.p`
     font-size: 16px;
     color: var(--dark-gray);
     line-height: 20.03px;
+
+    @media screen and (max-width: 768px) {
+        margin-top: 20px;
+    }
 `
 
 export const TotalPrice = styled(StoreName)`
@@ -91,7 +118,7 @@ export const AmountSpan = styled.span`
 
 export const BtnDiv = styled.div`
     display: flex;
-    gap: 14px;   
+    gap: 14px;
 `
 
 export const TabDiv = styled.div`
@@ -99,14 +126,18 @@ export const TabDiv = styled.div`
     width: 1280px;
     height: 200px;
     margin: 0 auto;
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
 `
 
 export const OrderBtn = styled(BtnM)`
-    width: 416px;
+    max-width: 416px;
 `
 
 export const CartBtn = styled(BtnM)`
-    width: 200px;
+    max-width: 200px;
 `
 
 export const Price = ({price, color}) => {

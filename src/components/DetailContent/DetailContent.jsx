@@ -144,7 +144,7 @@ const DetailContent = () => {
             {loading && <Loading/>} 
             <S.DetailDiv className={loading ? '' : 'show'}> 
                 <S.DetailImg src={detail.image} alt={detail.product_name}/>
-                <div>
+                <S.InfoDiv>
                     <S.StoreName>{detail.store_name}</S.StoreName> 
                     <S.ProductName>{detail.product_name}</S.ProductName>
                     <S.Price price={parseInt(detail.price)} color={'--black'}/>
@@ -181,7 +181,7 @@ const DetailContent = () => {
                         isOpenModal={isOpenLoginModal} 
                         setIsOpenModal={setIsOpenLoginModal}
                     />
-                </div>
+                </S.InfoDiv>
             </S.DetailDiv>
             <S.TabDiv>
                 <BtnTab type={'disabled'}>버튼</BtnTab>
