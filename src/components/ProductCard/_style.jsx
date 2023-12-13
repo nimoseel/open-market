@@ -17,9 +17,14 @@ export const ItemImg = styled.img`
         filter: brightness(85%);
     }
 
+    @media screen and (max-width: 1024px) {
+        width: 300px;
+        height: 300px;
+    }
+
     @media screen and (max-width: 768px) {
-        width: 220px;
-        height: 220px;
+        width: 240px;
+        height: 240px;
     }
 `
 
