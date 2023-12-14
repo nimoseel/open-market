@@ -39,11 +39,11 @@ export const TotalDiv = styled.div`
     display: flex;
     justify-content: space-between;
     width: 100%;
+    min-width: 330px;
     height: 45px;
     margin: 32px 0 30px;
     box-sizing: border-box;
     align-items: flex-end;
-
 `
 
 export const PriceDiv = styled.div`
