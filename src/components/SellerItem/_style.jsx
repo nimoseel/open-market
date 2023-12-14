@@ -8,25 +8,39 @@ export const ItemLi = styled.li`
     justify-content: space-between;
     align-items: center;
     padding: 16px 30px;
-    background-color: var(--white);
     border-bottom: 1px solid var(--disabled);
+    background-color: var(--white);
     cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+        padding: 16px 16px;
+    }
 `
 
 export const ItemImg = styled.img`
     width: 70px;
     height: 70px;
-    object-fit: cover;
-    border-radius: 100px;
     margin-right: 30px;
+    border-radius: 100px;
+    object-fit: cover;
+
+    @media screen and (max-width: 768px) {
+        width: 50px;
+        height: 50px;
+        margin-right: 15px;
+    }
 `
 
 export const ItemTxtDiv = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
     width: 350px;
+    gap: 10px;
+
+    @media screen and (max-width: 768px) {
+        width: 125px;
+    }
 `
 
 export const ItemName = styled.p`
@@ -45,24 +59,34 @@ export const ItemStock = styled.p`
 export const ItemBtn = styled(BtnS)`
     width: 80px;
     margin: 0 10px;
+
     &:focus{
         border-color: var(--disabled);
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 50px;
+        margin: 0;
     }
 `
 
 const StyledPrice = styled.p`
     display: inline-block;
-    font-weight: var(--regular);
-    font-size: 18px;
     width: 200px;
     text-align: center;
+    font-size: 18px;
+    font-weight: var(--regular);
+
+    @media screen and (max-width: 768px) {
+        width: 130px;
+    }
 `
 
 export const Price = ({price}) => {
     return (
-            <StyledPrice>
-                {price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}원
-            </StyledPrice>
+        <StyledPrice>
+            {price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}원
+        </StyledPrice>
     )
 };
 
