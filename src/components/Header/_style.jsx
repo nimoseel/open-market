@@ -34,7 +34,6 @@ export const HeaderContent = styled.header`
 export const MainDiv = styled.div`
     display: flex;
     align-items: center;
-    height: 47px;
     gap: 30px;
     
     @media screen and (max-width: 768px) {
@@ -113,16 +112,27 @@ export const MenuBtn = styled.button`
 export const SellerHeaderContent = styled.div`
     display: flex;
     align-items: center;
-    width: 1280px;
+    width: 100%;
+    height: 47px;
+    max-width: 1280px;
     margin: 0 auto;
+
+    @media screen and (max-width: 768px) {
+        width: 540px;
+    }
 `
 
 export const SellerHeaderTitle = styled.p`
     width: 145px;
     height: 38px;
+    margin-left: 20px;
     font-weight: var(--semi-bold);
     font-size: 30px;
     line-height: 38px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 22px;
+    }
 `
 
 export const LoginModal = ({isOpenModal, setIsOpenModal}) => {
