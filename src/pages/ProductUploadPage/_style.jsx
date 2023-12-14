@@ -5,35 +5,55 @@ import ImgUploadIcon from '../../assets/icon-img.svg';
 export const TitleDiv = styled.div`
     display: flex;
     justify-content: flex-start;
-    width: 1280px;
+    width: 100%;
+    max-width: 1280px;
     height: 130px;
     margin: 0 auto;
     align-items: center;
+
+    @media screen and (max-width: 768px) {
+        max-width: 540px;
+    }
 `
 
 export const Title = styled.h1`
     font-size: 36px;
-    line-height: 44px;
     font-weight: var(--bold);
+    line-height: 44px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 22px;
+    }
 `
 
 export const MainDiv = styled.div`
-    width: 1280px;
-    margin: 0 auto;
     display: flex;
     flex-direction: row;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
     gap: 80px;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        width: 540px;
+        gap: 40px;
+    }
 `
 
 export const InputTitle = styled.p`
-    color: var(--dark-gray);
     font-size: 16px;
     font-weight: var(--regular);
     line-height: 20.03px;
+    color: var(--dark-gray);
 `
 
 export const CautionDiv = styled.div`
-    width: 320px;
+    min-width: 250px;
+
+    @media screen and (max-width: 768px) {
+        width: 540px;
+    }
 `
 
 export const CautionTitle = styled(InputTitle)`
@@ -42,7 +62,6 @@ export const CautionTitle = styled(InputTitle)`
 `
 
 export const CautionContent = styled.p`
-    width: 100%;
     height: fit-content;
     padding: 20px;
     box-sizing: border-box;
@@ -51,6 +70,11 @@ export const CautionContent = styled.p`
     font-weight: var(--regular);
     line-height: 17.53px;
     background-color: #FFEFE8;
+`
+
+export const InfoInputsDiv = styled.div`
+    display: flex;
+    flex-direction: column;
 `
 
 const InputDiv = styled.div`
@@ -62,19 +86,27 @@ const InputDiv = styled.div`
     border-radius: 5px;
     box-sizing: border-box;
     overflow: hidden;
+
+    @media screen and (max-width: 768px) {
+        width: 250px;
+    }
 `
 
 const CommonInput = styled.input`
     border: none;
     width: 166px;
-    font-size: 16px;
     padding-left: 16px;
+    font-size: 16px;
+
+    @media screen and (max-width: 768px) {
+        width: 195px;
+    }
 `
 
 const InputSpan = styled.span`
+    display: inline-block;
     width: 54px;
     height: 54px;
-    display: inline-block;
     text-align: center;
     line-height: 54px;
     background-color: var(--disabled);
@@ -93,8 +125,12 @@ export const StyledInput = ({name, value, onChange, txt}) =>{
 const ProductNameInputDiv = styled(InputDiv)`
     display: flex;
     justify-content: space-between;
+    width: 100%;
     padding: 17px 16px;
-    width: 450px;
+
+    @media screen and (max-width: 768px) {
+        width: 250px;
+    }
 `
 const ExtendCommonInput = styled(CommonInput)`
     width: 400px;
@@ -119,8 +155,8 @@ export const ProductNameInput = ({name, value, onChange}) => {
 export const InputWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 10px;
     margin-bottom: 16px;
+    gap: 10px;
 `
 
 export const BtnDiv = styled.div`
@@ -130,6 +166,7 @@ export const BtnDiv = styled.div`
 
 export const Btn = styled(BtnMS)`
     width: 200px;
+
     &:focus{
         border-color: var(--disabled);
     }
@@ -137,25 +174,34 @@ export const Btn = styled(BtnMS)`
 
 export const ShippingBtn = styled(BtnMS)`
     width: 220px;
+    border: ${(props) => props.isFocused ? 'none': '1px solid var(--disabled)'};
     background-color: var(${(props) => props.isFocused ? '--main': '--white'});
     color: var(${(props) => props.isFocused ? '--white': '--dark-gray'});
 
-    border: ${(props) => props.isFocused ? 'none': '1px solid var(--disabled)'};
     &:focus{
         border: ${(props) => props.isFocused ? 'none': '1px solid var(--disabled)'};
     }
     
+    @media screen and (max-width: 768px) {
+        width: 120px;
+        font-size: 14px;
+    }
 `
 
 export const ProductImgDiv = styled.div`
     display: flex;
-    align-items: center;
+    position: relative;
     justify-content: center;
+    align-items: center;
     box-sizing: border-box;
     width: 454px;
     height: 454px;
-    position: relative;
     background-color: var(--disabled);
+
+    @media screen and (max-width: 768px) {
+        width: 250px;
+        height: 250px;
+    }
 `
 
 export const ProductImg = styled.img`
@@ -165,42 +211,54 @@ export const ProductImg = styled.img`
 `
 
 export const ImgUploadBtn = styled.div`
-    width: 50px;
-    height: 50px;
-    background-image: url(${ImgUploadIcon});
-    background-repeat: no-repeat;
-    background-position: center;
     position: absolute;
     top: 202px;
     left: 202px;
+    width: 50px;
+    height: 50px;
     border: none;
+    background-image: url(${ImgUploadIcon});
+    background-repeat: no-repeat;
+    background-position: center;
     cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+        top: 100px;
+        left: 100px;
+    }
 `
 
 export const FinalBtnDiv = styled(BtnDiv)`
-    width: 1280px;
-    margin: 0 auto;
     display: flex;
     justify-content: flex-end;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    max-width: 1280px;
+    margin: 50px auto;
+
+    @media screen and (max-width: 768px) {
+        width: 540px;
+    }
 `
 
 export const ProductMainInputDiv = styled.div`
     display: flex;
-    gap: 40px;
     margin-bottom: 40px;
+    gap: 40px;
+
+    @media screen and (max-width: 768px) {
+        margin-bottom: 10px;
+    }
 `
 
 export const ProductInfoInput = styled.textarea`
     width: 100%;
     height: 200px;
+    box-sizing: border-box;
+    padding: 16px;
     border: 1px solid var(--disabled);
     border-radius: 5px;
-    padding: 16px;
-    box-sizing: border-box;
     font-size: 16px;
     resize: none;
+    
     &:focus{
         outline: none;
     }

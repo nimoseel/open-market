@@ -143,7 +143,7 @@ const ProductUpload = () => {
                                 </S.ProductImgDiv>
                             </S.InputWrapper>
                         </div>
-                        <div>
+                        <S.InfoInputsDiv>
                             <S.InputWrapper>
                                 <S.InputTitle>상품명</S.InputTitle>
                                 <S.ProductNameInput {...product_name} />
@@ -168,7 +168,7 @@ const ProductUpload = () => {
                                 <S.InputTitle>재고</S.InputTitle>
                                 <S.StyledInput {...stock} txt={'개'} />
                             </S.InputWrapper>
-                        </div>
+                        </S.InfoInputsDiv>
                     </S.ProductMainInputDiv>
                     <div>
                         <S.InputWrapper>
