@@ -42,13 +42,13 @@ const SellerCenter = () => {
                 <S.UploadBtn onClick={()=>{navigate('/productupload')}}/>
             </S.TitleDiv>
             <S.MainDiv>
-                <ul>
+                <S.MenuUl>
                     <S.MenuLi content={`판매중인 상품 (${product_number})`} isFocused={isFocused}/>
                     <S.MenuLi content={'주문/배송'} onClick={handleAlert}/>
                     <S.MenuLi content={'문의/리뷰'} onClick={handleAlert}/>
                     <S.MenuLi content={'통계'} onClick={handleAlert}/>
                     <S.MenuLi content={'스토어 설정'} onClick={handleAlert}/>
-                </ul>
+                </S.MenuUl>
                 <S.ContentDiv>
                     <S.ItemIndexUl>
                         <S.ItemIndexLi>상품정보</S.ItemIndexLi>

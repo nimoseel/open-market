@@ -5,22 +5,27 @@ import plusIcon from '../../assets/icon-plus.svg'
 export const TitleDiv = styled.div`
     display: flex;
     justify-content: space-between;
-    width: 1280px;
+    align-items: center;
+    width: 100%;
+    max-width: 1280px;
     height: 130px;
     margin: 0 auto;
-    align-items: center;
+
+    @media screen and (max-width: 768px) {
+        width: 540px;
+    }
 `
 
 export const Title = styled.h1`
     font-size: 36px;
-    line-height: 130px;
     font-weight: var(--bold);
+    line-height: 130px;
 `
 
 export const StoreName = styled.strong`
     margin-left: 16px;
-    color: var(--main);
     font-weight: var(--semi-bold);
+    color: var(--main);
 `
 
 const StyledUploadBtn = styled(BtnMS)`
@@ -54,23 +59,38 @@ export const UploadBtn = ({onClick}) => {
 }
 
 export const MainDiv = styled.div`
-    width: 1280px;
-    margin: 0 auto;
     display: flex;
     flex-direction: row;
+    width: 1280px;
+    margin: 0 auto;
     gap: 30px;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        width: 540px;
+    }
+`
+
+export const MenuUl = styled.ul`
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
 `
 
 const StyledMenuLi = styled.button`
-    padding: 13px 20px;
-    margin-bottom: 10px;
-    text-align: left;
     width: 250px;
     height: 50px;
-    background-color: var(${(props) => props.isFocused === true ? '--main': '--white'});
-    color: var(${(props) => props.isFocused === true ? '--white': '--black'});
+    margin-bottom: 10px;
+    padding: 13px 20px;
+    text-align: left;
     font-size: 16px;
     font-weight: var(--semi-bold);
+    background-color: var(${(props) => props.isFocused === true ? '--main': '--white'});
+    color: var(${(props) => props.isFocused === true ? '--white': '--black'});
+    
     &:hover{
         color: var(--black);
         background-color: var(--main-light);
@@ -86,11 +106,12 @@ export const MenuLi = ({onClick, content, isFocused}) => {
 }
 
 export const ContentDiv = styled.div`
-    border: 1px solid var(--disabled);
-    border-radius: 5px;
     width: 100%;
+    max-width: 1000px;
     height: 800px;
     margin-bottom: 96px;
+    border: 1px solid var(--disabled);
+    border-radius: 5px;
     background-color: var(--menu);
     overflow: hidden;
 `
@@ -100,36 +121,47 @@ export const ItemIndexUl = styled.ul`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    font-size: 18px;
-    font-weight: var(--regular);
     height: 60px;
     padding: 18px 45px 18px 30px;
-    border-bottom: 1px solid var(--disabled);
-    background-color: var(--white);
+    box-sizing: border-box;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    box-sizing: border-box;
+    border-bottom: 1px solid var(--disabled);
+    font-size: 18px;
+    font-weight: var(--regular);
+    background-color: var(--white);
+
+    @media screen and (max-width: 768px) {
+        padding: 18px;
+    }
 `
 
 export const ItemIndexLi = styled.li`
     text-align: center;
+
     &:first-child{
         width: 450px;
+
+        @media screen and (max-width: 768px) {
+            width: 270px;
+        }
     }
+
     &:nth-child(2){
         width: 200px;
     }
+    
     &:nth-child(3), &:nth-child(4){
         width: 100px;
     }
 `
 
 export const SellerItemUl = styled.ul`
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
 `
 
 export const UlWrapper = styled.div`
     height: 740px;
-    overflow-y: scroll;
     background-color: transparent;
+    overflow-y: scroll;
 `
