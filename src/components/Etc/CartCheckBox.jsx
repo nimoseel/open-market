@@ -4,8 +4,8 @@ import UnCheck from '../../assets/icon-cart-check-box.svg';
 
 const CartCheckLabel = styled.label`
     display: inline-block;
-    width: 22px;
-    height: 22px;
+    min-width: 22px;
+    min-height: 22px;
     background-image: url(${(props) => props.isCheck ? Checked : UnCheck});
     background-repeat: no-repeat;
     background-size: contain;
