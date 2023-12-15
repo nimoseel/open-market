@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { BtnL } from '../../components/Etc/Button';
 
 export const CartTitleDiv = styled.div`
-    width: 1280px;
+    width: 100%;
+    max-width: 1280px;
     margin: 0 auto 35px;
     text-align: center;
 `
@@ -10,47 +11,57 @@ export const CartTitleDiv = styled.div`
 export const CartHeader = styled.h1`
     display: inline-block;
     margin: 54px 0 52px;
-    font-weight: var(--bold);
     font-size: 36px;
+    font-weight: var(--bold);
     line-height: 44px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 22px;
+    }
 `
 
 export const MenuUl = styled.ul`
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     height: 60px;
-    padding: 21px 126px 19px 32px;
+    margin: 0 auto;
+    padding-left: 32px;
+    padding-right: 140px;
     box-sizing: border-box;
     border-radius: 10px;
-    background-color: var(--menu);
     font-size: 18px;
     line-height: 22.54px;
+    background-color: var(--menu);
+    
+    @media screen and (max-width: 768px) {
+        width: 540px;
+    }
 `
 
 export const MenuLi = styled.li`
-    margin: 0;
-    font-weight: var(--regular);
     font-size: 18px;
+    font-weight: var(--regular);
     line-height: 22.54px;
 
-    &:nth-child(2){
-        margin-left: 314px;
-        margin-right: 379px;
+    &:nth-child(3){
+        width: 280px;
     };
 
-    &:nth-child(3){
-        margin-right: 238px;
-    };
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
 `
 
 export const CartContentDiv = styled.div`
-    opacity: 0;
     transition: opacity 1s, transform 1s;
     transform: translateY(10px);
+    opacity: 0;
+    
     &.show {
-        opacity: 1;
         transform: translateY(0);
+        opacity: 1;
     }
 `
 
@@ -62,16 +73,16 @@ export const EmptyDiv = styled(CartContentDiv)`
 
 export const EmptyBoldTxt = styled.p`
     margin-bottom: 17px;
-    font-weight: var(--bold);
     font-size: 18px;
+    font-weight: var(--bold);
     line-height: 22.54px;
 `
 
 export const EmptyTxt = styled.p`
-    font-weight: var(--regular);
     font-size: 14px;
-    color: var(--dark-gray);
+    font-weight: var(--regular);
     line-height: 17.53px;
+    color: var(--dark-gray);
 `
 
 export const OrderBtn = styled(BtnL)`
