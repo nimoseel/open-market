@@ -144,14 +144,17 @@ const CartItem = (props) => {
             </S.TxtInfoDiv>
 
             <S.Div>
-                <AmountBtn 
-                    num={quantity} 
-                    isMax={checkStock()} 
-                    handleMinus={handleQuantityModal} 
-                    handlePlus={handleQuantityModal}
-                />
+                <S.EditDiv>
+                    <AmountBtn 
+                        num={quantity} 
+                        isMax={checkStock()} 
+                        handleMinus={handleQuantityModal} 
+                        handlePlus={handleQuantityModal}
+                    />
+                </S.EditDiv>
                 <S.OrderDiv>
                     <S.TotalPrice price={price*quantity}/>
+                    <S.EditBtn type={'white'} onClick={handleQuantityModal}>수량변경</S.EditBtn>
                     <S.OrderBtn type={'green'} onClick={navigateToPayment}>주문하기</S.OrderBtn>
                 </S.OrderDiv>
             </S.Div>

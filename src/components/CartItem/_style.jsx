@@ -7,68 +7,113 @@ import Modal from '../Etc/Modal';
 export const Li = styled.li`
     display: flex;
     position: relative;
-    width: 1280px;
+    align-items: center;
+    width: 100%;
+    max-width: 1280px;
     height: 200px;
-    box-sizing: border-box;
     margin: 0 auto 10px;
     padding: 18px 100px 20px 28px;
+    box-sizing: border-box;
     border: 2px solid var(--menu);
     border-radius: 10px;
-    align-items: center;
+
+    @media screen and (max-width: 768px) {
+        max-width: 540px;
+        height: fit-content;
+    }
 `
 
 export const Img = styled.img`
-    width: 160px;
+    min-width: 160px;
     height: 160px;
     margin: 2px 36px 0 40px;
-    object-fit: cover;
     border-radius: 10px;
+    object-fit: cover;
+
+    @media screen and (max-width: 768px) {
+        min-width: 120px;
+        height: 120px;
+        margin: 0 20px;
+    }
 `
 
 export const TxtInfoDiv = styled.div`
-    width: 418px;
-    margin-right: 50px;
+    width: 468px;
+    min-width: 160px;
 `
 
 export const StoreName = styled.p`
     margin-top: 8px;
-    font-weight: var(--regular);
     font-size: 14px;
-    color: var(--dark-gray);
+    font-weight: var(--regular);
     line-height: 17.53px;
+    color: var(--dark-gray);
 `
 
 export const ProductName = styled.p`
     margin: 10px 0;
-    font-weight: var(--regular);
     font-size: 18px;
-    color: var(--black);
+    font-weight: var(--regular);
     line-height: 22px;
+    color: var(--black);
 `
 
 export const Shipping = styled(StoreName)`
     margin: 40px 0 16px;
+
+    @media screen and (max-width: 768px) {
+        margin: 10px 0;
+    }
+`
+
+export const EditBtn = styled(BtnS)`
+    display: none;
+    width: 90px;
+    height: 30px;
+    margin-top: 10px;
+
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
 `
 
 export const OrderBtn = styled(BtnS)`
     width: 130px;
     margin-top: 26px;
+
+    @media screen and (max-width: 768px) {
+        width: 90px;
+        height: 30px;
+        margin-top: 10px;
+    }
 `
 
 export const Div = styled.div`
     display: flex;
     justify-content: space-between;
-    width: 438px;
     align-items: center;
+    width: 438px;
+`
+
+export const EditDiv = styled.div`
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
 `
 
 export const OrderDiv = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    box-sizing: border-box;
     height: 88px;
+    margin-left: 50px;
+    box-sizing: border-box;
     text-align: center;
+
+    @media screen and (max-width: 768px) {
+        height: 100%;
+        margin-left: 10px;
+    }
 `
 
 export const DeleteBtn = styled.button`
