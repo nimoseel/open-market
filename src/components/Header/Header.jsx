@@ -9,7 +9,7 @@ import * as S from '../Header/_style';
 
 const Header = () => {
     const navigate = useNavigate();
-    const { token, userType } = useContext(AuthContext);
+    const { token, userType, logout } = useContext(AuthContext);
     
     const [ isOpenMyPageDropdown, setIsOpenMyPageDropdown ] = useState(false);
     const [ isOpenLoginModal, setIsOpenLoginModal ] = useState(false);
@@ -73,8 +73,46 @@ const Header = () => {
         setIsOpenMenu(!isOpenMenu);
     }
 
-    const setList = () => {
+    const setMenuList = () => {
+        let menuItems;
 
+        const handlelogout = () => {
+            logout();
+            alert('로그아웃 되었습니다.');
+            setIsOpenMenu(false);
+            navigate('/');
+        }
+
+        if(!token){
+            menuItems = (
+                <>
+                    <S.MenuLi onClick={checkToken}>장바구니</S.MenuLi>
+                    <S.MenuLi onClick={()=>{navigate('/login')}}>로그인</S.MenuLi>
+                </>
+            );
+        }
+        if(token && userType === "BUYER"){
+            menuItems = (
+                <>
+                    <S.MenuLi onClick={checkToken}>장바구니</S.MenuLi>
+                    <S.MenuLi onClick={handlelogout}>로그아웃</S.MenuLi>
+                </>
+            );
+        }
+        if(token && userType === "SELLER"){
+            menuItems = (
+                <>
+                    <S.MenuLi onClick={clickSellerBtn}>판매자센터</S.MenuLi>
+                    <S.MenuLi onClick={handlelogout}>로그아웃</S.MenuLi>
+                </>
+            );
+        }
+
+        return (
+            <S.MenuUl isOpen={isOpenMenu}>
+                {menuItems}
+            </S.MenuUl>
+        )
     }
 
     return (
@@ -124,8 +162,7 @@ const Header = () => {
                     </>
                 }         
             </S.HeaderContent>
-            <S.MenuList isOpen={isOpenMenu} list={"unlogin"}/>
-            
+            {setMenuList()}
             <S.LoginModal 
                 isOpenModal={isOpenLoginModal}
                 setIsOpenModal={setIsOpenLoginModal}

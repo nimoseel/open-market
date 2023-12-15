@@ -9,10 +9,10 @@ import Close from '../../assets/icon-delete-colored.svg';
 export const HeaderDiv = styled.div`
     display: flex;
     justify-content: center;
-    box-sizing: border-box;
     width: 100%;
     height: 90px;
     padding-top: 20px;
+    box-sizing: border-box;
     box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.1);
 `
 
@@ -27,7 +27,6 @@ export const HeaderContent = styled.header`
     
     @media screen and (max-width: 768px) {
         width: 540px;
-        margin: 0;
     }
 `
 
@@ -35,7 +34,7 @@ export const MainDiv = styled.div`
     display: flex;
     align-items: center;
     gap: 30px;
-    
+
     @media screen and (max-width: 768px) {
         gap: 0px;
     }
@@ -49,7 +48,7 @@ export const SearchInput = styled.input`
     border-radius: 50px;
 
     @media screen and (max-width: 768px) {
-        width: 340px;
+        width: 370px;
         margin-left: 30px;
     }
 `
@@ -113,8 +112,8 @@ export const SellerHeaderContent = styled.div`
     display: flex;
     align-items: center;
     width: 100%;
-    height: 47px;
     max-width: 1280px;
+    height: 47px;
     margin: 0 auto;
 
     @media screen and (max-width: 768px) {
@@ -126,8 +125,8 @@ export const SellerHeaderTitle = styled.p`
     width: 145px;
     height: 38px;
     margin-left: 20px;
-    font-weight: var(--semi-bold);
     font-size: 30px;
+    font-weight: var(--semi-bold);
     line-height: 38px;
 
     @media screen and (max-width: 768px) {
@@ -151,15 +150,15 @@ export const LoginModal = ({isOpenModal, setIsOpenModal}) => {
     )
 }
 
-const MenuUl = styled.ul`
+export const MenuUl = styled.ul`
     position: relative;
+    top: 70px;
     width: 100%;
     height: ${props => (props.isOpen ? 'fit-content' : '0')};
-    top: 70px;
     border-top: 1px solid var(--main);
     transition: opacity 0.3s linear, height 0.3s linear;
     background-color: white;
-    opacity: ${props => (props.isOpen ? '0.8' : '0')};
+    opacity: ${props => (props.isOpen ? '1' : '0')};
     z-index: 1;
 
     @media screen and (min-width: 768px) {
@@ -167,23 +166,14 @@ const MenuUl = styled.ul`
     }
 `
 
-const MenuLi = styled.li`
+export const MenuLi = styled.li`
     height: 60px;
     border-bottom: 1px solid var(--main);
     text-align: center;
     line-height: 60px;
+    cursor: pointer;
 
     &:hover {
         background-color: var(--main-light);
     }
 `
-
-export const MenuList = ({list, isOpen}) => {
-
-    return (
-        <MenuUl isOpen={isOpen}>
-            <MenuLi>장바구니</MenuLi>
-            <MenuLi>로그인</MenuLi>
-        </MenuUl>
-    )
-}
