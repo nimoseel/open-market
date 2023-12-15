@@ -102,13 +102,11 @@ const Cart = () => {
             <S.CartTitleDiv>
                 <S.CartHeader>장바구니</S.CartHeader>
                 <S.MenuUl>
-                    <S.MenuLi>
                         <CartCheckBox
                             isCheck={isAllChecked}
                             setIsCheck={setIsAllChecked}
                             handleClick={handleAllItemsCheck}
                         />
-                    </S.MenuLi>
                     <S.MenuLi>상품정보</S.MenuLi>
                     <S.MenuLi>수량</S.MenuLi>
                     <S.MenuLi>상품금액</S.MenuLi>
