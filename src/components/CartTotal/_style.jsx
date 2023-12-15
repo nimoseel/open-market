@@ -3,26 +3,41 @@ import BasePrice from '../Etc/Price';
 
 export const TotalUl = styled.ul`
     display: flex;
-    width: 1280px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1280px;
     height: 150px;
     margin: 80px auto 40px;
-    border-radius: 10px;
     box-sizing: border-box;
-    background-color: var(--menu);
+    border-radius: 10px;
     text-align: center;
-    align-items: center;
+    background-color: var(--menu);
+
+    @media screen and (max-width: 768px) {
+        max-width: 540px;
+        padding: 0 12px;
+    }
 `
 
 export const TotalTxt = styled.p`
     margin-bottom: 12px;
-    font-weight: var(--regular);
     font-size: 16px;
-    color: var(--black);
+    font-weight: var(--regular);
     line-height: 20.03px;
+    color: var(--black);
+
+    @media screen and (max-width: 768px) {
+        font-size: 14px;
+    }
 `
 
 export const TotalLi = styled.li`
     width: 303px;
+
+    @media screen and (max-width: 768px) {
+        width: fit-content;
+    }
 `
 
 export const Price = ({price}) => {
