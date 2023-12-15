@@ -12,16 +12,12 @@ export const ItemLi = styled.li`
 `
 
 export const ItemImg = styled.img`
-    width: 130px;
+    min-width: 130px;
+    max-width: 130px;
     height: 130px;
     margin-right: 36px;
     border-radius: 10px;
     object-fit: cover;
-    
-    @media screen and (max-width: 768px) {
-        min-width: 130px;
-        min-height: 130px;
-    }
 `
 
 export const ItemInfoDiv = styled.div`
