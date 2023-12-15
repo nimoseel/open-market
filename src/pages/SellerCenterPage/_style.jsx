@@ -156,10 +156,6 @@ export const ItemIndexLi = styled.li`
     }
 `
 
-export const SellerItemUl = styled.ul`
-    overflow-y: scroll;
-`
-
 export const UlWrapper = styled.div`
     height: 740px;
     background-color: transparent;

@@ -57,14 +57,14 @@ const SellerCenter = () => {
                         <S.ItemIndexLi>삭제</S.ItemIndexLi>
                     </S.ItemIndexUl>
                     <S.UlWrapper>
-                        <S.SellerItemUl>
+                        <ul>
                             {sellerItems?.map((item) => 
                                 <SellerItem
                                     {...item}
                                     key={item.product_id}
                                 />
                             )}
-                        </S.SellerItemUl>
+                        </ul>
                     </S.UlWrapper>
                 </S.ContentDiv>
             </S.MainDiv>
