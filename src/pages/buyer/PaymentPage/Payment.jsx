@@ -1,15 +1,15 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { AuthContext } from '../../contexts/AuthContext';
-import { postOrder } from '../../API/orderApi';
+import { AuthContext } from '../../../contexts/AuthContext';
+import { postOrder } from '../../../API/orderApi';
 import DaumPostCode from 'react-daum-postcode';
-import Header from '../../components/Header/Header';
-import PaymentItem from '../../components/PaymentItem/PaymentItem';
-import Price from '../../components/Etc/Price';
-import CheckBox from '../../components/Etc/CheckBox';
-import ModalPortal from '../../Portal';
-import useInput from '../../hooks/useInput';
-import { regex } from '../../constants/regex';
+import Header from '../../../components/Header/Header';
+import PaymentItem from '../../../components/PaymentItem/PaymentItem';
+import Price from '../../../components/Etc/Price';
+import CheckBox from '../../../components/Etc/CheckBox';
+import ModalPortal from '../../../Portal';
+import useInput from '../../../hooks/useInput';
+import { regex } from '../../../constants/regex';
 import * as S from '../PaymentPage/_style';
 
 const Payment = () => {

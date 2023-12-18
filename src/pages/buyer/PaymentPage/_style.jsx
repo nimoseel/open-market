@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { BtnS, BtnL } from '../../components/Etc/Button';
-import Price from '../../components/Etc/Price';
-import DelIcon from '../../assets/icon-delete.svg';
+import { BtnS, BtnL } from '../../../components/Etc/Button';
+import Price from '../../../components/Etc/Price';
+import DelIcon from '../../../assets/icon-delete.svg';
 
 export const PaymentTitleDiv = styled.div`
     width: 100%;
