@@ -1,16 +1,16 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { GlobalStyle } from './GlobalStyle';
 
-import Home from './pages/HomePage/Home';
-import Login from './pages/LoginPage/Login';
-import Join from './pages/JoinPage/Join';
-import NotFound from './pages/404Page/NotFound';
-import Detail from './pages/DetailPage/Detail';
-import Payment from './pages/PaymentPage/Payment';
-import Cart from './pages/CartPage/Cart';
-import SellerCenter from './pages/SellerCenterPage/SellerCenter';
-import ProductUpload from './pages/ProductUploadPage/ProductUpload';
-import SearchResult from './pages/SearchResultPage/SearchResult';
+import Home from './pages/common/HomePage/Home';
+import Login from './pages/common/LoginPage/Login';
+import Join from './pages/common/JoinPage/Join';
+import NotFound from './pages/common/404Page/NotFound';
+import Detail from './pages/common/DetailPage/Detail';
+import SearchResult from './pages/common/SearchResultPage/SearchResult';
+import Payment from './pages/buyer/PaymentPage/Payment';
+import Cart from './pages/buyer/CartPage/Cart';
+import SellerCenter from './pages/seller/SellerCenterPage/SellerCenter';
+import ProductUpload from './pages/seller/ProductUploadPage/ProductUpload';
 
 function App() {
   return (
