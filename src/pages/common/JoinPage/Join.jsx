@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { joinIdValid, join, companyNumVaild, sellerJoin } from '../../API/userApi';
-import Dropdown from '../../components/Etc/Dropdown';
-import CheckBox from '../../components/Etc/CheckBox';
-import useInput from '../../hooks/useInput';
-import { regex } from '../../constants/regex';
+import { joinIdValid, join, companyNumVaild, sellerJoin } from '../../../API/userApi';
+import Dropdown from '../../../components/Etc/Dropdown';
+import CheckBox from '../../../components/Etc/CheckBox';
+import useInput from '../../../hooks/useInput';
+import { regex } from '../../../constants/regex';
 import * as SC from '../LoginPage/_styleLoginJoin';
-import * as S from '../JoinPage/_style';
+import * as S from './_style';
 
 const Join = () => {
     const navigate = useNavigate();
