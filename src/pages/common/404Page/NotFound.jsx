@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Icon404 from '../../assets/icon-404.svg';
+import Icon404 from '../../../assets/icon-404.svg';
 import * as S from '../404Page/_style';
 
 const NotFound = () => {
