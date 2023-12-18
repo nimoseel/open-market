@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { login } from '../../API/userApi';
-import useInput from '../../hooks/useInput';
+import { login } from '../../../API/userApi';
+import useInput from '../../../hooks/useInput';
 import * as SC from '../LoginPage/_styleLoginJoin';
 import * as S from '../LoginPage/_style';
-import { AuthContext } from '../../contexts/AuthContext';
+import { AuthContext } from '../../../contexts/AuthContext';
 
 const Login = () => {
     const navigate = useNavigate();

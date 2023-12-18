@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import mainLogo from '../../assets/Logo-our.svg';
+import mainLogo from '../../../assets/Logo-our.svg';
 
 // 로그인과 회원가입 화면에서 공통적으로 사용하는 UI - SC.컴포넌트명으로 사용
 // S.컴포넌트명은 해당 페이지에서만 사용하는 UI에만 사용
