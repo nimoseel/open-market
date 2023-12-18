@@ -162,7 +162,7 @@ const Header = () => {
                     </>
                 }         
             </S.HeaderContent>
-            {setMenuList()}
+            {isOpenMenu && setMenuList()}
             <S.LoginModal 
                 isOpenModal={isOpenLoginModal}
                 setIsOpenModal={setIsOpenLoginModal}
