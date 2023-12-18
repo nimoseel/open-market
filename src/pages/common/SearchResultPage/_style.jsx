@@ -1,4 +1,4 @@
-import noresult from '../../assets/noresult.png';
+import noresult from '../../../assets/noresult.png';
 import styled from 'styled-components';
 
 export const SearchTxt = styled.p`
