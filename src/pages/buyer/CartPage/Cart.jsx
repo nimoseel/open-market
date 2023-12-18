@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../contexts/AuthContext';
-import { getDetail } from '../../API/productApi';
-import { getCart } from '../../API/cartApi';
-import Header from '../../components/Header/Header';
-import Loading from '../../components/Loading/Loading';
-import CartCheckBox from '../../components/Etc/CartCheckBox';
-import CartItem from '../../components/CartItem/CartItem';
-import CartTotal from '../../components/CartTotal/CartTotal';
+import { AuthContext } from '../../../contexts/AuthContext';
+import { getDetail } from '../../../API/productApi';
+import { getCart } from '../../../API/cartApi';
+import Header from '../../../components/Header/Header';
+import Loading from '../../../components/Loading/Loading';
+import CartCheckBox from '../../../components/Etc/CartCheckBox';
+import CartItem from '../../../components/CartItem/CartItem';
+import CartTotal from '../../../components/CartTotal/CartTotal';
 import * as S from '../CartPage/_style';
 
 const Cart = () => {
