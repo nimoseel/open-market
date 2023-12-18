@@ -1,13 +1,13 @@
 import React,{ useState, useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { getData } from '../../API/productApi';
-import Header from '../../components/Header/Header';
-import Carousel from '../../components/Carousel/Carousel';
-import ProductCard from '../../components/ProductCard/ProductCard';
-import Footer from '../../components/Footer/Footer';
-import Loading from '../../components/Loading/Loading';
-import Paging from '../../components/Paging/Paging';
-import * as S from '../HomePage/_style';
+import { getData } from '../../../API/productApi';
+import Header from '../../../components/Header/Header';
+import Carousel from '../../../components/Carousel/Carousel';
+import ProductCard from '../../../components/ProductCard/ProductCard';
+import Footer from '../../../components/Footer/Footer';
+import Loading from '../../../components/Loading/Loading';
+import Paging from '../../../components/Paging/Paging';
+import * as S from './_style';
 
 const Home = () => {
     const { page } = useParams(); 
