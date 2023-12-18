@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { BtnMS } from '../../components/Etc/Button';
-import plusIcon from '../../assets/icon-plus.svg'
+import { BtnMS } from '../../../components/Etc/Button';
+import plusIcon from '../../../assets/icon-plus.svg'
 
 export const TitleDiv = styled.div`
     display: flex;
