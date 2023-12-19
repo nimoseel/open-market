@@ -2,9 +2,9 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import SearchIconImg from '../../assets/icon-search.svg';
 import mainLogo from '../../assets/Logo-our.svg';
-import Modal from '../Etc/Modal';
 import Menu from '../../assets/icon-hamburger.svg';
 import Close from '../../assets/icon-delete-colored.svg';
+import Modal from '../Etc/Modal';
 
 export const HeaderDiv = styled.div`
     display: flex;
@@ -25,8 +25,12 @@ export const HeaderContent = styled.header`
     max-width: 1280px;
     box-sizing: border-box;
     
+    @media screen and (max-width: 1280px) {
+        max-width: 700px;
+    }
+
     @media screen and (max-width: 768px) {
-        width: 540px;
+        width: 500px;
     }
 `
 
@@ -47,9 +51,12 @@ export const SearchInput = styled.input`
     border: 2px solid var(--main);
     border-radius: 50px;
 
+    @media screen and (max-width: 1280px) {
+        width: 360px;
+    }
     @media screen and (max-width: 768px) {
-        width: 370px;
-        margin-left: 30px;
+        width: 360px;
+        margin-left: 20px;
     }
 `
 
@@ -154,11 +161,11 @@ export const MenuUl = styled.ul`
     position: relative;
     top: 70px;
     width: 100%;
-    height: ${props => (props.isOpen ? 'fit-content' : '0')};
+    height: fit-content;
     border-top: 1px solid var(--main);
     transition: opacity 0.3s linear, height 0.3s linear;
     background-color: white;
-    opacity: ${props => (props.isOpen ? '1' : '0')};
+    box-shadow: 0px 10px 30px 0px rgba(121, 30, 247, 0.1);
     z-index: 1;
 
     @media screen and (min-width: 768px) {

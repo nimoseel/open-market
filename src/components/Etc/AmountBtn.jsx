@@ -22,7 +22,6 @@ const Minus = styled.button`
     background: url(${(props) => props.isOne ? disabledMinus : minusIcon}) no-repeat center;
     background-color: var(${(props) => props.isOne ? '--drop-down': '--white'});
     border-radius: 0px;
-
 `
 
 const AmountNum = styled.span`

@@ -20,7 +20,6 @@ const Footer = () => {
                     </S.InfoUl>
                     <S.SnsUl>
                         <li>
-                            {/* 외부페이지로 넘어가기 때문에 a 태그 사용 */}
                             <a href='https://www.instagram.com/'> 
                                 <img src={InstaImg} alt='아우어마켓 인스타그램'/>
                             </a>
