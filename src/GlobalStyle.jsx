@@ -85,8 +85,7 @@ export const GlobalStyle = createGlobalStyle`
         height: 54px;
         padding: 0 16px;
         border-radius: 5px;
-        border:1px solid var(--disabled);
-        /* background: url('../src/assets/icon-down-arrow.svg') center right 10px; */
+        border: 1px solid var(--disabled);
     }
 
     select:focus{
