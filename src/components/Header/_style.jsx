@@ -26,11 +26,11 @@ export const HeaderContent = styled.header`
     box-sizing: border-box;
     
     @media screen and (max-width: 1280px) {
-        max-width: 700px;
+        max-width: 900px;
     }
 
     @media screen and (max-width: 768px) {
-        width: 500px;
+        width: 450px;
     }
 `
 
@@ -55,7 +55,7 @@ export const SearchInput = styled.input`
         width: 360px;
     }
     @media screen and (max-width: 768px) {
-        width: 360px;
+        width: 310px;
         margin-left: 20px;
     }
 `
