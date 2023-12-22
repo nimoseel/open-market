@@ -19,6 +19,11 @@ export const DetailDiv = styled.div`
         opacity: 1;
         transform: translateY(0);
     }
+    
+    @media screen and (max-width: 1280px) {
+        max-width: 900px;
+        margin-bottom: 0;
+    }
 
     @media screen and (max-width: 768px) {
         flex-direction: column;
@@ -30,9 +35,9 @@ export const InfoDiv = styled.div`
     display: inline-block;
     width: 100%;
     max-width: 630px;
-    
-    @media screen and (max-width: 768px) {
-        max-width: 540px;
+
+    @media screen and (max-width: 1280px) {
+        max-width: 450px;
     }
 `
 
@@ -45,6 +50,10 @@ export const TotalDiv = styled.div`
     height: 45px;
     margin: 32px 0 30px;
     box-sizing: border-box;
+
+    @media screen and (max-width: 1280px) {
+        max-width: 450px;
+    }
 `
 
 export const PriceDiv = styled.div`
@@ -53,14 +62,16 @@ export const PriceDiv = styled.div`
 `
 
 export const DetailImg = styled.img`
-    width: 100%;
-    max-width: 600px;
-    max-height: 600px;
+    width: 600px;
+    height: 600px;
     box-sizing: border-box;
     object-fit: cover;
 
-    @media screen and (max-width: 768px) {
-        max-width: 540px;
+    @media screen and (max-width: 1280px) {
+        min-width: 450px;
+        min-height: 450px;
+        max-width: 450px;
+        max-height: 450px;    
     }
 `
 
@@ -70,10 +81,19 @@ export const Line = styled.div`
     margin-top: 20px;
     margin-bottom: 30px;
     background-color: var(--disabled);
+
+    @media screen and (min-width: 768px) and (max-width: 1280px) {
+        margin-top: 30px;
+        margin-bottom: 15px
+    }
 `
 
 export const Line2 = styled(Line)`
     margin-top: 30px;
+
+    @media screen and (min-width: 768px) and (max-width: 1280px) {
+        margin-top: 15px
+    }
 `
 
 export const StoreName = styled.p`
@@ -88,6 +108,11 @@ export const ProductName = styled.p`
     font-size: 36px;
     line-height: 45.07px;
     color: var(--black);
+    
+    @media screen and (max-width: 1280px) {
+        margin: 10px 0;
+        font-size: 24px;
+    }
 `
 
 export const Shipping = styled.p`
@@ -96,7 +121,7 @@ export const Shipping = styled.p`
     line-height: 20.03px;
     color: var(--dark-gray);
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1280px) {
         margin-top: 20px;
     }
 `
@@ -104,6 +129,7 @@ export const Shipping = styled.p`
 export const TotalPrice = styled(StoreName)`
     font-weight: var(--semi-bold);
     color: var(--black);
+
 `
 
 export const Amount = styled(StoreName)`
@@ -128,6 +154,10 @@ export const TabDiv = styled.div`
     width: 1280px;
     height: 200px;
     margin: 0 auto;
+
+    @media screen and (max-width: 1280px) {
+        width: 900px;
+    }
 
     @media screen and (max-width: 768px) {
         display: none;
