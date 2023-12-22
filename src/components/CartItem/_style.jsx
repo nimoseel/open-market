@@ -17,29 +17,38 @@ export const Li = styled.li`
     border: 2px solid var(--menu);
     border-radius: 10px;
 
+    @media screen and (max-width: 1280px) {
+        width: 900px;
+        height: fit-content;
+    }
+
     @media screen and (max-width: 768px) {
-        max-width: 540px;
+        width: 450px;
         height: fit-content;
     }
 `
 
 export const Img = styled.img`
-    min-width: 160px;
+    width: 160px;
     height: 160px;
     margin: 2px 36px 0 40px;
     border-radius: 10px;
     object-fit: cover;
 
     @media screen and (max-width: 768px) {
-        min-width: 120px;
-        height: 120px;
-        margin: 0 20px;
+        width: 110px;
+        height: 110px;
+        margin: 0 10px;
     }
 `
 
 export const TxtInfoDiv = styled.div`
-    width: 468px;
-    min-width: 160px;
+    width: 100%;
+    max-width: 468px;
+
+    @media screen and (max-width: 768px) {
+        min-width: 120px;
+    }
 `
 
 export const StoreName = styled.p`
@@ -48,6 +57,10 @@ export const StoreName = styled.p`
     font-weight: var(--regular);
     line-height: 17.53px;
     color: var(--dark-gray);
+
+    @media screen and (max-width: 768px) {
+        font-size: 12px;
+    }
 `
 
 export const ProductName = styled.p`
@@ -56,6 +69,10 @@ export const ProductName = styled.p`
     font-weight: var(--regular);
     line-height: 22px;
     color: var(--black);
+
+    @media screen and (max-width: 768px) {
+        font-size: 16px;
+    }
 `
 
 export const Shipping = styled(StoreName)`
@@ -93,6 +110,7 @@ export const Div = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 438px;
+
 `
 
 export const EditDiv = styled.div`
