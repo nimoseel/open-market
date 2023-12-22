@@ -16,18 +16,20 @@ export const ProductUl = styled.ul`
     opacity: 0;
     transition: opacity 3s, transform 3s; 
     transform: translateY(50px); 
+
     &.show {
         opacity: 1;
         transform: translateY(0);
     }
 
-    @media screen and (max-width: 1024px) {
-        max-width: 700px;
-        grid-template-columns: 1fr 1fr;
-        gap: 50px;
+    @media screen and (max-width: 1280px) {
+        max-width: 900px;
+        grid-row-gap: 50px;
+        grid-column-gap: 20px;
     }
 
     @media screen and (max-width: 768px) {
-        max-width: 540px;
+        max-width: 450px;
+        grid-template-columns: 1fr 1fr;
     }
 `

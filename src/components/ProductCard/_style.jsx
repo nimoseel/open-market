@@ -17,14 +17,14 @@ export const ItemImg = styled.img`
         filter: brightness(85%);
     }
 
-    @media screen and (max-width: 1024px) {
-        width: 300px;
-        height: 300px;
+    @media screen and (max-width: 1280px) {
+        width: 280px;
+        height: 280px;
     }
 
     @media screen and (max-width: 768px) {
-        width: 240px;
-        height: 240px;
+        width: 215px;
+        height: 215px;
     }
 `
 

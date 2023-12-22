@@ -17,10 +17,19 @@ export const SearchCount = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+    max-width: 1280px;
     height: 110px;
     margin: 0 auto 50px;
     border-bottom: 1px dotted var(--main);
     gap: 15px;
+
+    @media screen and (max-width: 1280px) {
+        max-width: 900px;
+    }
+
+    @media screen and (max-width: 768px) {
+        max-width: 450px;
+    }
 `
 
 export const Main = styled.main`
@@ -40,7 +49,8 @@ export const SearchResultTxt = styled.p`
 export const ProductUl = styled.ul`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    width: 1280px;
+    justify-items: center;
+    max-width: 1280px;
     margin: 0 auto;
     gap: 70px;
     opacity: 0;
@@ -51,15 +61,15 @@ export const ProductUl = styled.ul`
         transform: translateY(0);
     }
 
-    @media screen and (max-width: 1024px) {
-        max-width: 700px;
-        grid-template-columns: 1fr 1fr;
-        gap: 50px;
+    @media screen and (max-width: 1280px) {
+        max-width: 900px;
+        grid-row-gap: 50px;
+        grid-column-gap: 20px;
     }
 
-
     @media screen and (max-width: 768px) {
-        max-width: 540px;
+        max-width: 450px;
+        grid-template-columns: 1fr 1fr;
     }
 `
 
