@@ -39,8 +39,12 @@ export const ItemUl = styled.ul`
     max-width: 1280px;
     margin: 0 auto;
 
+    @media screen and (max-width: 1280px) {
+        width: 900px;
+    }
+
     @media screen and (max-width: 768px) {
-        width: 500px;
+        width: 450px;
     }
 `
 
@@ -51,9 +55,13 @@ export const TotalPriceDiv = styled.div`
     margin: 0 auto;
     padding-top: 14px;
     align-items: center;
+    
+    @media screen and (max-width: 1280px) {
+        width: 900px;
+    }
 
     @media screen and (max-width: 768px) {
-        width: 500px;
+        width: 450px;
     }
 `
 
@@ -68,8 +76,12 @@ export const InfoInputDiv = styled.div`
     width: 1280px;
     margin: 96px auto 70px;    
 
+    @media screen and (max-width: 1280px) {
+        width: 900px;
+    }
+
     @media screen and (max-width: 768px) {
-        width: 500px;
+        width: 450px;
     }
 `
 
@@ -145,10 +157,17 @@ export const MobileInput1 = styled(PaymentInput)`
     text-align: center;
     &:invalid {
         border: 1px solid var(--red);
-}
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 60px;
+    }
 `
 export const MobileInput = styled(MobileInput1)`
     width: 100px;
+    @media screen and (max-width: 768px) {
+        width: 80px;
+    }
 `
 
 export const EmailInput = styled(PaymentInput)`
@@ -159,6 +178,10 @@ export const EmailInput = styled(PaymentInput)`
 
 export const PostNumInput = styled(PaymentInput)`
     width: 170px;
+
+    @media screen and (max-width: 768px) {
+        width: 70px;
+    }
 `
 
 export const AddressInput = styled(PaymentInput)`
@@ -170,8 +193,12 @@ export const AddressInput = styled(PaymentInput)`
 export const ShippingMsgInput = styled(PaymentInput)`
     max-width: 800px;
     
+    @media screen and (max-width: 1280px) {
+        max-width: 730px;
+    }
+
     @media screen and (max-width: 768px) {
-        max-width: 334px;
+        max-width: 330px;
     }
 `
 
@@ -209,14 +236,23 @@ export const PaymentDiv = styled.div`
     max-width: 1280px;
     margin: 0 auto;
 
+    @media screen and (max-width: 1280px) {
+        width: 900px;
+    }
+
     @media screen and (max-width: 768px) {
-        max-width: 500px;
+        max-width: 450px;
         flex-direction: column;
     }
 `
 
 export const MethodDiv = styled.div`
     width: 760px;
+    margin-top: 3px;
+
+    @media screen and (max-width: 1280px) {
+        width: 450px;
+    }
 `
 
 export const MethodUl = styled.ul`
@@ -225,7 +261,7 @@ export const MethodUl = styled.ul`
     justify-content: space-between;
     gap: 20px;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1280px) {
         flex-direction: column;
         gap: 0;
     }
@@ -267,7 +303,7 @@ export const FinalDiv = styled.div`
 
     @media screen and (max-width: 768px) {
         margin-left: 0;
-        width: 500px;
+        width: 450px;
         margin-top: 70px;
     }
 `
