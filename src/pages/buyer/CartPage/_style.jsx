@@ -35,8 +35,12 @@ export const MenuUl = styled.ul`
     line-height: 22.54px;
     background-color: var(--menu);
     
+    @media screen and (max-width: 1280px) {
+        width: 900px;
+    }
+
     @media screen and (max-width: 768px) {
-        width: 540px;
+        width: 450px;
     }
 `
 
@@ -47,7 +51,12 @@ export const MenuLi = styled.li`
 
     &:nth-child(3){
         width: 280px;
+        
+        @media screen and (max-width: 1280px) {
+            width: 190px;
+        }
     };
+
 
     @media screen and (max-width: 768px) {
         display: none;
