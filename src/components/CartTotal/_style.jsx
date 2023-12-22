@@ -14,8 +14,14 @@ export const TotalUl = styled.ul`
     text-align: center;
     background-color: var(--menu);
 
+    @media screen and (max-width: 1280px) {
+        max-width: 900px;
+    }
+
     @media screen and (max-width: 768px) {
-        max-width: 540px;
+        max-width: 450px;
+        height: 120px;
+        margin: 35px auto;
         padding: 0 12px;
     }
 `
