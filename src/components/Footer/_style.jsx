@@ -11,8 +11,12 @@ export const FooterContentDiv = styled.div`
     max-width: 1280px;
     margin: 0 auto;
 
+    @media screen and (max-width: 1280px) {
+        max-width: 900px;
+    }
+
     @media screen and (max-width: 768px) {
-        max-width: 500px;
+        max-width: 450px;
     }
 `
 
