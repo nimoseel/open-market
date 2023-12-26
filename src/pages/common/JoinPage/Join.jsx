@@ -357,7 +357,7 @@ const Join = () => {
 
             <S.CheckBoxDiv>
                 <CheckBox setIsCheck={setIsCheck} isCheck={isCheck}/>
-                <span> 호두샵의 <S.CheckLink href='#'>이용약관</S.CheckLink> 및 <S.CheckLink href='#'>개인정보처리방침</S.CheckLink>에 대한 내용을 확인하였고 동의합니다.</span>
+                <S.Agreement> 호두샵의 <S.CheckLink href='#'>이용약관</S.CheckLink> 및 <S.CheckLink href='#'>개인정보처리방침</S.CheckLink>에 대한 내용을 확인하였고 동의합니다.</S.Agreement>
             </S.CheckBoxDiv>
             { ValidWholeCheck() ?
                 <S.JoinBtn type={'active'} onClick={JoinCheck}>가입하기</S.JoinBtn>

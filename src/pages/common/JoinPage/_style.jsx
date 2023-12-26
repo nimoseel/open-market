@@ -52,11 +52,19 @@ export const Contact = styled(Input)`
     width: 152px;
     border: 1px solid var(--disabled);
     text-align: center;
+
+    @media screen and (max-width: 768px) {
+        width: 117px;
+    }
 `
 
 export const EmailInput = styled(Contact)`
     width: 220px;
     text-align: left;
+
+    @media screen and (max-width: 768px) {
+        width: 170px;
+    }
 `
 
 export const EmailAdd = styled.span`
@@ -66,9 +74,8 @@ export const EmailAdd = styled.span`
 `
 
 export const JoinBtn = styled(BtnM)`
-    width: 480px;
+    width: 450px;
 `
-
 
 export const InputDiv = styled.div`
     display: flex;
@@ -98,6 +105,12 @@ export const PwInput = styled.input`
     width: calc(100% - 44px);
     font-size: 16px;
     line-height: 24px;
+`
+
+export const Agreement = styled.span`
+    @media screen and (max-width: 768px) {
+        font-size: 14px;
+    }
 `
 
 export const CheckIcon = styled.span`
