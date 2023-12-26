@@ -44,4 +44,8 @@ export const LoginErrMsg = styled.strong`
 
 export const LoginBtn = styled(BtnM)`
     width: 480px;
+
+    @media screen and (max-width: 768px) {
+        width: 380px;
+    }
 `
