@@ -69,6 +69,11 @@ export const ShippingDiv = styled.div`
     background-image: url(${LogisticsIcon}) ;
     background-repeat: no-repeat;
     background-size: contain;
+    
+    @media screen and (max-width: 768px) {
+        width: 90px;
+        background-size: 25px;
+    }
 `
 
 export const Shipping = styled.p`
