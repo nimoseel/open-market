@@ -7,6 +7,10 @@ const StyledPrice = styled.span`
     font-weight: var(--bold);
     font-size: ${props => `${props.numsize}px`};
     color: var(${props => `${props.color}`});
+
+    @media screen and (max-width: 768px) {
+        font-size: ${props => `${props.numsize * 0.8}px`}
+    }
 `
 
 const StyledTxt = styled.span`
@@ -14,6 +18,10 @@ const StyledTxt = styled.span`
     font-weight: var(--regular);
     color: var(${props => `${props.color}`});
     color: var(--black);
+
+    @media screen and (max-width: 768px) {
+        font-size: 16px;
+    }
 `
 
 export default function Price ({numsize, margin, color, price, txtsize}){
