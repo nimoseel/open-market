@@ -11,8 +11,12 @@ export const TitleDiv = styled.div`
     height: 130px;
     margin: 0 auto;
 
+    @media screen and (max-width: 1280px) {
+        max-width: 900px;
+    }
+
     @media screen and (max-width: 768px) {
-        width: 540px;
+        width: 450px;
     }
 `
 
@@ -20,6 +24,10 @@ export const Title = styled.h1`
     font-size: 36px;
     font-weight: var(--bold);
     line-height: 130px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 22px;
+    }
 `
 
 export const StoreName = styled.strong`
@@ -65,9 +73,13 @@ export const MainDiv = styled.div`
     margin: 0 auto;
     gap: 30px;
 
+    @media screen and (max-width: 1280px) {
+        max-width: 900px;
+    }
+
     @media screen and (max-width: 768px) {
         flex-direction: column;
-        width: 540px;
+        width: 450px;
     }
 `
 
@@ -94,6 +106,10 @@ const StyledMenuLi = styled.button`
     &:hover{
         color: var(--black);
         background-color: var(--main-light);
+    }
+
+    @media screen and (max-width: 768px) {
+        display: none;
     }
 `
 
@@ -132,7 +148,9 @@ export const ItemIndexUl = styled.ul`
     background-color: var(--white);
 
     @media screen and (max-width: 768px) {
-        padding: 18px;
+        font-size: 14px;
+        padding: 18px 38px 18px 30px;
+
     }
 `
 
@@ -142,7 +160,7 @@ export const ItemIndexLi = styled.li`
     &:first-child{
         width: 450px;
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 1280px) {
             width: 270px;
         }
     }
