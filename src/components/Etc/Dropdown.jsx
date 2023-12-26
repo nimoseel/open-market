@@ -18,6 +18,11 @@ const Title = styled.button`
     &:focus{
         border-color: var(--main);
     }
+
+    @media screen and (max-width: 768px) {
+        width: 122px;
+        padding-left: 37px;
+    }
 `
 
 const OptionUl = styled.ul`
@@ -30,6 +35,10 @@ const OptionUl = styled.ul`
     border: 1px solid var(--disabled);
     border-radius: 5px;
     overflow-y: scroll;
+
+    @media screen and (max-width: 768px) {
+        width: 122px;
+    }
 `
 
 const OptionBtn = styled.button`
