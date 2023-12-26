@@ -75,15 +75,15 @@ export const ProductUl = styled.ul`
 
 export const NoResult = styled.div`
     width: 250px;
-    height: 300px;
+    height: calc(100vh - 673px);
     margin: 0 auto;
     background-image: url(${noresult}) ;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
-    
-    @media (min-width: 1280px) {
-        height: 800px;
+
+    @media screen and (max-width: 768px) {
+        height: calc(100vh - 711px);
     }
 `
 
