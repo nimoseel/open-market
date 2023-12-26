@@ -123,8 +123,12 @@ export const SellerHeaderContent = styled.div`
     height: 47px;
     margin: 0 auto;
 
+    @media screen and (max-width: 1280px) {
+        max-width: 900px;
+    }
+
     @media screen and (max-width: 768px) {
-        width: 540px;
+        width: 450px;
     }
 `
 
