@@ -11,8 +11,12 @@ export const TitleDiv = styled.div`
     margin: 0 auto;
     align-items: center;
 
+    @media screen and (max-width: 1280px) {
+        max-width: 900px;
+    }
+
     @media screen and (max-width: 768px) {
-        max-width: 540px;
+        width: 450px;
     }
 `
 
@@ -33,11 +37,16 @@ export const MainDiv = styled.div`
     max-width: 1280px;
     margin: 0 auto;
     gap: 80px;
+    
+    @media screen and (max-width: 1280px) {
+        max-width: 900px;
+        flex-direction: column;
+        gap: 40px;
+    }
 
     @media screen and (max-width: 768px) {
         flex-direction: column;
-        width: 540px;
-        gap: 40px;
+        width: 450px;
     }
 `
 
@@ -52,7 +61,7 @@ export const CautionDiv = styled.div`
     min-width: 250px;
 
     @media screen and (max-width: 768px) {
-        width: 540px;
+        width: 450px;
     }
 `
 
@@ -70,6 +79,10 @@ export const CautionContent = styled.p`
     font-weight: var(--regular);
     line-height: 17.53px;
     background-color: #FFEFE8;
+
+    @media screen and (max-width: 768px) {
+        font-size: 12px;
+    }
 `
 
 export const InfoInputsDiv = styled.div`
@@ -88,7 +101,7 @@ const InputDiv = styled.div`
     overflow: hidden;
 
     @media screen and (max-width: 768px) {
-        width: 250px;
+        width: 210px;
     }
 `
 
@@ -99,7 +112,7 @@ const CommonInput = styled.input`
     font-size: 16px;
 
     @media screen and (max-width: 768px) {
-        width: 195px;
+        width: 155px;
     }
 `
 
@@ -126,15 +139,19 @@ const ProductNameInputDiv = styled(InputDiv)`
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 17px 16px;
+    padding: 16px;
 
     @media screen and (max-width: 768px) {
-        width: 250px;
+        width: 210px;
     }
 `
 const ExtendCommonInput = styled(CommonInput)`
     width: 400px;
     padding: 0;
+
+    @media screen and (max-width: 1280px) {
+        width: 130px;
+    }
 `
 const NumberSpan = styled.span`
     font-size: 14px;
@@ -181,10 +198,10 @@ export const ShippingBtn = styled(BtnMS)`
     &:focus{
         border: ${(props) => props.isFocused ? 'none': '1px solid var(--disabled)'};
     }
-    
+
     @media screen and (max-width: 768px) {
-        width: 120px;
-        font-size: 14px;
+        width: 100px;
+        font-size: 12px;
     }
 `
 
@@ -198,9 +215,14 @@ export const ProductImgDiv = styled.div`
     height: 454px;
     background-color: var(--disabled);
 
+    @media screen and (max-width: 1280px) {
+        width: 400px;
+        height: 400px;
+    }
+
     @media screen and (max-width: 768px) {
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
     }
 `
 
@@ -222,9 +244,14 @@ export const ImgUploadBtn = styled.div`
     background-position: center;
     cursor: pointer;
 
+    @media screen and (max-width: 1280px) {
+        top: 175px;
+        left: 175px;
+    }
+
     @media screen and (max-width: 768px) {
-        top: 100px;
-        left: 100px;
+        top: 75px;
+        left: 75px;
     }
 `
 
@@ -234,8 +261,12 @@ export const FinalBtnDiv = styled(BtnDiv)`
     max-width: 1280px;
     margin: 50px auto;
 
+    @media screen and (max-width: 1280px) {
+        width: 900px;
+    }
+
     @media screen and (max-width: 768px) {
-        width: 540px;
+        width: 450px;
     }
 `
 
