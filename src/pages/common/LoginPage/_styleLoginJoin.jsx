@@ -24,6 +24,10 @@ export const ContentSection = styled.section`
 export const ContentWrapper = styled.div`
     width: 550px;
     margin: 50px auto 0;
+
+    @media screen and (max-width: 768px) {
+        width: 450px;
+    }
 `
 
 export const MenuUl = styled.ul`
@@ -36,12 +40,12 @@ export const MenuLi = styled.li`
     box-sizing: border-box;
     border: 1px solid var(--disabled);
     border-radius: 10px 10px 0 0;
-    padding: 19px 78px 18px 77px;
+    padding: 18.5px 0;
     text-align: center;
     background-color : var(${(props) => props.isSelected ? '--white' : '--menu'});
     border-bottom : ${(props) => props.isSelected ? 0 : 1};
     cursor: pointer;
-    `
+`
 
 export const InputWrapper = styled.form`
     border: 1px solid var(--disabled);
