@@ -37,9 +37,13 @@ export const ItemTxtDiv = styled.div`
     align-items: flex-start;
     width: 350px;
     gap: 10px;
+    
+    @media screen and (max-width: 1280px) {
+        width: 125px;
+    }
 
     @media screen and (max-width: 768px) {
-        width: 125px;
+        width: 115px;
     }
 `
 
@@ -66,7 +70,7 @@ export const ItemBtn = styled(BtnS)`
 
     @media screen and (max-width: 768px) {
         width: 50px;
-        margin: 0;
+        font-size: 14px;
     }
 `
 
@@ -78,7 +82,8 @@ const StyledPrice = styled.p`
     font-weight: var(--regular);
 
     @media screen and (max-width: 768px) {
-        width: 130px;
+        width: 100px;
+        font-size: 14px;
     }
 `
 
