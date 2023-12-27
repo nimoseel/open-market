@@ -1,13 +1,26 @@
-<h1> 호두마켓 | 모두들 위한 오픈마켓 </h1>
-<br>
+<h1> 아우어마켓 | 모두들 위한 오픈마켓 </h1>
+
+### [ 배포 ]
+- URL : https://sominopenmarket.netlify.app/
+```
+- 구매자 계정 
+    - ID : ourbuyer
+    - PW : our123!!
+
+- 판매자 계정
+    - ID : ourseller
+    - PW : our123!!
+```
+
+<br/>
 
 ### [ 프로젝트 기간 ] <br>
-    22년 12월 22일 ~ 2월 24일
-
+    ver1. 22년 12월 22일 ~ 2월 24일
+    ver2. 23년 11월 16일 ~ 코드 수정
 <br>
 
 ### [ 프로젝트 소개 ] <br>
-    - 호두마켓은 구매회원, 판매회원으로 나뉘어 물건을 사고, 팔 수 있는 오픈마켓 서비스입니다.
+    - 아우어마켓은 구매회원, 판매회원으로 나뉘어 물건을 사고, 팔 수 있는 오픈마켓 서비스입니다.
 
     - 회원가입
         - 원하는 사용자 성격에 따라 가입할 수 있습니다. (구매회원, 판매회원)
@@ -18,7 +31,7 @@
     - 로그인
         - 사용자 성격에 맞는 로그인 화면에서 로그인을 진행합니다. 
         - 판매회원이 구매회원 로그인을 진행할 경우 로그인 유형 확인 경고가 나타납니다.
-
+        - 상품 검색의 경우 로그인하지 않더라도 이용할 수 있습니다.
     - 구매회원
         - 원하는 상품을, 원하는 수량으로 장바구니에 담을 수 있습니다.
         - 장바구니 내에서 상품 수량을 변경 및 삭제할 수 있습니다.
@@ -33,55 +46,40 @@
 
 <br>
 
-### [ 배포 ]
-- URL : https://sominopenmarket.netlify.app/
-- 구매자 계정 
-    - ID : iambuyer
-    - PW : ghen123!!
-
-- 판매자 계정
-    - ID : iamseller
-    - PW : ghen123!!
-
-<br/>
-
 ### [ 실행 화면 ]
 
-|                            0. 메인화면 ( + 로그인 전 상품 상세 페이지)                            |                           1. 구매회원 회원가입                            |
+|                            0. 메인화면 ( + 로그인 전 상품 상세 페이지 )                            |                           1. 회원가입                            |
 | :-------------------------------------------------------------: | :--------------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/85738589/222374987-79e6cbe3-ddec-4410-b065-f138710c2303.gif"/> | <img src="https://user-images.githubusercontent.com/85738589/222368203-3f6f5942-8d57-406d-9bbb-0305de3fb148.gif" /> |
+| <img src="https://velog.velcdn.com/images/nimoseel/post/0f2fc255-ab31-4a88-90ba-12861ab79e02/image.gif"/> | <img src="https://velog.velcdn.com/images/nimoseel/post/1318298a-c702-4fdf-90c9-1232daccade1/image.gif" /> |
 
-|                           2. 구매회원 로그인                           |                          3. 장바구니                          |
+|                           2. 로그인                           |                          3. 장바구니                          |
 | :-------------------------------------------------------------: | :-------------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/85738589/222367778-f37afedc-9b0f-45a5-b0fd-9c1c0b349611.gif" width="390px" /> | <img src="https://user-images.githubusercontent.com/85738589/222376629-fab7cd1d-c4bf-4b11-a3a1-4c4a2524a489.gif" width="390px" /> |
+| <img src="https://velog.velcdn.com/images/nimoseel/post/be17323b-0c9f-4968-aefa-f9e203961cdf/image.gif"/> | <img src="https://velog.velcdn.com/images/nimoseel/post/9b4217f1-85a1-4a08-bc53-ce8517aa3e18/image.gif" /> |
 
 |                        4. 상품 주문하기                        |                     5. 상품 결제하기                     |
 | :-------------------------------------------------------------: | :-------------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/85738589/222378137-858421a1-f127-419b-a889-23bdb7e6120d.gif" /><span>상세 페이지 내 바로 주문, 장바구니내 개별 주문, 전체 주문</span>| <img src="https://user-images.githubusercontent.com/85738589/222379337-77775cdb-3733-432f-9459-fb43dce962b8.gif"/> <span>react-daum-postcode 사용</span>|
+| <img src="https://velog.velcdn.com/images/nimoseel/post/b63876e0-986a-4a3a-b17b-14b475bf1cfa/image.gif" /><span>상세 페이지 내 바로 주문, 장바구니내 개별 주문, 전체 주문</span>| <img src="https://velog.velcdn.com/images/nimoseel/post/93f085ed-6c4a-441b-8566-be48e66d4cfa/image.gif"/> <span>react-daum-postcode 사용</span>|
 
 
 <br/>
 <hr/>
 <br/>
 
-
-|                      6. 판매회원 회원가입                       |                         7. 판매회원 로그인                          |
+|                     6. 판매회원 홈 화면 + 상품 상세 페이지                      |                          7. 판매 상품 업로드                          |
 | :-------------------------------------------------------------: | :-------------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/85738589/222368074-b8b9b90a-0bac-41ca-8aad-36b1bd983d71.gif"/> | <img src="https://user-images.githubusercontent.com/85738589/222401487-6e9295c1-e572-4060-9825-0b4dfa8a9b46.gif"/> |
+| <img src="https://velog.velcdn.com/images/miniso/post/0517d413-2f89-41bf-8ada-c0af208910cb/image.gif"/> | <img src="https://velog.velcdn.com/images/miniso/post/6df64bfc-3dd2-4f22-868c-a93535873b3c/image.gif"/> |
 
-|                     8. 판매회원 홈 화면 + 상품 상세 페이지                      |                          9. 판매 상품 업로드                          |
+|                     8. 판매 상품 정보 수정                      |                          9. 판매 상품 삭제                          |
 | :-------------------------------------------------------------: | :-------------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/85738589/222401935-81de14f1-b6b0-4ddc-ab60-993d51ec3f8d.gif"/> | <img src="https://user-images.githubusercontent.com/85738589/222402870-5d930b25-4a44-412c-a072-74c09e98fa25.gif"/> |
+| <img src="https://velog.velcdn.com/images/miniso/post/12b16b8b-9b8c-47c3-a242-cf656987c052/image.gif"/> | <img src="https://velog.velcdn.com/images/miniso/post/9aeed45b-79be-4edc-86bd-7be64bf5a211/image.gif"/> |
 
-|                     10. 판매 상품 정보 수정 페이지                      |                          11. 판매 상품 삭제                          |
+|                     10. 검색                      |                     11. 로그아웃                      |
 | :-------------------------------------------------------------: | :-------------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/85738589/222403414-715be1af-a08e-4dd4-b977-6c2912f721ad.gif"/> | <img src="https://user-images.githubusercontent.com/85738589/222403958-28711456-75d5-4ec2-8200-7327e3e95cd5.gif"/> |
+| <img src="https://velog.velcdn.com/images/miniso/post/67cb49f6-14e3-4155-b1e2-b68665c0ab84/image.gif"/> | <img src="https://velog.velcdn.com/images/miniso/post/cef1e82f-8fe0-4c75-a2d5-91e528a942db/image.gif"/>|
 
-|                     12. 로그아웃                      |
-| :-------------------------------------------------------------:|
-| <img src="https://user-images.githubusercontent.com/85738589/222404574-11e66378-373c-4ebc-ba94-9124fd4511f9.gif" width="50%"/> |
-
-
+|                     12. 반응형                       |
+| :-------------------------------------------------------------: | 
+| <img src="https://velog.velcdn.com/images/miniso/post/aa3b3c55-3c40-4548-9a37-6b9fb8a90eae/image.gif" width="70%"/> | 
 
 ### [ 주요 코드 ]
 #### 1. 스타일드 컴포넌트 임포트시 컴포넌트 앞에 S. 붙여 구분이 용이하도록 함. 
@@ -235,44 +233,3 @@ const loginCheck = async() => {
 <br/>
 
 ### [ 폴더 트리 ]
-```
-📦OpenMarket
- 📂 src
- ┣ 📂 API
- ┃ ┣ cartApi.jsx
- ┃ ┣ orderApi.jsx
- ┃ ┣ productApi.jsx
- ┃ ┣ sellerApi.jsx
- ┃ ┗ userApi.jsx
- ┣ 📂 assets
- ┣ 📂 components
- ┃ ┣ 📂 Carousel
- ┃ ┣ 📂 CartItem
- ┃ ┣ 📂 CartTotal
- ┃ ┣ 📂 DetailContent
- ┃ ┣ 📂 Etc
- ┃ ┣ 📂 Footer
- ┃ ┣ 📂 Header
- ┃ ┣ 📂 HeaderBtn
- ┃ ┣ 📂 PaymentItem
- ┃ ┣ 📂 ProductCard
- ┃ ┗ 📂 SellerItem
- ┣ 📂 constants
- ┃ ┣ API_URL.js
- ┃ ┗ token.js
- ┣ 📂 pages
- ┃ ┣ 📂 404Page
- ┃ ┣ 📂 CartPage
- ┃ ┣ 📂 DetailPage
- ┃ ┣ 📂 HomePage
- ┃ ┣ 📂 JoinPage
- ┃ ┣ 📂 LoginPage
- ┃ ┣ 📂 PaymentPage
- ┃ ┣ 📂 ProductUploadPage
- ┃ ┣ 📂 SearchResultPage
- ┃ ┗ 📂 SellerCenterPage
- ┣ App.jsx
- ┣ GlobalStyle.jsx
- ┣ index.js
- ┗ Portal.js
- ```
