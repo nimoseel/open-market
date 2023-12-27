@@ -23,6 +23,7 @@ export const BtnL = styled(Btn_common)`
 `
 
 export const BtnM = styled(Btn_common)`
+    width: 100%;
     height: 60px;
     border: ${(props) => props.type === 'white' && '1px solid var(--disabled)'};
     font-size: 18px;
