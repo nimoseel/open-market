@@ -22,12 +22,12 @@ ul.pagination li {
 }
 
 ul.pagination li a {
-    color: black;
+    color: var(--black);
     font-size: 1rem;
 }
 
 ul.pagination li.active a {
-    color: white;
+    color: var(--white);
 }
 
 ul.pagination li.active {
