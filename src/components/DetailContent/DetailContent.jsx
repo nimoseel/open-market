@@ -1,4 +1,4 @@
-import React,{ useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import { getDetail } from '../../API/productApi';
@@ -13,21 +13,21 @@ const DetailContent = () => {
 
     const navigate = useNavigate();
     const { token, userType } = useContext(AuthContext);
-    
-    const [ detail, setDetail ] = useState({});
-    const [ cartLists, setCartLists ] = useState({});
-    const [ isOpenCartModal, setIsOpenCartModal ] = useState(false);
-    const [ isOpenLoginModal , setIsOpenLoginModal ] = useState(false);
-    
-    const [ loading, setLoading ] = useState(true);
 
-    useEffect(()=>{
+    const [detail, setDetail] = useState({});
+    const [cartLists, setCartLists] = useState({});
+    const [isOpenCartModal, setIsOpenCartModal] = useState(false);
+    const [isOpenLoginModal, setIsOpenLoginModal] = useState(false);
+
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
         setLoading(true);
 
         const fetchData = async () => {
             try {
                 if (userType === 'BUYER') {
-                    const [ detailData, cartData ] = await Promise.all([
+                    const [detailData, cartData] = await Promise.all([
                         getDetail(product_id),
                         getCart(token),
                     ]);
@@ -43,142 +43,165 @@ const DetailContent = () => {
             setLoading(false);
         };
         fetchData();
-    },[product_id, token, userType])
+    }, [product_id, token, userType]);
 
-    const [ num, setNum ] = useState('1');
-    const [ isMax, setIsMax ] = useState(false);
-    
+    const [num, setNum] = useState('1');
+    const [isMax, setIsMax] = useState(false);
+
     const handleMinus = () => {
-        if(parseInt(num) === 1){
-            alert('최소 수량은 1개 입니다.')
+        if (parseInt(num) === 1) {
+            alert('최소 수량은 1개 입니다.');
         }
-        if(parseInt(num) > 1){
-            setNum(parseInt(num)-1);
+        if (parseInt(num) > 1) {
+            setNum(parseInt(num) - 1);
             setIsMax(false);
         }
-    }
-    
+    };
+
     const handlePlus = () => {
-        if(parseInt(num) === detail.stock){
+        if (parseInt(num) === detail.stock) {
             setIsMax(true);
         }
-        if(parseInt(num) < detail.stock){
-            setNum(parseInt(num)+1);
+        if (parseInt(num) < detail.stock) {
+            setNum(parseInt(num) + 1);
         }
-    }
+    };
 
     const navigateToPayment = () => {
-        if(token){
+        if (token) {
             navigate('/payment', {
-                state : { 
-                    order_data : 
-                    [{
-                        product_id : product_id,
-                        image : detail?.image,
-                        store_name : detail?.store_name,
-                        product_name : detail?.product_name,
-                        quantity : num,
-                        shipping_fee : detail?.shipping_fee,
-                        price : detail?.price,
-                        order_kind : 'direct_order',
-                    }]
+                state: {
+                    order_data: [
+                        {
+                            product_id: product_id,
+                            image: detail?.image,
+                            store_name: detail?.store_name,
+                            product_name: detail?.product_name,
+                            quantity: num,
+                            shipping_fee: detail?.shipping_fee,
+                            price: detail?.price,
+                            order_kind: 'direct_order',
+                        },
+                    ],
                 },
             });
-        }else{
+        } else {
             setIsOpenLoginModal(true);
         }
-    }
+    };
 
     const postItemToCart = () => {
-        if(token){
+        if (token) {
             const addCartData = {
-                'product_id': product_id,
-                'quantity': num,
-                'check' : cartLists?.results.find(v => v.product_id === parseInt(product_id)),
+                product_id: product_id,
+                quantity: num,
+                check: cartLists?.results.find(
+                    (v) => v.product_id === parseInt(product_id),
+                ),
             };
-    
-            if(addCartData.check){
+
+            if (addCartData.check) {
                 setIsOpenCartModal(true);
-            }else{
-                try{
-                    postCart(addCartData,token);
+            } else {
+                try {
+                    postCart(addCartData, token);
                     navigate('/cart');
-                }catch(error){
+                } catch (error) {
                     console.error(error);
                 }
             }
-        }else{
+        } else {
             setIsOpenLoginModal(true);
         }
-    }
+    };
 
     const returnBtnDiv = () => {
-        if(userType === 'SELLER'){
+        if (userType === 'SELLER') {
             return (
                 <>
-                    <S.OrderBtn type={'disabled'} disabled>바로 구매</S.OrderBtn>
-                    <S.CartBtn type={'disabled'} disabled>장바구니</S.CartBtn>
+                    <S.OrderBtn type={'disabled'} disabled>
+                        바로 구매
+                    </S.OrderBtn>
+                    <S.CartBtn type={'disabled'} disabled>
+                        장바구니
+                    </S.CartBtn>
                 </>
-            )
+            );
         }
-        if(userType === 'BUYER' && detail.stock === 0){
+        if (userType === 'BUYER' && detail.stock === 0) {
             return (
                 <>
-                    <S.OrderBtn type={'disabled'} disabled>품절</S.OrderBtn>
-                    <S.CartBtn type={'disabled'} disabled>품절</S.CartBtn>
+                    <S.OrderBtn type={'disabled'} disabled>
+                        품절
+                    </S.OrderBtn>
+                    <S.CartBtn type={'disabled'} disabled>
+                        품절
+                    </S.CartBtn>
                 </>
-            )
+            );
         }
-        if((userType === 'BUYER' && detail.stock !== 0) || !token){
+        if ((userType === 'BUYER' && detail.stock !== 0) || !token) {
             return (
                 <>
-                    <S.OrderBtn type={'green'} onClick={navigateToPayment}>바로 구매</S.OrderBtn>
-                    <S.CartBtn type={'dark'} onClick={postItemToCart}>장바구니</S.CartBtn>
+                    <S.OrderBtn type={'green'} onClick={navigateToPayment}>
+                        바로 구매
+                    </S.OrderBtn>
+                    <S.CartBtn type={'dark'} onClick={postItemToCart}>
+                        장바구니
+                    </S.CartBtn>
                 </>
-            )
+            );
         }
-    }
+    };
 
     return (
         <>
-            {loading && <Loading/>} 
-            <S.DetailDiv className={loading ? '' : 'show'}> 
-                <S.DetailImg src={detail.image} alt={detail.product_name}/>
+            {loading && <Loading />}
+            <S.DetailDiv className={loading ? '' : 'show'}>
+                <S.DetailImg src={detail.image} alt={detail.product_name} />
                 <S.InfoDiv>
-                    <S.StoreName>{detail.store_name}</S.StoreName> 
+                    <S.StoreName>{detail.store_name}</S.StoreName>
                     <S.ProductName>{detail.product_name}</S.ProductName>
-                    <S.Price price={parseInt(detail.price)} color={'--black'}/>
-                    { detail.shipping_fee !== 0 ? 
+                    <S.Price price={parseInt(detail.price)} color={'--black'} />
+                    {detail.shipping_fee !== 0 ? (
                         <S.Shipping>배송비 {detail.shipping_fee}원</S.Shipping>
-                        :
+                    ) : (
                         <S.Shipping>무료배송</S.Shipping>
-                    }
-                    <S.Line/>
-                    { userType === 'SELLER' ?
-                        <AmountBtn num={1} isMax={1}/>
-                        :
-                        <AmountBtn num={num} isMax={isMax} handleMinus={handleMinus} handlePlus={handlePlus}/>
-                    }
-                    <S.Line2/>
+                    )}
+                    <S.Line />
+                    {userType === 'SELLER' ? (
+                        <AmountBtn num={1} isMax={1} />
+                    ) : (
+                        <AmountBtn
+                            num={num}
+                            isMax={isMax}
+                            handleMinus={handleMinus}
+                            handlePlus={handlePlus}
+                        />
+                    )}
+                    <S.Line2 />
 
                     <S.TotalDiv>
                         <S.TotalPrice>총 상품 금액</S.TotalPrice>
                         <S.PriceDiv>
-                            <S.Amount>총 수량 <S.AmountSpan>{num}</S.AmountSpan>개</S.Amount>
-                            <S.Price price={parseInt(detail.price)*num} color={'--main'}/>
+                            <S.Amount>
+                                총 수량 <S.AmountSpan>{num}</S.AmountSpan>개
+                            </S.Amount>
+                            <S.Price
+                                price={parseInt(detail.price) * num}
+                                color={'--main'}
+                            />
                         </S.PriceDiv>
                     </S.TotalDiv>
-                            
-                    <S.BtnDiv>
-                        {returnBtnDiv()}
-                    </S.BtnDiv>
 
-                    <S.CartModal 
-                        isOpenModal={isOpenCartModal} 
+                    <S.BtnDiv>{returnBtnDiv()}</S.BtnDiv>
+
+                    <S.CartModal
+                        isOpenModal={isOpenCartModal}
                         setIsOpenModal={setIsOpenCartModal}
                     />
-                    <S.LoginModal 
-                        isOpenModal={isOpenLoginModal} 
+                    <S.LoginModal
+                        isOpenModal={isOpenLoginModal}
                         setIsOpenModal={setIsOpenLoginModal}
                     />
                 </S.InfoDiv>
