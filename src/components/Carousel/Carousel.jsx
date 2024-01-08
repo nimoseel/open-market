@@ -13,23 +13,23 @@ import { ReactComponent as Next } from '../../assets/arrow-right.svg';
 import { ReactComponent as Prev } from '../../assets/arrow-left.svg';
 
 const Carousel = () => {
-    const settings = { 
-        dots: true, // 캐러셀 밑의 지정 콘텐츠로 이동할 수 있는 버튼 
+    const settings = {
+        dots: true, // 캐러셀 밑의 지정 콘텐츠로 이동할 수 있는 버튼
         infinite: true, // 콘텐츠 맨 끝에서 다시 앞으로 반복
         speed: 1000, // 콘텐츠 넘어가는 속도 (ms)
         slidesToShow: 1, // 한화면에 보이는 콘텐츠 개수
-        slidesToScroll: 1, // 한번에 넘어가는 콘텐츠 수 
+        slidesToScroll: 1, // 한번에 넘어가는 콘텐츠 수
         autoplay: true,
         autoplaySpeed: 2000,
         arrow: true,
         nextArrow: (
             <S.NextDiv>
-                <Next/>
+                <Next />
             </S.NextDiv>
-            ),
+        ),
         prevArrow: (
             <S.PrevDiv>
-                <Prev/>
+                <Prev />
             </S.PrevDiv>
         ),
         appendDots: (dots) => (
@@ -42,15 +42,14 @@ const Carousel = () => {
     return (
         <>
             <S.StyledSlider {...settings}>
-                <S.Image src={our} alt='아우어 마켓 메인' />
-                <S.Image src={christmas} alt='크리스마스 쇼핑' />
-                <S.Image src={chair} alt='의자 행사' />
-                <S.Image src={skin_care} alt='스킨케어 행사' />
-                <S.Image src={sale} alt='마지막 세일' />
+                <S.Image src={our} alt="아우어 마켓 메인" />
+                <S.Image src={christmas} alt="크리스마스 쇼핑" />
+                <S.Image src={chair} alt="의자 행사" />
+                <S.Image src={skin_care} alt="스킨케어 행사" />
+                <S.Image src={sale} alt="마지막 세일" />
             </S.StyledSlider>
         </>
     );
 };
 
 export default Carousel;
-
