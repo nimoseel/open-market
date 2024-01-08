@@ -97,4 +97,4 @@ export const GlobalStyle = createGlobalStyle`
         white-space: nowrap;
         text-overflow: ellipsis;
     }
-`
+`;
