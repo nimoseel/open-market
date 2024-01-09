@@ -24,7 +24,7 @@ export const TotalUl = styled.ul`
         margin: 35px auto;
         padding: 0 12px;
     }
-`
+`;
 
 export const TotalTxt = styled.p`
     margin-bottom: 12px;
@@ -36,7 +36,7 @@ export const TotalTxt = styled.p`
     @media screen and (max-width: 768px) {
         font-size: 14px;
     }
-`
+`;
 
 export const TotalLi = styled.li`
     width: 303px;
@@ -44,16 +44,28 @@ export const TotalLi = styled.li`
     @media screen and (max-width: 768px) {
         width: fit-content;
     }
-`
+`;
 
-export const Price = ({price}) => {
+export const Price = ({ price }) => {
     return (
-        <BasePrice price={price} numsize={24} margin={2} txtsize={16} color={'--black'}/>
-    )
-}
+        <BasePrice
+            price={price}
+            numsize={24}
+            margin={2}
+            txtsize={16}
+            color={'--black'}
+        />
+    );
+};
 
-export const TotalPrice = ({price}) => {
+export const TotalPrice = ({ price }) => {
     return (
-        <BasePrice price={price} numsize={36} margin={2} txtsize={18} color={'--main'} />
-    )
-}
+        <BasePrice
+            price={price}
+            numsize={36}
+            margin={2}
+            txtsize={18}
+            color={'--main'}
+        />
+    );
+};
