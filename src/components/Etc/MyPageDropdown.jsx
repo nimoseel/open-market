@@ -9,13 +9,13 @@ const OptionUl = styled.ul`
     left: ${(props) => (props.isSeller ? '-46px' : '35px')};
     width: 130px;
     padding: 10px;
-    display: ${(props) => props.isOpen ? 'block' : 'none'};
+    display: ${(props) => (props.isOpen ? 'block' : 'none')};
     background-color: var(--white);
     border-radius: 10px;
     border: 1px solid var(--disabled);
     z-index: 20;
 
-    &::after{
+    &::after {
         position: absolute;
         top: -13px;
         right: 67px;
@@ -27,7 +27,7 @@ const OptionUl = styled.ul`
         z-index: 10;
     }
 
-    &::before{
+    &::before {
         position: absolute;
         top: -15px;
         right: 67px;
@@ -38,7 +38,7 @@ const OptionUl = styled.ul`
         border-left: 10px solid transparent;
         z-index: -10;
     }
-`
+`;
 
 const OptionBtn = styled.button`
     width: 100%;
@@ -49,27 +49,31 @@ const OptionBtn = styled.button`
         border: 1px solid var(--dark-gray);
         color: var(--black);
     }
-`
+`;
 
-const MyPageDropdown = ({isOpen, setIsOpen, isSeller}) => {
+const MyPageDropdown = ({ isOpen, setIsOpen, isSeller }) => {
     const navigate = useNavigate();
     const { logout } = useContext(AuthContext);
 
     const handleOpenMypage = () => {
         alert('페이지 준비중 입니다.');
-    }
-    
+    };
+
     const handleLogout = () => {
         logout();
         alert('로그아웃 되었습니다.');
         setIsOpen(false);
         navigate('/');
-    }
+    };
 
     return (
         <OptionUl isOpen={isOpen} setIsOpen={setIsOpen} isSeller={isSeller}>
-            <li><OptionBtn onClick={handleOpenMypage}>마이페이지</OptionBtn></li>
-            <li><OptionBtn onClick={handleLogout}>로그아웃</OptionBtn></li>
+            <li>
+                <OptionBtn onClick={handleOpenMypage}>마이페이지</OptionBtn>
+            </li>
+            <li>
+                <OptionBtn onClick={handleLogout}>로그아웃</OptionBtn>
+            </li>
         </OptionUl>
     );
 };
