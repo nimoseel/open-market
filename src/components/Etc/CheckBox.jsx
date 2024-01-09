@@ -7,21 +7,27 @@ const CheckLabel = styled.label`
     width: 16px;
     height: 16px;
     margin-right: 10px;
-    background-image: url(${(props) => props.isCheck ? Checked : UnCheck});
+    background-image: url(${(props) => (props.isCheck ? Checked : UnCheck)});
     cursor: pointer;
-    `
+`;
 
 const CheckInput = styled.input`
     display: none;
-`
+`;
 
-const CheckBox = ({isCheck, setIsCheck}) => {
+const CheckBox = ({ isCheck, setIsCheck }) => {
     return (
         <>
-            <CheckLabel htmlFor='chk_box' isCheck={isCheck} onClick={()=>{setIsCheck(!isCheck)}}  />
-            <CheckInput type='checkbox' id='chk_box'/>   
+            <CheckLabel
+                htmlFor="chk_box"
+                isCheck={isCheck}
+                onClick={() => {
+                    setIsCheck(!isCheck);
+                }}
+            />
+            <CheckInput type="checkbox" id="chk_box" />
         </>
-    )
+    );
 };
 
 export default CheckBox;
