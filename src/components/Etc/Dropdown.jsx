@@ -12,10 +12,10 @@ const Title = styled.button`
     font-weight: var(--regular);
     font-size: 16px;
     text-align: left;
-    background-image: url(${(props) => props.isOpen ? upArrow : downArrow});
+    background-image: url(${(props) => (props.isOpen ? upArrow : downArrow)});
     background-position: right 12px center;
     background-repeat: no-repeat;
-    &:focus{
+    &:focus {
         border-color: var(--main);
     }
 
@@ -23,10 +23,10 @@ const Title = styled.button`
         width: 122px;
         padding-left: 37px;
     }
-`
+`;
 
 const OptionUl = styled.ul`
-    display: ${(props) => props.isOpen ? 'block' : 'none'};
+    display: ${(props) => (props.isOpen ? 'block' : 'none')};
     position: absolute;
     width: 152px;
     height: 150px;
@@ -39,7 +39,7 @@ const OptionUl = styled.ul`
     @media screen and (max-width: 768px) {
         width: 122px;
     }
-`
+`;
 
 const OptionBtn = styled.button`
     width: 100%;
@@ -49,52 +49,53 @@ const OptionBtn = styled.button`
     font-size: 16px;
     text-align: center;
     background-color: var(--white);
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         background-color: var(--drop-down);
     }
-`
+`;
 
-const Dropdown = ({id, value, onChange}) => {
+const Dropdown = ({ id, value, onChange }) => {
     const [txt, setTxt] = useState(value);
     const [isOpen, setIsOpen] = useState(false);
 
     const handleToggle = () => {
-        setIsOpen(!isOpen)
-    }
+        setIsOpen(!isOpen);
+    };
 
     const handleSelect = (e) => {
         setTxt(e.target.value);
         onChange(e);
         setIsOpen(!isOpen);
-    }
+    };
 
-    const numlist = ['010','011','016','017','018','019'];
+    const numlist = ['010', '011', '016', '017', '018', '019'];
 
     return (
         <>
-            <Title 
-                type='button' 
-                onClick={handleToggle} 
+            <Title
+                type="button"
+                onClick={handleToggle}
                 isOpen={isOpen}
                 id={id}
                 value={value}
             >
-            {txt}
+                {txt}
             </Title>
 
             <OptionUl isOpen={isOpen}>
                 <li>
-                    {numlist.map((item,index) => 
-                        <OptionBtn 
-                            type='button' 
-                            key={index} 
+                    {numlist.map((item, index) => (
+                        <OptionBtn
+                            type="button"
+                            key={index}
                             name={id}
-                            onClick={handleSelect} 
+                            onClick={handleSelect}
                             value={item}
                         >
                             {item}
                         </OptionBtn>
-                    )}
+                    ))}
                 </li>
             </OptionUl>
         </>
