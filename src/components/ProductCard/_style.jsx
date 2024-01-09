@@ -3,13 +3,13 @@ import BasePrice from '../Etc/Price';
 
 export const ProductLi = styled.li`
     cursor: pointer;
-`
+`;
 
 export const ItemImg = styled.img`
     width: 380px;
     height: 380px;
     box-sizing: border-box;
-    border: 1px solid #C4C4C4;
+    border: 1px solid var(--disabled);
     border-radius: 10px;
     object-fit: cover;
     transition: filter 0.3s ease-in-out;
@@ -26,22 +26,28 @@ export const ItemImg = styled.img`
         width: 215px;
         height: 215px;
     }
-`
+`;
 
 export const StoreName = styled.p`
-    margin: 16px 0 10px;    
+    margin: 16px 0 10px;
     font-size: 1rem;
     font-weight: var(--regular);
     color: var(--dark-gray);
-`
+`;
 
 export const ProductName = styled.p`
     margin: 10px 0;
     font-size: 1.125rem;
-`
+`;
 
-export const Price = ({price}) => {
+export const Price = ({ price }) => {
     return (
-        <BasePrice price={price} numsize={24} margin={2} txtsize={16} color={'--black'}/>
-    )
-}
+        <BasePrice
+            price={price}
+            numsize={24}
+            margin={2}
+            txtsize={16}
+            color={'--black'}
+        />
+    );
+};
