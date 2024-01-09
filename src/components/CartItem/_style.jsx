@@ -26,7 +26,7 @@ export const Li = styled.li`
         width: 450px;
         height: fit-content;
     }
-`
+`;
 
 export const Img = styled.img`
     width: 160px;
@@ -40,7 +40,7 @@ export const Img = styled.img`
         height: 110px;
         margin: 0 10px;
     }
-`
+`;
 
 export const TxtInfoDiv = styled.div`
     width: 100%;
@@ -49,7 +49,7 @@ export const TxtInfoDiv = styled.div`
     @media screen and (max-width: 768px) {
         min-width: 120px;
     }
-`
+`;
 
 export const StoreName = styled.p`
     margin-top: 8px;
@@ -61,7 +61,7 @@ export const StoreName = styled.p`
     @media screen and (max-width: 768px) {
         font-size: 12px;
     }
-`
+`;
 
 export const ProductName = styled.p`
     margin: 10px 0;
@@ -73,7 +73,7 @@ export const ProductName = styled.p`
     @media screen and (max-width: 768px) {
         font-size: 16px;
     }
-`
+`;
 
 export const Shipping = styled(StoreName)`
     margin: 40px 0 16px;
@@ -81,7 +81,7 @@ export const Shipping = styled(StoreName)`
     @media screen and (max-width: 768px) {
         margin: 10px 0;
     }
-`
+`;
 
 export const EditBtn = styled(BtnS)`
     display: none;
@@ -92,7 +92,7 @@ export const EditBtn = styled(BtnS)`
     @media screen and (max-width: 768px) {
         display: block;
     }
-`
+`;
 
 export const OrderBtn = styled(BtnS)`
     width: 130px;
@@ -103,21 +103,20 @@ export const OrderBtn = styled(BtnS)`
         height: 30px;
         margin-top: 10px;
     }
-`
+`;
 
 export const Div = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 438px;
-
-`
+`;
 
 export const EditDiv = styled.div`
     @media screen and (max-width: 768px) {
         display: none;
     }
-`
+`;
 
 export const OrderDiv = styled.div`
     display: flex;
@@ -132,7 +131,7 @@ export const OrderDiv = styled.div`
         height: 100%;
         margin-left: 10px;
     }
-`
+`;
 
 export const DeleteBtn = styled.button`
     position: absolute;
@@ -141,47 +140,65 @@ export const DeleteBtn = styled.button`
     width: 22px;
     height: 22px;
     background: url(${DelIcon}) no-repeat;
-`
+`;
 
-export const ProductPrice = ({price}) => {
+export const ProductPrice = ({ price }) => {
     return (
-        <BasePrice price={price} numsize={16} margin={0} txtsize={16} color={'--black'} />
-    )
-}
+        <BasePrice
+            price={price}
+            numsize={16}
+            margin={0}
+            txtsize={16}
+            color={'--black'}
+        />
+    );
+};
 
-export const TotalPrice = ({price}) => {
+export const TotalPrice = ({ price }) => {
     return (
         <div>
-            <BasePrice price={price} numsize={18} margin={0} txtsize={18} color={'--main'} />
+            <BasePrice
+                price={price}
+                numsize={18}
+                margin={0}
+                txtsize={18}
+                color={'--main'}
+            />
         </div>
-    )
-}
+    );
+};
 
-export const DeleteModal = ({isOpenModal, setIsOpenModal, onClickYes}) => {
+export const DeleteModal = ({ isOpenModal, setIsOpenModal, onClickYes }) => {
     return (
-        <Modal 
+        <Modal
             isOpenModal={isOpenModal}
             setIsOpenModal={setIsOpenModal}
-            padding_top={60} 
+            padding_top={60}
             content={'상품을 삭제하시겠습니까?'}
-            whiteBtn={'취소'} 
+            whiteBtn={'취소'}
             greenBtn={'삭제'}
             onClickYes={onClickYes}
         />
-    )
-}
+    );
+};
 
-export const EditAmountModal = ({isOpenModal, setIsOpenModal, content, onClickYes, onClickNo}) => {
+export const EditAmountModal = ({
+    isOpenModal,
+    setIsOpenModal,
+    content,
+    onClickYes,
+    onClickNo,
+}) => {
     return (
-        <Modal 
-                isOpenModal={isOpenModal}
-                setIsOpenModal={setIsOpenModal}
-                padding_top={44} 
-                content={content}
-                whiteBtn={'취소'} 
-                greenBtn={'수정'}
-                onClickYes={onClickYes}
-                onClickNo={onClickNo}
-            />
-    )
-}
+        <Modal
+            isOpenModal={isOpenModal}
+            setIsOpenModal={setIsOpenModal}
+            padding_top={44}
+            content={content}
+            whiteBtn={'취소'}
+            greenBtn={'수정'}
+            onClickYes={onClickYes}
+            onClickNo={onClickNo}
+        />
+    );
+};
