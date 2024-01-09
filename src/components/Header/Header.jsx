@@ -6,18 +6,17 @@ import useInput from '../../hooks/useInput';
 import * as Btn from '../HeaderBtn/HeaderBtn';
 import * as S from '../Header/_style';
 
-
 const Header = () => {
     const navigate = useNavigate();
     const { token, userType, logout } = useContext(AuthContext);
-    
-    const [ isOpenMyPageDropdown, setIsOpenMyPageDropdown ] = useState(false);
-    const [ isOpenLoginModal, setIsOpenLoginModal ] = useState(false);
-    const [ isOpenMenu, setIsOpenMenu ] = useState(false);
+
+    const [isOpenMyPageDropdown, setIsOpenMyPageDropdown] = useState(false);
+    const [isOpenLoginModal, setIsOpenLoginModal] = useState(false);
+    const [isOpenMenu, setIsOpenMenu] = useState(false);
 
     const searchWord = useInput('', null, 'searchWord');
 
-    useEffect(()=>{
+    useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth > 768) {
                 setIsOpenMenu(false);
@@ -28,18 +27,18 @@ const Header = () => {
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    },[])
+    }, []);
 
     const checkToken = () => {
-        if(token){
+        if (token) {
             setIsOpenLoginModal(false);
             navigate('/cart');
-        }else{
+        } else {
             setIsOpenLoginModal(true);
         }
-    }
+    };
 
-    const searchData = async() => {
+    const searchData = async () => {
         try {
             const encodedSearchValue = encodeURIComponent(searchWord.value);
             navigate(`/search?search=${encodedSearchValue}`);
@@ -47,11 +46,11 @@ const Header = () => {
         } catch (error) {
             console.error(error);
         }
-    }
+    };
 
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
-            if(e.nativeEvent.isComposing === false){ 
+            if (e.nativeEvent.isComposing === false) {
                 searchData();
             }
         }
@@ -59,11 +58,11 @@ const Header = () => {
 
     const clickMyPageBtn = () => {
         setIsOpenMyPageDropdown(!isOpenMyPageDropdown);
-    }
+    };
 
     const clickSellerBtn = () => {
         navigate('/sellercenter');
-    }
+    };
 
     const isSeller = () => {
         return userType === 'SELLER';
@@ -71,7 +70,7 @@ const Header = () => {
 
     const handleMenu = () => {
         setIsOpenMenu(!isOpenMenu);
-    }
+    };
 
     const setMenuList = () => {
         let menuItems;
@@ -81,17 +80,23 @@ const Header = () => {
             alert('로그아웃 되었습니다.');
             setIsOpenMenu(false);
             navigate('/');
-        }
+        };
 
-        if(!token){
+        if (!token) {
             menuItems = (
                 <>
                     <S.MenuLi onClick={checkToken}>장바구니</S.MenuLi>
-                    <S.MenuLi onClick={()=>{navigate('/login')}}>로그인</S.MenuLi>
+                    <S.MenuLi
+                        onClick={() => {
+                            navigate('/login');
+                        }}
+                    >
+                        로그인
+                    </S.MenuLi>
                 </>
             );
         }
-        if(token && userType === "BUYER"){
+        if (token && userType === 'BUYER') {
             menuItems = (
                 <>
                     <S.MenuLi onClick={checkToken}>장바구니</S.MenuLi>
@@ -99,7 +104,7 @@ const Header = () => {
                 </>
             );
         }
-        if(token && userType === "SELLER"){
+        if (token && userType === 'SELLER') {
             menuItems = (
                 <>
                     <S.MenuLi onClick={clickSellerBtn}>판매자센터</S.MenuLi>
@@ -108,67 +113,63 @@ const Header = () => {
             );
         }
 
-        return (
-            <S.MenuUl isOpen={isOpenMenu}>
-                {menuItems}
-            </S.MenuUl>
-        )
-    }
+        return <S.MenuUl isOpen={isOpenMenu}>{menuItems}</S.MenuUl>;
+    };
 
     return (
         <S.HeaderDiv>
             <S.HeaderContent>
                 <S.MainDiv>
                     <Link to={'/'}>
-                        <S.LogoIcon alt='로고 이미지'/>
+                        <S.LogoIcon alt="로고 이미지" />
                     </Link>
-                        <S.SearchInput 
-                            type='text' 
-                            placeholder='상품을 검색해보세요 !' 
-                            onKeyDown={handleKeyDown} 
-                            {...searchWord}
-                        />
-                        <S.SearchButton onClick={searchData}/>
+                    <S.SearchInput
+                        type="text"
+                        placeholder="상품을 검색해보세요 !"
+                        onKeyDown={handleKeyDown}
+                        {...searchWord}
+                    />
+                    <S.SearchButton onClick={searchData} />
                 </S.MainDiv>
 
-                <S.MenuBtn onClick={handleMenu} isOpen={isOpenMenu}/>
-                {isSeller() ?
+                <S.MenuBtn onClick={handleMenu} isOpen={isOpenMenu} />
+                {isSeller() ? (
                     <>
                         <S.HeaderBtnDiv>
-                            <Btn.MyPage onClick={clickMyPageBtn}/>
-                            <Btn.Seller onClick={clickSellerBtn}/>
-                            <MyPageDropdown 
-                                isOpen={isOpenMyPageDropdown} 
-                                setIsOpen={setIsOpenMyPageDropdown} 
+                            <Btn.MyPage onClick={clickMyPageBtn} />
+                            <Btn.Seller onClick={clickSellerBtn} />
+                            <MyPageDropdown
+                                isOpen={isOpenMyPageDropdown}
+                                setIsOpen={setIsOpenMyPageDropdown}
                                 isSeller={isSeller()}
                             />
                         </S.HeaderBtnDiv>
                     </>
-                    :
+                ) : (
                     <>
                         <S.HeaderBtnDiv>
-                            <Btn.Cart onClick={checkToken}/>
-                            { token ? 
-                                <Btn.MyPage onClick={clickMyPageBtn}/>
-                                : 
-                                <Btn.Login/>
-                            }
-                            <MyPageDropdown 
-                                isOpen={isOpenMyPageDropdown} 
-                                setIsOpen={setIsOpenMyPageDropdown} 
+                            <Btn.Cart onClick={checkToken} />
+                            {token ? (
+                                <Btn.MyPage onClick={clickMyPageBtn} />
+                            ) : (
+                                <Btn.Login />
+                            )}
+                            <MyPageDropdown
+                                isOpen={isOpenMyPageDropdown}
+                                setIsOpen={setIsOpenMyPageDropdown}
                                 isSeller={isSeller()}
                             />
                         </S.HeaderBtnDiv>
                     </>
-                }         
+                )}
             </S.HeaderContent>
             {isOpenMenu && setMenuList()}
-            <S.LoginModal 
+            <S.LoginModal
                 isOpenModal={isOpenLoginModal}
                 setIsOpenModal={setIsOpenLoginModal}
             />
         </S.HeaderDiv>
-    )
+    );
 };
 
 export default Header;

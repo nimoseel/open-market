@@ -14,7 +14,7 @@ export const HeaderDiv = styled.div`
     padding-top: 20px;
     box-sizing: border-box;
     box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.1);
-`
+`;
 
 export const HeaderContent = styled.header`
     display: flex;
@@ -24,7 +24,7 @@ export const HeaderContent = styled.header`
     width: 100%;
     max-width: 1280px;
     box-sizing: border-box;
-    
+
     @media screen and (max-width: 1280px) {
         max-width: 900px;
     }
@@ -32,7 +32,7 @@ export const HeaderContent = styled.header`
     @media screen and (max-width: 768px) {
         width: 450px;
     }
-`
+`;
 
 export const MainDiv = styled.div`
     display: flex;
@@ -42,7 +42,7 @@ export const MainDiv = styled.div`
     @media screen and (max-width: 768px) {
         gap: 0px;
     }
-`
+`;
 
 export const SearchInput = styled.input`
     width: 400px;
@@ -58,14 +58,14 @@ export const SearchInput = styled.input`
         width: 310px;
         margin-left: 20px;
     }
-`
+`;
 
 export const LogoIcon = styled.div`
     display: flex;
     align-items: center;
     width: 94px;
     height: 47px;
-    background-image: url(${mainLogo}) ;
+    background-image: url(${mainLogo});
     background-repeat: no-repeat;
     background-size: contain;
     vertical-align: middle;
@@ -74,7 +74,7 @@ export const LogoIcon = styled.div`
         width: 60px;
         height: 30px;
     }
-`
+`;
 
 export const SearchButton = styled.button`
     display: inline-block;
@@ -98,13 +98,13 @@ export const HeaderBtnDiv = styled.div`
     @media screen and (max-width: 768px) {
         display: none;
     }
-`
+`;
 
 export const MenuBtn = styled.button`
     display: none;
-    width: 30px; 
+    width: 30px;
     height: 30px;
-    background-image: url(${props => props.isOpen ? Close : Menu});
+    background-image: url(${(props) => (props.isOpen ? Close : Menu)});
     background-repeat: no-repeat;
     background-size: contain;
     cursor: pointer;
@@ -112,7 +112,7 @@ export const MenuBtn = styled.button`
     @media screen and (max-width: 768px) {
         display: block;
     }
-`
+`;
 
 // 판매자 센터 헤더 css
 export const SellerHeaderContent = styled.div`
@@ -130,7 +130,7 @@ export const SellerHeaderContent = styled.div`
     @media screen and (max-width: 768px) {
         width: 450px;
     }
-`
+`;
 
 export const SellerHeaderTitle = styled.p`
     width: 145px;
@@ -143,23 +143,31 @@ export const SellerHeaderTitle = styled.p`
     @media screen and (max-width: 768px) {
         font-size: 22px;
     }
-`
+`;
 
-export const LoginModal = ({isOpenModal, setIsOpenModal}) => {
+export const LoginModal = ({ isOpenModal, setIsOpenModal }) => {
     const navigate = useNavigate();
 
     return (
-        <Modal 
+        <Modal
             isOpenModal={isOpenModal}
             setIsOpenModal={setIsOpenModal}
-            padding_top={50} 
-            content={<p>로그인이 필요한 서비스입니다.<br/>로그인 하시겠습니까?</p>}
-            whiteBtn={'아니오'} 
+            padding_top={50}
+            content={
+                <p>
+                    로그인이 필요한 서비스입니다.
+                    <br />
+                    로그인 하시겠습니까?
+                </p>
+            }
+            whiteBtn={'아니오'}
             greenBtn={'예'}
-            onClickYes={()=>{navigate('/login')}}
+            onClickYes={() => {
+                navigate('/login');
+            }}
         />
-    )
-}
+    );
+};
 
 export const MenuUl = styled.ul`
     position: relative;
@@ -167,15 +175,17 @@ export const MenuUl = styled.ul`
     width: 100%;
     height: fit-content;
     border-top: 1px solid var(--main);
-    transition: opacity 0.3s linear, height 0.3s linear;
-    background-color: white;
+    transition:
+        opacity 0.3s linear,
+        height 0.3s linear;
+    background-color: var(--white);
     box-shadow: 0px 10px 30px 0px rgba(121, 30, 247, 0.1);
     z-index: 1;
 
     @media screen and (min-width: 768px) {
         display: none;
     }
-`
+`;
 
 export const MenuLi = styled.li`
     height: 60px;
@@ -187,4 +197,4 @@ export const MenuLi = styled.li`
     &:hover {
         background-color: var(--main-light);
     }
-`
+`;
