@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { BtnMS } from '../../../components/Etc/Button';
-import plusIcon from '../../../assets/icon-plus.svg'
+import plusIcon from '../../../assets/icon-plus.svg';
 
 export const TitleDiv = styled.div`
     display: flex;
@@ -18,7 +18,7 @@ export const TitleDiv = styled.div`
     @media screen and (max-width: 768px) {
         width: 450px;
     }
-`
+`;
 
 export const Title = styled.h1`
     font-size: 36px;
@@ -28,13 +28,13 @@ export const Title = styled.h1`
     @media screen and (max-width: 768px) {
         font-size: 22px;
     }
-`
+`;
 
 export const StoreName = styled.strong`
     margin-left: 16px;
     font-weight: var(--semi-bold);
     color: var(--main);
-`
+`;
 
 const StyledUploadBtn = styled(BtnMS)`
     display: flex;
@@ -45,7 +45,7 @@ const StyledUploadBtn = styled(BtnMS)`
     font-size: 18px;
     font-weight: var(--semi-bold);
     gap: 9px;
-`
+`;
 
 const StyledPlusImg = styled.span`
     display: inline-block;
@@ -55,16 +55,16 @@ const StyledPlusImg = styled.span`
     background-image: url(${plusIcon});
     background-repeat: no-repeat;
     background-size: 30px;
-`
+`;
 
-export const UploadBtn = ({onClick}) => {
+export const UploadBtn = ({ onClick }) => {
     return (
         <StyledUploadBtn onClick={onClick}>
-            <StyledPlusImg/>
+            <StyledPlusImg />
             상품 업로드
         </StyledUploadBtn>
-    )
-}
+    );
+};
 
 export const MainDiv = styled.div`
     display: flex;
@@ -81,7 +81,7 @@ export const MainDiv = styled.div`
         flex-direction: column;
         width: 450px;
     }
-`
+`;
 
 export const MenuUl = styled.ul`
     display: flex;
@@ -90,7 +90,7 @@ export const MenuUl = styled.ul`
     @media screen and (max-width: 768px) {
         display: none;
     }
-`
+`;
 
 const StyledMenuLi = styled.button`
     width: 250px;
@@ -100,10 +100,14 @@ const StyledMenuLi = styled.button`
     text-align: left;
     font-size: 16px;
     font-weight: var(--semi-bold);
-    background-color: var(${(props) => props.isFocused === true ? '--main': '--white'});
-    color: var(${(props) => props.isFocused === true ? '--white': '--black'});
-    
-    &:hover{
+    background-color: var(
+        ${(props) => (props.isFocused === true ? '--main' : '--white')}
+    );
+    color: var(
+        ${(props) => (props.isFocused === true ? '--white' : '--black')}
+    );
+
+    &:hover {
         color: var(--black);
         background-color: var(--main-light);
     }
@@ -111,15 +115,15 @@ const StyledMenuLi = styled.button`
     @media screen and (max-width: 768px) {
         display: none;
     }
-`
+`;
 
-export const MenuLi = ({onClick, content, isFocused}) => {
+export const MenuLi = ({ onClick, content, isFocused }) => {
     return (
         <li onClick={onClick}>
             <StyledMenuLi isFocused={isFocused}>{content}</StyledMenuLi>
         </li>
-    )
-}
+    );
+};
 
 export const ContentDiv = styled.div`
     width: 100%;
@@ -130,7 +134,7 @@ export const ContentDiv = styled.div`
     border-radius: 5px;
     background-color: var(--menu);
     overflow: hidden;
-`
+`;
 
 export const ItemIndexUl = styled.ul`
     display: flex;
@@ -150,14 +154,13 @@ export const ItemIndexUl = styled.ul`
     @media screen and (max-width: 768px) {
         font-size: 14px;
         padding: 18px 38px 18px 30px;
-
     }
-`
+`;
 
 export const ItemIndexLi = styled.li`
     text-align: center;
 
-    &:first-child{
+    &:first-child {
         width: 450px;
 
         @media screen and (max-width: 1280px) {
@@ -165,17 +168,18 @@ export const ItemIndexLi = styled.li`
         }
     }
 
-    &:nth-child(2){
+    &:nth-child(2) {
         width: 200px;
     }
-    
-    &:nth-child(3), &:nth-child(4){
+
+    &:nth-child(3),
+    &:nth-child(4) {
         width: 100px;
     }
-`
+`;
 
 export const UlWrapper = styled.div`
     height: 740px;
     background-color: transparent;
     overflow-y: scroll;
-`
+`;
