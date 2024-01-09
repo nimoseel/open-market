@@ -9,14 +9,15 @@ const useInput = (initialValue, validator = null, inputName) => {
         setValue(e.target.value);
     };
 
-    const handleKeyUp = validator ? (e) => {
-        try {
-            setError(validator(e.target.value));
-        } catch (error) {
-            setError(error.message);
-        }
-    } : null;
-
+    const handleKeyUp = validator
+        ? (e) => {
+              try {
+                  setError(validator(e.target.value));
+              } catch (error) {
+                  setError(error.message);
+              }
+          }
+        : null;
 
     return {
         value,
