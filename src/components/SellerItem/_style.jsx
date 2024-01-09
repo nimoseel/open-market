@@ -15,7 +15,7 @@ export const ItemLi = styled.li`
     @media screen and (max-width: 768px) {
         padding: 16px 16px;
     }
-`
+`;
 
 export const ItemImg = styled.img`
     width: 70px;
@@ -29,7 +29,7 @@ export const ItemImg = styled.img`
         height: 50px;
         margin-right: 15px;
     }
-`
+`;
 
 export const ItemTxtDiv = styled.div`
     display: flex;
@@ -37,7 +37,7 @@ export const ItemTxtDiv = styled.div`
     align-items: flex-start;
     width: 350px;
     gap: 10px;
-    
+
     @media screen and (max-width: 1280px) {
         width: 125px;
     }
@@ -45,26 +45,26 @@ export const ItemTxtDiv = styled.div`
     @media screen and (max-width: 768px) {
         width: 115px;
     }
-`
+`;
 
 export const ItemName = styled.p`
     font-size: 18px;
     font-weight: var(--regular);
     line-height: 22px;
-`
+`;
 
 export const ItemStock = styled.p`
     font-size: 16px;
     font-weight: var(--regular);
     line-height: 20px;
     color: var(--dark-gray);
-`
+`;
 
 export const ItemBtn = styled(BtnS)`
     width: 80px;
     margin: 0 10px;
 
-    &:focus{
+    &:focus {
         border-color: var(--disabled);
     }
 
@@ -72,7 +72,7 @@ export const ItemBtn = styled(BtnS)`
         width: 50px;
         font-size: 14px;
     }
-`
+`;
 
 const StyledPrice = styled.p`
     display: inline-block;
@@ -85,31 +85,31 @@ const StyledPrice = styled.p`
         width: 100px;
         font-size: 14px;
     }
-`
+`;
 
-export const Price = ({price}) => {
+export const Price = ({ price }) => {
     return (
         <StyledPrice>
             {price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}원
         </StyledPrice>
-    )
+    );
 };
 
 export const ItemInfoDiv = styled.div`
     display: flex;
     align-items: center;
-`
+`;
 
-export const DeleteModal = ({isOpenModal, setIsOpenModal, onClickYes}) => {
+export const DeleteModal = ({ isOpenModal, setIsOpenModal, onClickYes }) => {
     return (
-        <Modal 
+        <Modal
             isOpenModal={isOpenModal}
             setIsOpenModal={setIsOpenModal}
-            padding_top={60} 
+            padding_top={60}
             content={'상품을 삭제하시겠습니까?'}
-            whiteBtn={'취소'} 
+            whiteBtn={'취소'}
             greenBtn={'삭제'}
             onClickYes={onClickYes}
         />
-    )
-}
+    );
+};
