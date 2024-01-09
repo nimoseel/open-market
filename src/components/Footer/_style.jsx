@@ -4,7 +4,7 @@ export const Footer = styled.footer`
     background-color: var(--menu);
     padding: 60px 0 63px;
     font-size: 14px;
-`
+`;
 
 export const FooterContentDiv = styled.div`
     width: 100%;
@@ -18,7 +18,7 @@ export const FooterContentDiv = styled.div`
     @media screen and (max-width: 768px) {
         max-width: 450px;
     }
-`
+`;
 
 export const FooterLinkDiv = styled.div`
     display: flex;
@@ -26,7 +26,7 @@ export const FooterLinkDiv = styled.div`
     padding-bottom: 30px;
     border-bottom: 1px solid var(--disabled);
     align-items: center;
-`
+`;
 
 export const InfoUl = styled.ul`
     display: flex;
@@ -38,49 +38,49 @@ export const InfoUl = styled.ul`
         grid-template-columns: 1fr 1fr;
         gap: 10px;
     }
-`
+`;
 
 export const InfoLi = styled.li`
     font-weight: var(--regular);
     font-size: 14px;
     line-height: 17.53px;
-    &::after{
+    &::after {
         content: '';
         position: absolute;
         width: 1px;
         height: 16px;
         margin-left: 16px;
         background-color: var(--disabled);
-    };
-    &:last-child::after{
+    }
+    &:last-child::after {
         display: none;
-    };
+    }
 
     @media screen and (max-width: 768px) {
-        &::after{
-            content:none;
-        };
+        &::after {
+            content: none;
+        }
     }
-`
+`;
 export const InfoBoldLi = styled(InfoLi)`
     font-weight: var(--bold);
-`
+`;
 
 export const SnsUl = styled.ul`
     display: flex;
     width: 124px;
     gap: 14px;
-`
+`;
 
 export const ContactDiv = styled.div`
     width: 321px;
     margin-top: 30px;
     color: var(--dark-gray);
-`
+`;
 
 export const ContactP = styled.p`
     margin: 12px 0;
-    :first-child{
+    :first-child {
         font-weight: 700;
     }
-`
+`;
