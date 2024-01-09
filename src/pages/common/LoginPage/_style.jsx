@@ -3,16 +3,16 @@ import { BtnM } from '../../../components/Etc/Button';
 
 export const InputDiv = styled.div`
     margin-bottom: 26px;
-`
+`;
 
 export const LoginInput = styled.input`
     height: 60px;
     border: none;
-    border-bottom: 1px solid var(--disabled);   
-    :first-child{
-    margin-bottom: 6px;
-}
-`
+    border-bottom: 1px solid var(--disabled);
+    :first-child {
+        margin-bottom: 6px;
+    }
+`;
 
 export const FindUl = styled.ul`
     display: flex;
@@ -21,10 +21,10 @@ export const FindUl = styled.ul`
     padding: 0;
     width: 184px;
     margin: 30px auto 80px;
-`
+`;
 
 export const FindLi = styled.li`
-    &:first-child::after{
+    &:first-child::after {
         content: '';
         position: absolute;
         left: 76px;
@@ -32,7 +32,7 @@ export const FindLi = styled.li`
         height: 16px;
         background-color: var(--black);
     }
-`
+`;
 
 export const LoginErrMsg = styled.strong`
     display: block;
@@ -40,7 +40,7 @@ export const LoginErrMsg = styled.strong`
     font-weight: var(--regular);
     font-size: 16px;
     color: var(--red);
-`
+`;
 
 export const LoginBtn = styled(BtnM)`
     width: 480px;
@@ -48,4 +48,4 @@ export const LoginBtn = styled(BtnM)`
     @media screen and (max-width: 768px) {
         width: 380px;
     }
-`
+`;
