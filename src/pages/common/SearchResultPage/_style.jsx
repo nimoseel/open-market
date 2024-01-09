@@ -11,7 +11,7 @@ export const SearchTxt = styled.p`
     line-height: 50px;
     background-color: var(--main-light);
     color: var(--main);
-`
+`;
 
 export const SearchCount = styled.div`
     display: flex;
@@ -30,13 +30,13 @@ export const SearchCount = styled.div`
     @media screen and (max-width: 768px) {
         max-width: 450px;
     }
-`
+`;
 
 export const Main = styled.main`
     width: 100%;
     max-width: 1280px;
     margin: 50px auto;
-`
+`;
 
 export const SearchResultTxt = styled.p`
     padding: 0 19px;
@@ -44,7 +44,7 @@ export const SearchResultTxt = styled.p`
     font-weight: var(--regular);
     line-height: 20px;
     color: var(--black);
-`
+`;
 
 export const ProductUl = styled.ul`
     display: grid;
@@ -54,8 +54,10 @@ export const ProductUl = styled.ul`
     margin: 0 auto;
     gap: 70px;
     opacity: 0;
-    transition: opacity 1s, transform 1s;
-    transform: translateY(10px); 
+    transition:
+        opacity 1s,
+        transform 1s;
+    transform: translateY(10px);
     &.show {
         opacity: 1;
         transform: translateY(0);
@@ -69,15 +71,16 @@ export const ProductUl = styled.ul`
 
     @media screen and (max-width: 768px) {
         max-width: 450px;
+        min-height: calc(100vh - 711px);
         grid-template-columns: 1fr 1fr;
     }
-`
+`;
 
 export const NoResult = styled.div`
     width: 250px;
     height: calc(100vh - 673px);
     margin: 0 auto;
-    background-image: url(${noresult}) ;
+    background-image: url(${noresult});
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
@@ -85,8 +88,8 @@ export const NoResult = styled.div`
     @media screen and (max-width: 768px) {
         height: calc(100vh - 711px);
     }
-`
+`;
 
 export const NoResultTxt = styled(SearchResultTxt)`
     color: var(--main);
-`
+`;
