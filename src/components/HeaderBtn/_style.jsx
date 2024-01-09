@@ -12,7 +12,7 @@ export const Button = styled.button`
     background-color: var(--white);
     align-items: center;
     cursor: pointer;
-`
+`;
 
 export const Img = styled.img`
     width: 32px;
@@ -20,16 +20,16 @@ export const Img = styled.img`
     margin-bottom: 4px;
     background-repeat: no-repeat;
     background-size: contain;
-`
+`;
 
 export const Span = styled.span`
     display: inline-block;
     line-height: 14px;
-`
+`;
 
 export const MyPageSpan = styled(Span)`
     margin-top: 7px;
-`
+`;
 
 export const SellerBtn = styled(BtnMS)`
     display: flex;
@@ -40,4 +40,4 @@ export const SellerBtn = styled(BtnMS)`
     font-size: 18px;
     line-height: 22.54px;
     align-items: center;
-`
+`;
