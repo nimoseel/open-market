@@ -6,11 +6,7 @@ function Loading() {
     return (
         <S.LoadingBg>
             <S.LoadingDiv>
-                <Loader
-                    size={12}
-                    margin={15}
-                    color='var(--main)'
-                    />
+                <Loader size={12} margin={15} color="var(--main)" />
             </S.LoadingDiv>
         </S.LoadingBg>
     );
