@@ -9,7 +9,7 @@ export const ItemLi = styled.li`
     width: 100%;
     border-bottom: 1px solid var(--disabled);
     padding: 10px 0;
-`
+`;
 
 export const ItemImg = styled.img`
     min-width: 130px;
@@ -18,19 +18,19 @@ export const ItemImg = styled.img`
     margin-right: 36px;
     border-radius: 10px;
     object-fit: cover;
-`
+`;
 
 export const ItemInfoDiv = styled.div`
     width: 100%;
     max-width: 500px;
-`
+`;
 
-export const GrayTxt  = styled.p`
+export const GrayTxt = styled.p`
     font-size: 14px;
     font-weight: var(--regular);
     line-height: 17.53px;
     color: var(--dark-gray);
-`
+`;
 
 export const ProductName = styled.p`
     margin-bottom: 10px;
@@ -38,7 +38,7 @@ export const ProductName = styled.p`
     font-weight: var(--regular);
     line-height: 22px;
     color: var(--black);
-`
+`;
 
 export const Discount = styled.p`
     width: 100px;
@@ -50,7 +50,7 @@ export const Discount = styled.p`
     @media screen and (max-width: 768px) {
         display: none;
     }
-`
+`;
 export const PriceDiv = styled.div`
     display: flex;
     justify-content: space-between;
@@ -63,18 +63,18 @@ export const PriceDiv = styled.div`
         align-items: end;
         gap: 10px;
     }
-`
+`;
 
 export const ShippingDiv = styled.div`
-    background-image: url(${LogisticsIcon}) ;
+    background-image: url(${LogisticsIcon});
     background-repeat: no-repeat;
     background-size: contain;
-    
+
     @media screen and (max-width: 768px) {
         width: 90px;
         background-size: 25px;
     }
-`
+`;
 
 export const Shipping = styled.p`
     margin-left: 35px;
@@ -85,10 +85,16 @@ export const Shipping = styled.p`
     @media screen and (max-width: 768px) {
         font-size: 16px;
     }
-`
+`;
 
-export const Price = ({price}) => {
+export const Price = ({ price }) => {
     return (
-        <BasePrice price={price} numsize={20} margin={0} txtsize={18} color={'--black'}/>
-    )
-}
+        <BasePrice
+            price={price}
+            numsize={20}
+            margin={0}
+            txtsize={18}
+            color={'--black'}
+        />
+    );
+};

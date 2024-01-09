@@ -2,8 +2,16 @@ import React from 'react';
 import * as S from '../PaymentItem/_style';
 
 const PaymentItem = (props) => {
-    const {product_id, product_name, store_name, price, image, quantity, shipping_fee} = props;
-    
+    const {
+        product_id,
+        product_name,
+        store_name,
+        price,
+        image,
+        quantity,
+        shipping_fee,
+    } = props;
+
     return (
         <S.ItemLi key={product_id}>
             <S.ItemImg src={image} alt={product_name} />
@@ -15,11 +23,13 @@ const PaymentItem = (props) => {
 
             <S.PriceDiv>
                 <S.ShippingDiv>
-                    <S.Shipping>{shipping_fee ? `${shipping_fee}원` :`무료배송`}</S.Shipping>
-                </S.ShippingDiv> 
+                    <S.Shipping>
+                        {shipping_fee ? `${shipping_fee}원` : `무료배송`}
+                    </S.Shipping>
+                </S.ShippingDiv>
 
                 <div>
-                    <S.Price price={price}/>
+                    <S.Price price={price} />
                 </div>
             </S.PriceDiv>
         </S.ItemLi>
