@@ -167,7 +167,7 @@ const Join = () => {
                 setCompanyNumErr(response.Success);
             }
         } catch (error) {
-            console.log(error);
+            console.error(error);
         }
     };
 
