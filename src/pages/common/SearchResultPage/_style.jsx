@@ -51,6 +51,7 @@ export const ProductUl = styled.ul`
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
     max-width: 1280px;
+    min-height: calc(100vh - 673px);
     margin: 0 auto;
     gap: 70px;
     opacity: 0;
