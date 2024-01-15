@@ -203,7 +203,7 @@ const Join = () => {
     const pw = useInput('', pwValidator, 'pw');
     const pw_chk = useInput('', checkPwMatch, 'pw_chk');
     const user_name = useInput('', nameValidator, 'user_name');
-    const mobile_1 = useInput('010', mobileValidator, 'mobile_1');
+    const mobile_1 = useInput('010', null, 'mobile_1');
     const mobile_2 = useInput('', mobileValidator, 'mobile_2');
     const mobile_3 = useInput('', mobileValidator, 'mobile_3');
     const email_1 = useInput('', emailValidator, 'email_1');
