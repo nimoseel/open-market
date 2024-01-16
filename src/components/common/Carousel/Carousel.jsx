@@ -3,14 +3,14 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import * as S from '../Carousel/_style';
 
-import our from '../../assets/c_our.png';
-import christmas from '../../assets/c_christmas.png';
-import chair from '../../assets/c_chair.png';
-import skin_care from '../../assets/c_skin_care.png';
-import sale from '../../assets/c_sale.png';
+import our from '../../../assets/c_our.png';
+import christmas from '../../../assets/c_christmas.png';
+import chair from '../../../assets/c_chair.png';
+import skin_care from '../../../assets/c_skin_care.png';
+import sale from '../../../assets/c_sale.png';
 
-import { ReactComponent as Next } from '../../assets/arrow-right.svg';
-import { ReactComponent as Prev } from '../../assets/arrow-left.svg';
+import { ReactComponent as Next } from '../../../assets/arrow-right.svg';
+import { ReactComponent as Prev } from '../../../assets/arrow-left.svg';
 
 const Carousel = () => {
     const settings = {
