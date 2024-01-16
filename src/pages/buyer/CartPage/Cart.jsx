@@ -3,11 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import { getDetail } from '../../../API/productApi';
 import { getCart } from '../../../API/cartApi';
-import Header from '../../../components/Header/Header';
-import Loading from '../../../components/Loading/Loading';
-import CartCheckBox from '../../../components/Etc/CartCheckBox';
-import CartItem from '../../../components/CartItem/CartItem';
-import CartTotal from '../../../components/CartTotal/CartTotal';
+import Header from '../../../components/common/Header/Header';
+import Loading from '../../../components/common/Loading/Loading';
+import CartCheckBox from '../../../components/common/Etc/CartCheckBox';
+import CartItem from '../../../components/buyer/CartItem/CartItem';
+import CartTotal from '../../../components/buyer/CartTotal/CartTotal';
 import * as S from '../CartPage/_style';
 
 const Cart = () => {

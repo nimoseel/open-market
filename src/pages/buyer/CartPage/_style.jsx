@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BtnL } from '../../../components/Etc/Button';
+import { BtnL } from '../../../components/common/Etc/Button';
 
 export const CartTitleDiv = styled.div`
     width: 100%;
