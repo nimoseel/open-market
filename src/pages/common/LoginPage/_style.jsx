@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BtnM } from '../../../components/Etc/Button';
+import { BtnM } from '../../../components/common/Etc/Button';
 
 export const InputDiv = styled.div`
     margin-bottom: 26px;
