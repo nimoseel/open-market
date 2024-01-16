@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import minusIcon from '../../assets/icon-minus-line.svg';
-import disabledMinus from '../../assets/icon-disabled-minus.svg';
-import plusIcon from '../../assets/icon-plus-line.svg';
-import disabledPlus from '../../assets/icon-disabled-plus.svg';
+import minusIcon from '../../../assets/icon-minus-line.svg';
+import disabledMinus from '../../../assets/icon-disabled-minus.svg';
+import plusIcon from '../../../assets/icon-plus-line.svg';
+import disabledPlus from '../../../assets/icon-disabled-plus.svg';
 
 const AmountWrapper = styled.div`
     display: grid;
