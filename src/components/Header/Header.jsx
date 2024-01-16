@@ -40,7 +40,11 @@ const Header = () => {
 
     const searchData = async () => {
         try {
-            const encodedSearchValue = encodeURIComponent(searchWord.value);
+            const encodedSearchValue =
+                searchWord.value.trim() === ''
+                    ? ''
+                    : encodeURIComponent(searchWord.value);
+
             navigate(`/search?search=${encodedSearchValue}`);
             searchWord.setValue('');
         } catch (error) {
