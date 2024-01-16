@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../contexts/AuthContext';
-import { getDetail } from '../../API/productApi';
-import { getCart, postCart } from '../../API/cartApi';
-import Loading from '../../components/Loading/Loading';
-import { BtnTab } from '../Etc/Button';
-import AmountBtn from '../Etc/AmountBtn';
+import { AuthContext } from '../../../contexts/AuthContext';
+import { getDetail } from '../../../API/productApi';
+import { getCart, postCart } from '../../../API/cartApi';
+import Loading from '../../common/Loading/Loading';
+import { BtnTab } from '../../common/Etc/Button';
+import AmountBtn from '../../common/Etc/AmountBtn';
 import * as S from '../DetailContent/_style';
 
 const DetailContent = () => {
