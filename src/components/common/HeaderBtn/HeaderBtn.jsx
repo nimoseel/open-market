@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import profileIcon from '../../assets/icon-user.svg';
-import bagIcon from '../../assets/icon-shopping-bag.svg';
-import cartIcon from '../../assets/icon-shopping-cart.svg';
+import profileIcon from '../../../assets/icon-user.svg';
+import bagIcon from '../../../assets/icon-shopping-bag.svg';
+import cartIcon from '../../../assets/icon-shopping-cart.svg';
 import * as S from '../HeaderBtn/_style';
 
 export const MyPage = ({ onClick }) => {
