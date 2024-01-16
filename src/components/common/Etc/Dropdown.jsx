@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import downArrow from '../../assets/icon-down-arrow.svg';
-import upArrow from '../../assets/icon-up-arrow.svg';
+import downArrow from '../../../assets/icon-down-arrow.svg';
+import upArrow from '../../../assets/icon-up-arrow.svg';
 
 const Title = styled.button`
     position: relative;
