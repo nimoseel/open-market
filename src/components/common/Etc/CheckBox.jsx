@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import Checked from '../../assets/check-fill-box.svg';
-import UnCheck from '../../assets/check-box.svg';
+import Checked from '../../../assets/check-fill-box.svg';
+import UnCheck from '../../../assets/check-box.svg';
 
 const CheckLabel = styled.label`
     display: inline-block;
