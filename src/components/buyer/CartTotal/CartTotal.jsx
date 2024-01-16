@@ -1,5 +1,5 @@
 import React from 'react';
-import PlusIcon from '../../assets/icon-plus2.svg';
+import PlusIcon from '../../../assets/icon-plus2.svg';
 import * as S from '../CartTotal/_style';
 
 const total = ({ totalPrice, totalFee }) => {

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import BasePrice from '../Etc/Price';
+import BasePrice from '../../common/Etc/Price';
 
 export const TotalUl = styled.ul`
     display: flex;
