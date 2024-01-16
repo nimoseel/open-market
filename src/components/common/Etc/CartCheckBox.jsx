@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import Checked from '../../assets/icon-cart-check-fill-box.svg';
-import UnCheck from '../../assets/icon-cart-check-box.svg';
+import Checked from '../../../assets/icon-cart-check-fill-box.svg';
+import UnCheck from '../../../assets/icon-cart-check-box.svg';
 
 const CartCheckLabel = styled.label`
     display: inline-block;
