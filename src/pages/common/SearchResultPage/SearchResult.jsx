@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { getSearchData } from '../../../API/searchApi';
-import Header from '../../../components/Header/Header';
-import Footer from '../../../components/Footer/Footer';
-import Loading from '../../../components/Loading/Loading';
-import Paging from '../../../components/Paging/Paging';
-import ProductCard from '../../../components/ProductCard/ProductCard';
+import Header from '../../../components/common/Header/Header';
+import Footer from '../../../components/common/Footer/Footer';
+import Loading from '../../../components/common/Loading/Loading';
+import Paging from '../../../components/common/Paging/Paging';
+import ProductCard from '../../../components/common/ProductCard/ProductCard';
 import * as S from '../SearchResultPage/_style';
 
 const SearchResult = () => {
@@ -85,7 +85,6 @@ const SearchResult = () => {
             )}
 
             {!loading && <Footer />}
-            {/* <Footer /> */}
         </>
     );
 };
