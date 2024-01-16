@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import InstaImg from '../../assets/icon-insta.svg';
-import FacebookImg from '../../assets/icon-fb.svg';
-import YoutubeImg from '../../assets/icon-yt.svg';
+import InstaImg from '../../../assets/icon-insta.svg';
+import FacebookImg from '../../../assets/icon-fb.svg';
+import YoutubeImg from '../../../assets/icon-yt.svg';
 import * as S from '../Footer/_style';
 
 const Footer = () => {
