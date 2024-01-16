@@ -2,9 +2,9 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import { getSellerProduct } from '../../../API/sellerApi';
-import Header from '../../../components/Header/SellerCenterHeader';
-import SellerItem from '../../../components/SellerItem/SellerItem';
-import Loading from '../../../components/Loading/Loading';
+import Header from '../../../components/common/Header/SellerCenterHeader';
+import SellerItem from '../../../components/seller/SellerItem/SellerItem';
+import Loading from '../../../components/common/Loading/Loading';
 import * as S from '../SellerCenterPage/_style';
 
 const SellerCenter = () => {
