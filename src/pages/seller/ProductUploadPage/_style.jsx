@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BtnMS } from '../../../components/Etc/Button';
+import { BtnMS } from '../../../components/common/Etc/Button';
 import ImgUploadIcon from '../../../assets/icon-img.svg';
 
 export const TitleDiv = styled.div`

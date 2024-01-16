@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import { postProduct, editProduct } from '../../../API/sellerApi';
-import Header from '../../../components/Header/SellerCenterHeader';
+import Header from '../../../components/common/Header/SellerCenterHeader';
 import useInput from '../../../hooks/useInput';
 import * as S from '../ProductUploadPage/_style';
 
