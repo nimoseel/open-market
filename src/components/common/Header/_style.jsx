@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import SearchIconImg from '../../assets/icon-search.svg';
-import mainLogo from '../../assets/Logo-our.svg';
-import Menu from '../../assets/icon-hamburger.svg';
-import Close from '../../assets/icon-delete-colored.svg';
+import SearchIconImg from '../../../assets/icon-search.svg';
+import mainLogo from '../../../assets/Logo-our.svg';
+import Menu from '../../../assets/icon-hamburger.svg';
+import Close from '../../../assets/icon-delete-colored.svg';
 import Modal from '../Etc/Modal';
 
 export const HeaderDiv = styled.div`
