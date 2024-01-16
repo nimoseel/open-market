@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { BtnS } from '../Etc/Button';
-import Modal from '../Etc/Modal';
+import { BtnS } from '../../common/Etc/Button';
+import Modal from '../../common/Etc/Modal';
 
 export const ItemLi = styled.li`
     display: flex;

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../contexts/AuthContext';
-import { deleteProduct } from '../../API/sellerApi';
+import { AuthContext } from '../../../contexts/AuthContext';
+import { deleteProduct } from '../../../API/sellerApi';
 import * as S from '../SellerItem/_style';
 
 const SellerItem = (props) => {
