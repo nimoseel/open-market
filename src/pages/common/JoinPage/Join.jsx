@@ -6,8 +6,8 @@ import {
     companyNumVaild,
     sellerJoin,
 } from '../../../API/userApi';
-import Dropdown from '../../../components/Etc/Dropdown';
-import CheckBox from '../../../components/Etc/CheckBox';
+import Dropdown from '../../../components/common/Etc/Dropdown';
+import CheckBox from '../../../components/common/Etc/CheckBox';
 import useInput from '../../../hooks/useInput';
 import { regex } from '../../../constants/regex';
 import * as SC from '../LoginPage/_styleLoginJoin';

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BtnM, BtnMS } from '../../../components/Etc/Button';
+import { BtnM, BtnMS } from '../../../components/common/Etc/Button';
 import activeIcon from '../../../assets/icon-check-on.svg';
 import disabledIcon from '../../../assets/icon-check-off.svg';
 
