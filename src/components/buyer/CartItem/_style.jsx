@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { BtnS } from '../Etc/Button';
-import DelIcon from '../../assets/icon-delete.svg';
-import BasePrice from '../Etc/Price';
-import Modal from '../Etc/Modal';
+import { BtnS } from '../../common/Etc/Button';
+import DelIcon from '../../../assets/icon-delete.svg';
+import BasePrice from '../../common/Etc/Price';
+import Modal from '../../common/Etc/Modal';
 
 export const Li = styled.li`
     display: flex;

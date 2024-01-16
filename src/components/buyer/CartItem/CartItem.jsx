@@ -1,9 +1,9 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../contexts/AuthContext';
-import { deleteCartItem, editCartItem } from '../../API/cartApi';
-import AmountBtn from '../Etc/AmountBtn';
-import CartCheckBox from '../Etc/CartCheckBox';
+import { AuthContext } from '../../../contexts/AuthContext';
+import { deleteCartItem, editCartItem } from '../../../API/cartApi';
+import AmountBtn from '../../common/Etc/AmountBtn';
+import CartCheckBox from '../../common/Etc/CartCheckBox';
 import * as S from '../CartItem/_style';
 
 const CartItem = (props) => {
