@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import ModalPortal from '../../Portal';
-import { BtnS } from './Button';
-import DeleteIcon from '../../assets/icon-delete.svg';
+import ModalPortal from '../../../Portal';
+import { BtnS } from '../../common/Etc/Button';
+import DeleteIcon from '../../../assets/icon-delete.svg';
 
 const ModalBg = styled.section`
     position: fixed;
