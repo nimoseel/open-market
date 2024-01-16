@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import BasePrice from '../Etc/Price';
-import LogisticsIcon from '../../assets/icon-logistics.svg';
+import BasePrice from '../../common/Etc/Price';
+import LogisticsIcon from '../../../assets/icon-logistics.svg';
 
 export const ItemLi = styled.li`
     display: flex;
