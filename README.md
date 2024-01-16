@@ -1,9 +1,11 @@
 <h1> 아우어마켓 | 모두들 위한 오픈마켓 </h1>
 
 ### [ 배포 ]
-- URL : https://sominopenmarket.netlify.app/
+
+-   URL : https://sominopenmarket.netlify.app/
+
 ```
-- 구매자 계정 
+- 구매자 계정
     - ID : ourbuyer
     - PW : our123!!
 
@@ -15,11 +17,14 @@
 <br/>
 
 ### [ 프로젝트 기간 ] <br>
+
     ver1. 22년 12월 22일 ~ 2월 24일
     ver2. 23년 11월 16일 ~ 코드 수정
+
 <br>
 
 ### [ 프로젝트 소개 ] <br>
+
     - 아우어마켓은 구매회원, 판매회원으로 나뉘어 물건을 사고, 팔 수 있는 오픈마켓 서비스입니다.
 
     - 회원가입
@@ -27,11 +32,12 @@
         - 아이디 중복 검사가 필요합니다.
         - 판매회원의 경우 사업자 등록번호 확인이 필요합니다.
         - 유효한 정보를 모두 입력 후 정보제공 동의를 마쳐야 가입할 수 있습니다.
-    
+
     - 로그인
-        - 사용자 성격에 맞는 로그인 화면에서 로그인을 진행합니다. 
+        - 사용자 성격에 맞는 로그인 화면에서 로그인을 진행합니다.
         - 판매회원이 구매회원 로그인을 진행할 경우 로그인 유형 확인 경고가 나타납니다.
         - 상품 검색의 경우 로그인하지 않더라도 이용할 수 있습니다.
+
     - 구매회원
         - 원하는 상품을, 원하는 수량으로 장바구니에 담을 수 있습니다.
         - 장바구니 내에서 상품 수량을 변경 및 삭제할 수 있습니다.
@@ -39,7 +45,7 @@
         - 결제 페이지에서 모든 정보를 입력후 정보 제공 동의를 마쳐야 결제할 수 있습니다.
 
     - 판매회원
-        - 판매회원은 상세페이지에 들어가더라도 상품을 주문할 수 없습니다. 
+        - 판매회원은 상세페이지에 들어가더라도 상품을 주문할 수 없습니다.
         - 판매자 센터 페이지에서 판매중인 상품을 확인할 수 있습니다.
         - 판매중인 상품을 수정하거나 삭제할 수 있습니다.
         - 상품 업로드 및 수정 페이지 내의 모든 정보를 유효하게 입력해야 상품 정보를 저장할 수 있습니다.
@@ -48,188 +54,370 @@
 
 ### [ 실행 화면 ]
 
-|                            0. 메인화면 ( + 로그인 전 상품 상세 페이지 )                            |                           1. 회원가입                            |
-| :-------------------------------------------------------------: | :--------------------------------------------------------------: |
+|                               0. 메인화면 ( + 로그인 전 상품 상세 페이지 )                                |                                                1. 회원가입                                                 |
+| :-------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------: |
 | <img src="https://velog.velcdn.com/images/nimoseel/post/0f2fc255-ab31-4a88-90ba-12861ab79e02/image.gif"/> | <img src="https://velog.velcdn.com/images/nimoseel/post/1318298a-c702-4fdf-90c9-1232daccade1/image.gif" /> |
 
-|                           2. 로그인                           |                          3. 장바구니                          |
-| :-------------------------------------------------------------: | :-------------------------------------------------------------: |
+|                                                 2. 로그인                                                 |                                                3. 장바구니                                                 |
+| :-------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------: |
 | <img src="https://velog.velcdn.com/images/nimoseel/post/be17323b-0c9f-4968-aefa-f9e203961cdf/image.gif"/> | <img src="https://velog.velcdn.com/images/nimoseel/post/9b4217f1-85a1-4a08-bc53-ce8517aa3e18/image.gif" /> |
 
-|                        4. 상품 주문하기                        |                     5. 상품 결제하기                     |
-| :-------------------------------------------------------------: | :-------------------------------------------------------------: |
-| <img src="https://velog.velcdn.com/images/nimoseel/post/b63876e0-986a-4a3a-b17b-14b475bf1cfa/image.gif" /><span>상세 페이지 내 바로 주문, 장바구니내 개별 주문, 전체 주문</span>| <img src="https://velog.velcdn.com/images/nimoseel/post/93f085ed-6c4a-441b-8566-be48e66d4cfa/image.gif"/> <span>react-daum-postcode 사용</span>|
+|                                                                                 4. 상품 주문하기                                                                                 |                                                                5. 상품 결제하기                                                                 |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------: |
+| <img src="https://velog.velcdn.com/images/nimoseel/post/b63876e0-986a-4a3a-b17b-14b475bf1cfa/image.gif" /><span>상세 페이지 내 바로 주문, 장바구니내 개별 주문, 전체 주문</span> | <img src="https://velog.velcdn.com/images/nimoseel/post/93f085ed-6c4a-441b-8566-be48e66d4cfa/image.gif"/> <span>react-daum-postcode 사용</span> |
 
-
-<br/>
-<hr/>
-<br/>
-
-|                     6. 판매회원 홈 화면 + 상품 상세 페이지                      |                          7. 판매 상품 업로드                          |
-| :-------------------------------------------------------------: | :-------------------------------------------------------------: |
+|                                 6. 판매회원 홈 화면 + 상품 상세 페이지                                  |                                           7. 판매 상품 업로드                                           |
+| :-----------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: |
 | <img src="https://velog.velcdn.com/images/miniso/post/0517d413-2f89-41bf-8ada-c0af208910cb/image.gif"/> | <img src="https://velog.velcdn.com/images/miniso/post/6df64bfc-3dd2-4f22-868c-a93535873b3c/image.gif"/> |
 
-|                     8. 판매 상품 정보 수정                      |                          9. 판매 상품 삭제                          |
-| :-------------------------------------------------------------: | :-------------------------------------------------------------: |
+|                                         8. 판매 상품 정보 수정                                          |                                            9. 판매 상품 삭제                                            |
+| :-----------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: |
 | <img src="https://velog.velcdn.com/images/miniso/post/12b16b8b-9b8c-47c3-a242-cf656987c052/image.gif"/> | <img src="https://velog.velcdn.com/images/miniso/post/9aeed45b-79be-4edc-86bd-7be64bf5a211/image.gif"/> |
 
-|                     10. 검색                      |                     11. 로그아웃                      |
-| :-------------------------------------------------------------: | :-------------------------------------------------------------: |
-| <img src="https://velog.velcdn.com/images/miniso/post/67cb49f6-14e3-4155-b1e2-b68665c0ab84/image.gif"/> | <img src="https://velog.velcdn.com/images/miniso/post/cef1e82f-8fe0-4c75-a2d5-91e528a942db/image.gif"/>|
+|                                                10. 검색                                                 |                                              11. 로그아웃                                               |
+| :-----------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: |
+| <img src="https://velog.velcdn.com/images/miniso/post/67cb49f6-14e3-4155-b1e2-b68665c0ab84/image.gif"/> | <img src="https://velog.velcdn.com/images/miniso/post/cef1e82f-8fe0-4c75-a2d5-91e528a942db/image.gif"/> |
 
-|                     12. 반응형                       |
-| :-------------------------------------------------------------: | 
-| <img src="https://velog.velcdn.com/images/miniso/post/aa3b3c55-3c40-4548-9a37-6b9fb8a90eae/image.gif" width="70%"/> | 
+|                                                     12. 반응형                                                      |
+| :-----------------------------------------------------------------------------------------------------------------: |
+| <img src="https://velog.velcdn.com/images/miniso/post/aa3b3c55-3c40-4548-9a37-6b9fb8a90eae/image.gif" width="70%"/> |
+
+<br/>
 
 ### [ 주요 코드 ]
-#### 1. 스타일드 컴포넌트 임포트시 컴포넌트 앞에 S. 붙여 구분이 용이하도록 함. 
+
+#### 1. 디자인 시스템 (네이밍 규칙) 적용
+
+-   일반적인 리액트 컴포넌트와 스타일드 컴포넌트가 혼합되어 있기 때문에 <br/>
+    코드의 가독성을 향상시키기 위해 스타일드 컴포넌트 임포트시 컴포넌트 앞에 S. 붙여 구분이 용이하도록 했습니다.
+
 ```js
 //Home.jsx
 return (
-        <>
-            <Header/>
-            <Carousel/>
-            <S.Main>
-            {loading && <Loading/>}
-                <S.ProductUl>
-                    {products && products.map((item) => 
-                        <Link 
-                            key={item.product_id} 
+    <>
+        {loading && <Loading />}
+        <Header />
+        <Carousel />
+        <S.Main>
+            {!loading && products && (
+                <S.ProductUl className={loading ? '' : 'show'}>
+                    {products.map((item) => (
+                        <Link
+                            key={item.product_id}
                             to={`/product/${item.product_id}`}
                         >
-                            <ProductCard
-                                {...item}
-                                key={item.product_id}
-                            />
+                            <ProductCard {...item} key={item.product_id} />
                         </Link>
-                    )}
+                    ))}
                 </S.ProductUl>
-            </S.Main>
-            <Footer/>
-        </>
-    )
+            )}
+        </S.Main>
+    </>
+);
 ```
 
-#### 2. react-daum-postcode 사용
-```js
-    // 우편번호 검색 관련
-    const [ isOpenPostCode, setIsOpenPostCode ] = useState(false);
+<br/>
 
-    const onCompletePost = (post) => {
-        setInputs({
-            ...inputs,
-            post_code : post.zonecode,
-            address_1 : post.buildingName ? post.address + ' ('+ post.buildingName +')' : post.address ,
-        })
-        setIsOpenPostCode(false);
-    }
+### 2. useContext 사용하여 컴포넌트에서 인증 관련 값 사용
 
-    const postCodeStyle = {
-        width: '450px',
-        height: '450px',
-    }
-```
+-   사용자 인증 관련 값들을 관리합니다.
+-   토큰값 가져오기, token 설정하기, useType 확인하기, 로그아웃 하기가 필요한 컴포넌트에서
+    useContext를 이용해 값을 사용할 수 있습니다.
 
 ```js
-<> ...
+import React, { createContext, useState } from 'react';
 
-    {isOpenPostCode && 
-    <ModalPortal>
-        <S.ModalBg isOpenPostCode={isOpenPostCode}>
-            <S.PostCodeContent>
-                <S.PostCodeTitle>주소찾기</S.PostCodeTitle>
-                <S.DeleteBtn onClick={()=>{setIsOpenPostCode(false)}}/>
-                <DaumPostCode style={postCodeStyle} autoClose onComplete={onCompletePost}/>
-            </S.PostCodeContent>
-        </S.ModalBg>
-    </ModalPortal>
-    }
-</>
-```
+export const AuthContext = createContext();
 
-### 3. 로그인 타입에 따른 로그인 인증 로직 실행
-- 기본적인 로그인 타입은 buyer로 설정
-```js
-const [ loginType, setLoginType ] = useState('BUYER');
-```
+export const AuthProvider = ({ children }) => {
+    const [token, setToken] = useState(localStorage.getItem('token') || null);
+    const [userType, setUserType] = useState(
+        localStorage.getItem('user_type') || null,
+    );
 
-- 로그인 메뉴 클릭에 따라 loginType 값 변경
-```js
-<SC.MenuUl>
-    <SC.MenuLi 
-        isSelected={isSelected} 
-        onClick={()=>{ 
-            setIsSelected(true); 
-            setLoginType('BUYER'); 
-    }}>
-        구매회원 로그인
-    </SC.MenuLi>
-    <SC.MenuLi 
-        isSelected={!isSelected} 
-        onClick={()=>{ 
-            setIsSelected(false); 
-            setLoginType('SELLER'); 
-    }}>
-        판매회원 로그인
-    </SC.MenuLi>
-</SC.MenuUl>
-```
-```js
-<S.LoginBtn type='button' onClick={()=>{loginCheck()}}>로그인</S.LoginBtn>
-```
-
-- 로그인 버튼 클릭시 실행되는 loginCheck 함수
-    - seller 버튼 클릭시 setSLoginType을 통해 로그인 타입의 상태를 변경하고, 해당 값을 loginCheck 내부 로그인 로직에서 사용
-```js
-// 로그인 체크
-const loginCheck = async() => {
-    const username = id;
-    const password = pw;
-    const login_type = loginType;
-
-    const loginData = {
-        username,
-        password,
-        login_type,
+    const setAuthToken = (newToken, newUserType) => {
+        localStorage.setItem('token', newToken);
+        localStorage.setItem('user_type', newUserType);
+        setToken(newToken);
+        setUserType(newUserType);
     };
 
-    try{
-        const response = await login(loginData);
+    const logout = () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user_type');
+        setToken(null);
+        setUserType(null);
+    };
 
-        if(loginData.username === '' && loginData.password === ''){
-            setIsValid(false);
-            setErrTxt('아이디 또는 비밀번호를 입력해주세요.');
-            idInput.current.focus();
-        } else if(loginData.username === ''){
-            setIsValid(false);
-            setErrTxt('아이디를 입력해주세요');
-            idInput.current.focus();
-        } else if(loginData.password === ''){
-            setIsValid(false);
-            setErrTxt('비밀번호를 입력해주세요');
-            pwInput.current.focus();
+    return (
+        <AuthContext.Provider value={{ token, userType, setAuthToken, logout }}>
+            {children}
+        </AuthContext.Provider>
+    );
+};
+```
+
+<br/>
+
+### 3. useInput 훅 사용, 유효성 검사 디바운싱 적용
+
+-   커스텀 훅을 정의하여 input 요소와 관련된 처리를 효율적으로, 직관적으로 관리하고자 했습니다.
+-   파라미터를 통해 input 요소의 초기값, 유효성 검사 함수, input 요소의 이름을 받을 수 있으며<br/>
+    이때 유효성 검사를 진행하지 않는 input의 경우를 대비해 validator 파라미터의 default 값은 null로 설정했습니다.
+-   handleChange 함수는 input값이 변경될 때 호출되는 함수로 input 요소의 현재 값을 useState를 사용하여 변경합니다.
+-   디바운싱 적용 전엔 handleKeyUp 함수를 사용하여 input 값 변경이 이루어질 때마다 유효성 검사를 수행하고 오류를 처리했습니다.
+-   디바운싱 적용 후엔 입력 후 0.3초 동안 입력이 이루어지지 않으면 입력이 완료되었다고 판단하여 유효성 검사를 실시합니다.
+-   디바운싱 적용으로 불필요한 유효성 검사 실행을 감소 시켰습니다.
+
+```js
+// 주석 처리된 코드는 디바운싱 적용전 코드이며 디바운싱 적용 후 handleKeyUp 대신 useEffect 코드가 추가되었습니다.
+import { useState, useEffect, useRef } from 'react';
+
+const useInput = (initialValue, validator = null, inputName) => {
+    const [value, setValue] = useState(initialValue);
+    const [error, setError] = useState('');
+    const [isValid, setIsValid] = useState(true);
+
+    const debounceTimeout = useRef(null);
+
+    const handleChange = (e) => {
+        setValue(e.target.value);
+        console.log('입력중...');
+    };
+
+    //  const handleKeyUp = validator
+    //         ? (e) => {
+    //               try {
+    //                   console.log('입력 완료, 유효성 검사 실시');
+    //                   setError(validator(e.target.value));
+    //               } catch (error) {
+    //                   setError(error.message);
+    //               }
+    //           }
+    //         : null;
+
+    useEffect(() => {
+        if (debounceTimeout.current) {
+            clearTimeout(debounceTimeout.current);
         }
 
-        if(loginData.username !== '' && loginData.password !== ''){
-            if(response.FAIL_Message){
-                setIsValid(false);
-                setErrTxt(response.FAIL_Message);
-                setId('');
-                setPw('');
-                idInput.current.focus();
-            }else if(response.token && response.status !== 422){
-                localStorage.setItem('token', response.token);
-                localStorage.setItem('user_type', response.user_type);
-                setErrTxt('');
-                navigate('/');
-            }
+        if (validator && value !== '') {
+            debounceTimeout.current = setTimeout(() => {
+                console.log('입력 완료, 유효성 검사 실시');
+                try {
+                    setError(validator(value));
+                } catch (error) {
+                    setError(error.message);
+                }
+            }, 300);
         }
-    }
-    catch(error){
+
+        return () => {
+            clearTimeout(debounceTimeout.current);
+        };
+    }, [value, validator]);
+
+    return {
+        value,
+        setValue,
+        error,
+        isValid,
+        setIsValid,
+        onChange: handleChange,
+        // onKeyUp: handleKeyUp, - 삭제
+        name: inputName,
+        id: inputName,
+    };
+};
+
+export default useInput;
+```
+
+<br/>
+
+### 4. 검색 기능 구현
+
+헤더에서 검색어를 입력하고 검색을 실시하면 실행되는 함수
+
+1. 검색어를 url에서 사용할 수 있는 형태로 변환
+2. 검색 결과 페이지로 이동. 이때 URL의 쿼리 파라미터로 검색어를 전달
+3. 검색어 입력 필드를 초기화
+
+```js
+// Header 컴포넌트에서 검색어를 받아 url 쿼리 파라미터로 전달하면
+const searchData = async () => {
+    try {
+        const encodedSearchValue =
+            searchWord.value.trim() === ''
+                ? ''
+                : encodeURIComponent(searchWord.value);
+
+        navigate(`/search?search=${encodedSearchValue}`);
+        searchWord.setValue('');
+    } catch (error) {
         console.error(error);
     }
-}
+};
 ```
+
+```js
+// SearchResult 페이지 컴포넌트에서 값을 보여줌
+// 가져온 값을 getSearchData api 호출을 통해 검색을 실시하고 결과값을 렌더링함.
+useEffect(() => {
+    setLoading(true);
+    if (searchValue) {
+        try {
+            const encodedSearchValue = encodeURIComponent(searchValue);
+            getSearchData(activePage, encodedSearchValue).then((res) => {
+                setSearchData(res.data);
+                setSearchResults(res.data.results);
+                setLoading(false);
+            });
+        } catch (error) {
+            console.error(error);
+        }
+    } else {
+        setSearchData({});
+        setSearchResults([]);
+        setLoading(false);
+    }
+}, [searchValue, activePage]);
+```
+
+<br/>
+
+### 5. onKeyDown 이벤트 사용
+
+-   버튼 클릭과 더불어 엔터 키를 사용하여 입력값을 전송할 수 있도록 했습니다.
+
+```js
+const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+        if (e.nativeEvent.isComposing === false) {
+            searchData();
+        }
+    }
+};
+```
+
+<br/>
+
+### 6. 기타
+
+-   리액트 라이브러리를 사용했습니다.<br/>
+    (react-slick, react-spinners, react-js-pagination, react-daum-postcode)
+-   반응형 웹을 구현했습니다.<br/>
+    (기존 디자인에서 최대 화면 너비를 1280px로 설정했기 때문에 미디어 쿼리에서도 max-width를 1280px로 설정)
+-   정규식을 const로 선언하여 여러 컴포넌트에서 재사용 가능하도록 했습니다.
+-   페이지 폴더 구조를 buyer, seller, common으로 분류하여 직관성을 높였습니다.
+
 <br/>
 
 ### [ 폴더 트리 ]
+
+```
+📦src
+ ┣ 📂API
+ ┃ ┣ 📜cartApi.jsx
+ ┃ ┣ 📜orderApi.jsx
+ ┃ ┣ 📜productApi.jsx
+ ┃ ┣ 📜searchApi.jsx
+ ┃ ┣ 📜sellerApi.jsx
+ ┃ ┗ 📜userApi.jsx
+ ┣ 📂assets
+ ┣ 📂components
+ ┃ ┣ 📂common
+ ┃ ┃ ┣ 📂Carousel
+ ┃ ┃ ┃ ┣ 📜Carousel.jsx
+ ┃ ┃ ┃ ┗ 📜_style.jsx
+ ┃ ┃ ┣ 📂DetailContent
+ ┃ ┃ ┃ ┣ 📜DetailContent.jsx
+ ┃ ┃ ┃ ┗ 📜_style.jsx
+ ┃ ┣ 📂buyer
+ ┃ ┃ ┣ 📂CartItem
+ ┃ ┃ ┃ ┣ 📜CartItem.jsx
+ ┃ ┃ ┃ ┗ 📜_style.jsx
+ ┃ ┃ ┣ 📂CartTotal
+ ┃ ┃ ┃ ┣ 📜CartTotal.jsx
+ ┃ ┃ ┃ ┗ 📜_style.jsx
+ ┃ ┃ ┗ 📂PaymentItem
+ ┃ ┃ ┃ ┣ 📜PaymentItem.jsx
+ ┃ ┃ ┃ ┗ 📜_style.jsx
+ ┃ ┃ ┣ 📂Etc
+ ┃ ┃ ┃ ┣ 📜AmountBtn.jsx
+ ┃ ┃ ┃ ┣ 📜Button.jsx
+ ┃ ┃ ┃ ┣ 📜CartCheckBox.jsx
+ ┃ ┃ ┃ ┣ 📜CheckBox.jsx
+ ┃ ┃ ┃ ┣ 📜Dropdown.jsx
+ ┃ ┃ ┃ ┣ 📜Modal.jsx
+ ┃ ┃ ┃ ┣ 📜MyPageDropdown.jsx
+ ┃ ┃ ┃ ┗ 📜Price.jsx
+ ┃ ┃ ┣ 📂Footer
+ ┃ ┃ ┃ ┣ 📜Footer.jsx
+ ┃ ┃ ┃ ┗ 📜_style.jsx
+ ┃ ┃ ┣ 📂Header
+ ┃ ┃ ┃ ┣ 📜Header.jsx
+ ┃ ┃ ┃ ┣ 📜SellerCenterHeader.jsx
+ ┃ ┃ ┃ ┗ 📜_style.jsx
+ ┃ ┃ ┣ 📂HeaderBtn
+ ┃ ┃ ┃ ┣ 📜HeaderBtn.jsx
+ ┃ ┃ ┃ ┗ 📜_style.jsx
+ ┃ ┃ ┣ 📂Loading
+ ┃ ┃ ┃ ┣ 📜Loading.jsx
+ ┃ ┃ ┃ ┗ 📜_style.jsx
+ ┃ ┃ ┣ 📂Paging
+ ┃ ┃ ┃ ┣ 📜Paging.jsx
+ ┃ ┃ ┃ ┗ 📜_style.css
+ ┃ ┃ ┗ 📂ProductCard
+ ┃ ┃ ┃ ┣ 📜ProductCard.jsx
+ ┃ ┃ ┃ ┗ 📜_style.jsx
+ ┃ ┗ 📂seller
+ ┃ ┃ ┗ 📂SellerItem
+ ┃ ┃ ┃ ┣ 📜SellerItem.jsx
+ ┃ ┃ ┃ ┗ 📜_style.jsx
+ ┣ 📂constants
+ ┃ ┣ 📜API_URL.js
+ ┃ ┗ 📜regex.js
+ ┣ 📂contexts
+ ┃ ┗ 📜AuthContext.js
+ ┣ 📂hooks
+ ┃ ┗ 📜useInput.jsx
+ ┣ 📂pages
+ ┃ ┣ 📂common
+ ┃ ┃ ┣ 📂404Page
+ ┃ ┃ ┃ ┣ 📜NotFound.jsx
+ ┃ ┃ ┃ ┗ 📜_style.jsx
+ ┃ ┃ ┣ 📂DetailPage
+ ┃ ┃ ┃ ┗ 📜Detail.jsx
+ ┃ ┃ ┣ 📂HomePage
+ ┃ ┃ ┃ ┣ 📜Home.jsx
+ ┃ ┃ ┃ ┗ 📜_style.jsx
+ ┃ ┃ ┣ 📂JoinPage
+ ┃ ┃ ┃ ┣ 📜Join.jsx
+ ┃ ┃ ┃ ┗ 📜_style.jsx
+ ┃ ┃ ┣ 📂LoginPage
+ ┃ ┃ ┃ ┣ 📜Login.jsx
+ ┃ ┃ ┃ ┣ 📜_style.jsx
+ ┃ ┃ ┃ ┗ 📜_styleLoginJoin.jsx
+ ┃ ┃ ┗ 📂SearchResultPage
+ ┃ ┃ ┃ ┣ 📜SearchResult.jsx
+ ┃ ┃ ┃ ┗ 📜_style.jsx
+ ┃ ┣ 📂buyer
+ ┃ ┃ ┣ 📂CartPage
+ ┃ ┃ ┃ ┣ 📜Cart.jsx
+ ┃ ┃ ┃ ┗ 📜_style.jsx
+ ┃ ┃ ┗ 📂PaymentPage
+ ┃ ┃ ┃ ┣ 📜Payment.jsx
+ ┃ ┃ ┃ ┗ 📜_style.jsx
+ ┃ ┗ 📂seller
+ ┃ ┃ ┣ 📂ProductUploadPage
+ ┃ ┃ ┃ ┣ 📜ProductUpload.jsx
+ ┃ ┃ ┃ ┗ 📜_style.jsx
+ ┃ ┃ ┗ 📂SellerCenterPage
+ ┃ ┃ ┃ ┣ 📜SellerCenter.jsx
+ ┃ ┃ ┃ ┗ 📜_style.jsx
+ ┣ 📜App.jsx
+ ┣ 📜GlobalStyle.jsx
+ ┣ 📜Portal.js
+ ┗ 📜index.js
+```
