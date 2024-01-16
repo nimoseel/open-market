@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BtnM } from '../../../components/Etc/Button';
+import { BtnM } from '../../../components/common/Etc/Button';
 
 export const Section = styled.section`
     display: flex;
