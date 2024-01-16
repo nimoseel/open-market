@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../../../components/Header/Header';
-import DetailContent from '../../../components/DetailContent/DetailContent';
+import Header from '../../../components/common/Header/Header';
+import DetailContent from '../../../components/common/DetailContent/DetailContent';
 
 const Detail = () => {
     return (
