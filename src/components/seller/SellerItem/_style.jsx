@@ -9,7 +9,7 @@ export const ItemLi = styled.li`
     align-items: center;
     padding: 16px 30px;
     border-bottom: 1px solid var(--disabled);
-    background-color: var(--white);
+    background-color: var(--bg-color);
     cursor: pointer;
 
     @media screen and (max-width: 768px) {
@@ -51,6 +51,9 @@ export const ItemName = styled.p`
     font-size: 18px;
     font-weight: var(--regular);
     line-height: 22px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 `;
 
 export const ItemStock = styled.p`
