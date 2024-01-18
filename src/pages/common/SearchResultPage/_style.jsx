@@ -43,7 +43,7 @@ export const SearchResultTxt = styled.p`
     font-size: 16px;
     font-weight: var(--regular);
     line-height: 20px;
-    color: var(--black);
+    color: var(--txt-color);
 `;
 
 export const ProductUl = styled.ul`
