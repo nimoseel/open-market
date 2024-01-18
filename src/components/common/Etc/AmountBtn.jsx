@@ -22,7 +22,7 @@ const Minus = styled.button`
     background: url(${(props) => (props.isOne ? disabledMinus : minusIcon)})
         no-repeat center;
     background-color: var(
-        ${(props) => (props.isOne ? '--drop-down' : '--white')}
+        ${(props) => (props.isOne ? '--amount-disabled' : '--bg-color')}
     );
     border-radius: 0px;
 `;
@@ -43,7 +43,7 @@ const Plus = styled.button`
     background: url(${(props) => (props.isMax ? disabledPlus : plusIcon)})
         no-repeat center;
     background-color: var(
-        ${(props) => (props.isMax ? '--drop-down' : '--white')}
+        ${(props) => (props.isMax ? '--amount-disabled' : '--bg-color')}
     );
 `;
 
