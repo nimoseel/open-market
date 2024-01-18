@@ -113,6 +113,7 @@ const Cart = () => {
                 <S.CartHeader>장바구니</S.CartHeader>
                 <S.MenuUl>
                     <CartCheckBox
+                        id={'cartCheckBox'}
                         isCheck={isAllChecked}
                         setIsCheck={setIsAllChecked}
                         handleClick={handleAllItemsCheck}
