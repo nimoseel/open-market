@@ -62,7 +62,7 @@ export const BtnTab = styled.button`
     color: var(
         ${(props) => (props.type === 'disabled' ? '--dark-gray' : '--main')}
     );
-    background-color: var(--white);
+    background-color: var(--bg-color);
     font-size: 18px;
     &:focus {
         color: var(--main);
