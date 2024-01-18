@@ -79,6 +79,7 @@ export const CautionContent = styled.p`
     font-weight: var(--regular);
     line-height: 17.53px;
     background-color: #ffefe8;
+    color: var(--black);
 
     @media screen and (max-width: 768px) {
         font-size: 12px;
@@ -95,7 +96,7 @@ const InputDiv = styled.div`
     align-items: center;
     width: 220px;
     height: 54px;
-    border: 1px solid var(--disabled);
+    border: 1px solid var(--amount-disabled);
     border-radius: 5px;
     box-sizing: border-box;
     overflow: hidden;
@@ -122,7 +123,7 @@ const InputSpan = styled.span`
     height: 54px;
     text-align: center;
     line-height: 54px;
-    background-color: var(--disabled);
+    background-color: var(--amount-disabled);
     color: var(--white);
 `;
 
@@ -294,7 +295,7 @@ export const ProductInfoInput = styled.textarea`
     height: 200px;
     box-sizing: border-box;
     padding: 16px;
-    border: 1px solid var(--disabled);
+    border: 1px solid var(--amount-disabled);
     border-radius: 5px;
     font-size: 16px;
     resize: none;
