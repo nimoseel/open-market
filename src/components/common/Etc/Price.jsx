@@ -5,34 +5,40 @@ const StyledPrice = styled.span`
     display: inline-block;
     margin-right: ${(props) => `${props.margin}px`};
     font-weight: var(--bold);
-    font-size: ${(props) => `${props.numsize}px`};
-    color: var(${(props) => `${props.color}`});
+    font-size: ${(props) => `${props.numSize}px`};
+    color: var(${(props) => `${props.numColor}`});
 
     @media screen and (max-width: 768px) {
-        font-size: ${(props) => `${props.numsize * 0.8}px`};
+        font-size: ${(props) => `${props.numSize * 0.8}px`};
     }
 `;
 
 const StyledTxt = styled.span`
-    font-size: ${(props) => `${props.txtsize}px`};
+    font-size: ${(props) => `${props.txtSize}px`};
     font-weight: var(--regular);
-    color: var(${(props) => `${props.color}`});
-    color: var(--black);
+    color: var(${(props) => `${props.txtColor}`});
 
     @media screen and (max-width: 768px) {
         font-size: 16px;
     }
 `;
 
-export default function Price({ numsize, margin, color, price, txtsize }) {
+export default function Price({
+    numSize,
+    margin,
+    numColor,
+    price,
+    txtSize,
+    txtColor,
+}) {
     return (
         <>
-            <StyledPrice numsize={numsize} margin={margin} color={color}>
+            <StyledPrice numSize={numSize} margin={margin} numColor={numColor}>
                 {price
                     .toString()
                     .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}
             </StyledPrice>
-            <StyledTxt txtsize={txtsize} color={color}>
+            <StyledTxt txtsize={txtSize} txtColor={txtColor}>
                 원
             </StyledTxt>
         </>
