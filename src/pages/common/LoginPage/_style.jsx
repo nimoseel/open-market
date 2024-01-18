@@ -30,7 +30,7 @@ export const FindLi = styled.li`
         left: 76px;
         width: 1px;
         height: 16px;
-        background-color: var(--black);
+        background-color: var(--txt-color);
     }
 `;
 
