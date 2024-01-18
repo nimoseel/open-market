@@ -162,9 +162,17 @@ const DetailContent = () => {
                 <S.InfoDiv>
                     <S.StoreName>{detail.store_name}</S.StoreName>
                     <S.ProductName>{detail.product_name}</S.ProductName>
-                    <S.Price price={parseInt(detail.price)} color={'--black'} />
+                    <S.Price
+                        price={parseInt(detail.price)}
+                        color={'--txt-color'}
+                    />
                     {detail.shipping_fee !== 0 ? (
-                        <S.Shipping>배송비 {detail.shipping_fee}원</S.Shipping>
+                        <S.ShippingDiv>
+                            <S.Shipping>택배배송 </S.Shipping>
+                            <S.ShippingPrice
+                                price={parseInt(detail.shipping_fee)}
+                            />
+                        </S.ShippingDiv>
                     ) : (
                         <S.Shipping>무료배송</S.Shipping>
                     )}
@@ -189,7 +197,8 @@ const DetailContent = () => {
                             </S.Amount>
                             <S.Price
                                 price={parseInt(detail.price) * num}
-                                color={'--main'}
+                                numColor={'--main'}
+                                txtColor={'--txt-color'}
                             />
                         </S.PriceDiv>
                     </S.TotalDiv>

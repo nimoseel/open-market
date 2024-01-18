@@ -109,7 +109,7 @@ export const ProductName = styled.p`
     margin: 16px 0 20px;
     font-size: 36px;
     line-height: 45.07px;
-    color: var(--black);
+    color: var(--txt-color);
 
     @media screen and (max-width: 1280px) {
         margin: 10px 0;
@@ -118,7 +118,7 @@ export const ProductName = styled.p`
 `;
 
 export const Shipping = styled.p`
-    margin: 138px 0 20px;
+    margin: 138px 8px 20px 0;
     font-size: 16px;
     line-height: 20.03px;
     color: var(--dark-gray);
@@ -130,7 +130,7 @@ export const Shipping = styled.p`
 
 export const TotalPrice = styled(StoreName)`
     font-weight: var(--semi-bold);
-    color: var(--black);
+    color: var(--txt-color);
 `;
 
 export const Amount = styled(StoreName)`
@@ -173,14 +173,34 @@ export const CartBtn = styled(BtnM)`
     max-width: 200px;
 `;
 
-export const Price = ({ price, color }) => {
+export const ShippingDiv = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+`;
+
+export const ShippingPrice = ({ price }) => {
     return (
         <BasePrice
             price={price}
-            numsize={36}
+            numSize={16}
+            margin={0}
+            txtSize={16}
+            numColor={'--dark-gray'}
+            txtColor={'--dark-gray'}
+        />
+    );
+};
+
+export const Price = ({ price, numColor, txtColor }) => {
+    return (
+        <BasePrice
+            price={price}
+            numSize={36}
             margin={2}
-            txtsize={18}
-            color={color}
+            txtSize={18}
+            numColor={numColor}
+            txtColor={txtColor}
         />
     );
 };
