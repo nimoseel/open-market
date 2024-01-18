@@ -38,16 +38,18 @@ export const StoreName = styled.p`
 export const ProductName = styled.p`
     margin: 10px 0;
     font-size: 1.125rem;
+    color: var(--txt-color);
 `;
 
 export const Price = ({ price }) => {
     return (
         <BasePrice
             price={price}
-            numsize={24}
+            numSize={24}
             margin={2}
-            txtsize={16}
-            color={'--black'}
+            txtSize={16}
+            numColor={'--txt-color'}
+            txtColor={'--txt-color'}
         />
     );
 };
