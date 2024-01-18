@@ -2,20 +2,30 @@ import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
 export const GlobalStyle = createGlobalStyle`
+
     ${reset}
 
     :root{
         /* color */
-        --main :#5D23A8;
-        --main-light :#f7efff;
+        --main :${({ theme }) => (theme.isDarkMode ? '#8527ff' : '#5D23A8')};
+        --main-light : ${({ theme }) =>
+            theme.isDarkMode ? '#d1b9ea' : '#f7efff'};
         --green : #21BF48;
         --red : #EB5757;
         --black : #000000;
         --dark-gray : #767676;
         --white : #FFFFFF;
-        --disabled: #C4C4C4;
         --drop-down : #E0E0E0;
-        --menu : #F2F2F2;
+        --disabled: #C4C4C4;
+        --bg-color: ${({ theme }) =>
+            theme.isDarkMode ? '#1E1E22' : '#FFFFFF'};
+        --txt-color: ${({ theme }) =>
+            theme.isDarkMode ? '#FFFFFF' : '#000000'};
+        --menu : ${({ theme }) => (theme.isDarkMode ? '#333' : '#F2F2F2')};
+        --shadow :  ${({ theme }) =>
+            theme.isDarkMode ? '#333337' : '#E7E7E7'};
+        --amount-disabled : ${({ theme }) =>
+            theme.isDarkMode ? '#333337' : '#C4C4C4'};
 
         /* font-weight */
         --bold : 700;
@@ -23,8 +33,11 @@ export const GlobalStyle = createGlobalStyle`
         --regular : 400;
     }
 
-    body, button, input, textarea {
+    body, header, button, input, textarea {
         font-family: 'IBM Plex Sans KR', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--txt-color);
+        transition: background-color 0.5s, color 0.3s;
     }
 
     a{
