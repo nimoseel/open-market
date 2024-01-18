@@ -284,7 +284,7 @@ const Join = () => {
     return (
         <SC.ContentSection>
             <Link to={'/'}>
-                <SC.LogoIcon alt="로고 이미지" />
+                <SC.LogoIcon />
             </Link>
             <SC.ContentWrapper>
                 <SC.MenuUl>
