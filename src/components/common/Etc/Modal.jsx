@@ -28,7 +28,7 @@ const ModalContent = styled.div`
     box-sizing: border-box;
     border: 1px solid var(--disabled);
     transform: translate(-50%, -50%);
-    background-color: var(--white);
+    background-color: var(--bg-color);
     text-align: center;
 `;
 
