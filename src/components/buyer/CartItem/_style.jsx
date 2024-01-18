@@ -57,6 +57,9 @@ export const StoreName = styled.p`
     font-weight: var(--regular);
     line-height: 17.53px;
     color: var(--dark-gray);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 
     @media screen and (max-width: 768px) {
         font-size: 12px;
@@ -68,15 +71,25 @@ export const ProductName = styled.p`
     font-size: 18px;
     font-weight: var(--regular);
     line-height: 22px;
-    color: var(--black);
+    color: var(--txt-color);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 
     @media screen and (max-width: 768px) {
         font-size: 16px;
     }
 `;
 
+export const ShippingDiv = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+`;
+
 export const Shipping = styled(StoreName)`
-    margin: 40px 0 16px;
+    display: inline-block;
+    margin: 16px 6px 16px 0;
 
     @media screen and (max-width: 768px) {
         margin: 10px 0;
@@ -142,6 +155,19 @@ export const DeleteBtn = styled.button`
     background: url(${DelIcon}) no-repeat;
 `;
 
+export const ShippingPrice = ({ price }) => {
+    return (
+        <BasePrice
+            price={price}
+            numSize={14}
+            margin={0}
+            txtSize={14}
+            numColor={'--dark-gray'}
+            txtColor={'--dark-gray'}
+        />
+    );
+};
+
 export const ProductPrice = ({ price }) => {
     return (
         <BasePrice
@@ -149,7 +175,8 @@ export const ProductPrice = ({ price }) => {
             numsize={16}
             margin={0}
             txtsize={16}
-            color={'--black'}
+            numColor={'--txt-color'}
+            txtColor={'--txt-color'}
         />
     );
 };
@@ -159,10 +186,11 @@ export const TotalPrice = ({ price }) => {
         <div>
             <BasePrice
                 price={price}
-                numsize={18}
+                numSize={18}
                 margin={0}
-                txtsize={18}
-                color={'--main'}
+                txtSize={18}
+                numColor={'--main'}
+                txtColor={'--txt-color'}
             />
         </div>
     );

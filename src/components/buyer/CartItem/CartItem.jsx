@@ -140,6 +140,7 @@ const CartItem = (props) => {
     return (
         <S.Li key={product_id}>
             <CartCheckBox
+                id={product_id}
                 isCheck={is_active}
                 setIsCheck={handleCheckBox}
                 handleClick={handleCheckBox}
@@ -150,11 +151,16 @@ const CartItem = (props) => {
                 <S.StoreName>{store_name}</S.StoreName>
                 <S.ProductName>{product_name}</S.ProductName>
                 <S.ProductPrice price={price} />
-                {shipping_fee !== 0 ? (
-                    <S.Shipping>택배배송 / {shipping_fee}원</S.Shipping>
-                ) : (
-                    <S.Shipping>무료배송</S.Shipping>
-                )}
+                <S.ShippingDiv>
+                    {shipping_fee !== 0 ? (
+                        <>
+                            <S.Shipping>택배배송 /</S.Shipping>
+                            <S.ShippingPrice price={shipping_fee} />
+                        </>
+                    ) : (
+                        <S.Shipping>무료배송</S.Shipping>
+                    )}
+                </S.ShippingDiv>
             </S.TxtInfoDiv>
 
             <S.Div>
