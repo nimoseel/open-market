@@ -22,7 +22,7 @@ ul.pagination li {
 }
 
 ul.pagination li a {
-    color: var(--black);
+    color: var(--txt-color);
     font-size: 1rem;
 }
 
