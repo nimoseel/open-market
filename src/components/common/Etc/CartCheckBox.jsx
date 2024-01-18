@@ -1,22 +1,27 @@
 import styled from 'styled-components';
-import Checked from '../../../assets/icon-cart-check-fill-box.svg';
-import UnCheck from '../../../assets/icon-cart-check-box.svg';
+import CartCheckBoxImg from '../../../assets/cart-check-box-icon';
+import CartCheckBoxFillImg from '../../../assets/cart-check-box-fill-icon';
 
 const CartCheckLabel = styled.label`
     display: inline-block;
     min-width: 22px;
     min-height: 22px;
-    background-image: url(${(props) => (props.isCheck ? Checked : UnCheck)});
-    background-repeat: no-repeat;
-    background-size: contain;
     cursor: pointer;
 `;
+
+export const Checked = () => {
+    return <CartCheckBoxFillImg color={'var(--main)'} />;
+};
+
+export const UnChecked = () => {
+    return <CartCheckBoxImg color={'var(--main)'} />;
+};
 
 const CartCheckInput = styled.input`
     display: none;
 `;
 
-const CartCheckBox = ({ isCheck, setIsCheck, handleClick }) => {
+const CartCheckBox = ({ isCheck, setIsCheck, handleClick, id }) => {
     const handleCheckBoxClick = () => {
         setIsCheck(!isCheck);
         if (handleClick) {
@@ -27,11 +32,13 @@ const CartCheckBox = ({ isCheck, setIsCheck, handleClick }) => {
     return (
         <>
             <CartCheckLabel
-                htmlFor="chk_box"
+                htmlFor={id}
                 isCheck={isCheck}
                 onClick={handleCheckBoxClick}
-            />
-            <CartCheckInput type="checkbox" id="chk_box" />
+            >
+                {isCheck ? <Checked /> : <UnChecked />}
+            </CartCheckLabel>
+            <CartCheckInput type="checkbox" id={id} />
         </>
     );
 };
