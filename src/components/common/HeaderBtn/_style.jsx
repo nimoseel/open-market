@@ -4,14 +4,13 @@ import { BtnMS } from '../Etc/Button';
 export const Button = styled.button`
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 56px;
-    height: 50px;
+    height: 54px;
     border: none;
     font-size: 12px;
     color: var(--dark-gray);
-    background-color: var(--white);
     align-items: center;
-    cursor: pointer;
 `;
 
 export const Img = styled.img`

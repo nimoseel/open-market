@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import profileIcon from '../../../assets/icon-user.svg';
 import bagIcon from '../../../assets/icon-shopping-bag.svg';
-import cartIcon from '../../../assets/icon-shopping-cart.svg';
+import ShoppingCartImg from '../../../assets/shopping-cart-icon';
+import UserImg from '../../../assets/user-icon';
 import * as S from '../HeaderBtn/_style';
 
 export const MyPage = ({ onClick }) => {
     return (
         <S.Button type="button" onClick={onClick}>
-            <S.Img src={profileIcon} />
+            <UserImg color={'var(--txt-color)'} />
             <S.MyPageSpan>마이페이지</S.MyPageSpan>
         </S.Button>
     );
@@ -27,7 +27,7 @@ export const Cart = ({ onClick }) => {
     return (
         <S.Button type="button" onClick={onClick}>
             <Link>
-                <S.Img src={cartIcon} />
+                <ShoppingCartImg color={'var(--txt-color)'} />
                 <S.Span>장바구니</S.Span>
             </Link>
         </S.Button>
@@ -38,7 +38,7 @@ export const Login = () => {
     return (
         <S.Button type="button">
             <Link to={'/login'}>
-                <S.Img src={profileIcon} />
+                <UserImg color={'var(--txt-color)'} />
                 <S.Span>로그인</S.Span>
             </Link>
         </S.Button>
