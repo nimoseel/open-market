@@ -48,7 +48,7 @@ const OptionBtn = styled.button`
     font-weight: var(--semi-bold);
     font-size: 16px;
     text-align: center;
-    background-color: var(--white);
+    background-color: var(--bg-color);
     &:hover,
     &:focus {
         background-color: var(--drop-down);
