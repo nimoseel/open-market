@@ -101,10 +101,10 @@ const StyledMenuLi = styled.button`
     font-size: 16px;
     font-weight: var(--semi-bold);
     background-color: var(
-        ${(props) => (props.isFocused === true ? '--main' : '--white')}
+        ${(props) => (props.isFocused === true ? '--main' : '--bg-color')}
     );
     color: var(
-        ${(props) => (props.isFocused === true ? '--white' : '--black')}
+        ${(props) => (props.isFocused === true ? '--white' : '--txt-color')}
     );
 
     &:hover {
@@ -149,7 +149,7 @@ export const ItemIndexUl = styled.ul`
     border-bottom: 1px solid var(--disabled);
     font-size: 18px;
     font-weight: var(--regular);
-    background-color: var(--white);
+    background-color: var(--bg-color);
 
     @media screen and (max-width: 768px) {
         font-size: 14px;
