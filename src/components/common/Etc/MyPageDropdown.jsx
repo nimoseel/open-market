@@ -6,11 +6,11 @@ import styled from 'styled-components';
 const OptionUl = styled.ul`
     position: absolute;
     top: 75px;
-    left: ${(props) => (props.isSeller ? '-46px' : '35px')};
+    left: ${(props) => (props.isSeller ? '9px' : '90px')};
     width: 130px;
     padding: 10px;
     display: ${(props) => (props.isOpen ? 'block' : 'none')};
-    background-color: var(--white);
+    background-color: var(--bg-color);
     border-radius: 10px;
     border: 1px solid var(--disabled);
     z-index: 20;
@@ -22,7 +22,7 @@ const OptionUl = styled.ul`
         content: '';
         border-top: 1px solid transparent;
         border-right: 10px solid transparent;
-        border-bottom: 15px solid var(--white);
+        border-bottom: 15px solid var(--bg-color);
         border-left: 10px solid transparent;
         z-index: 10;
     }
@@ -47,7 +47,7 @@ const OptionBtn = styled.button`
     color: var(--dark-gray);
     &:hover {
         border: 1px solid var(--dark-gray);
-        color: var(--black);
+        color: var(--txt-color);
     }
 `;
 
