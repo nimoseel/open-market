@@ -31,7 +31,7 @@ export const TotalTxt = styled.p`
     font-size: 16px;
     font-weight: var(--regular);
     line-height: 20.03px;
-    color: var(--black);
+    color: var(--dark-gray);
 
     @media screen and (max-width: 768px) {
         font-size: 14px;
@@ -50,10 +50,11 @@ export const Price = ({ price }) => {
     return (
         <BasePrice
             price={price}
-            numsize={24}
+            numSize={24}
             margin={2}
-            txtsize={16}
-            color={'--black'}
+            txtSize={16}
+            numColor={'--txt-color'}
+            txtColor={'--txt-color'}
         />
     );
 };
@@ -62,10 +63,11 @@ export const TotalPrice = ({ price }) => {
     return (
         <BasePrice
             price={price}
-            numsize={36}
+            numSize={36}
             margin={2}
-            txtsize={18}
-            color={'--main'}
+            txtSize={18}
+            numColor={'--main'}
+            txtColor={'--txt-color'}
         />
     );
 };
