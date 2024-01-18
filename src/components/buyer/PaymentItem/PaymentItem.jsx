@@ -1,5 +1,6 @@
 import React from 'react';
 import * as S from '../PaymentItem/_style';
+import LogisticsImg from '../../../assets/logistics-icon';
 
 const PaymentItem = (props) => {
     const {
@@ -23,9 +24,12 @@ const PaymentItem = (props) => {
 
             <S.PriceDiv>
                 <S.ShippingDiv>
-                    <S.Shipping>
-                        {shipping_fee ? `${shipping_fee}원` : `무료배송`}
-                    </S.Shipping>
+                    <LogisticsImg color={'var(--main)'} />
+                    {shipping_fee ? (
+                        <S.ShippingPrice price={shipping_fee} />
+                    ) : (
+                        <S.Shipping>무료배송</S.Shipping>
+                    )}
                 </S.ShippingDiv>
 
                 <div>

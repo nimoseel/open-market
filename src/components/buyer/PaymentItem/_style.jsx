@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import BasePrice from '../../common/Etc/Price';
-import LogisticsIcon from '../../../assets/icon-logistics.svg';
 
 export const ItemLi = styled.li`
     display: flex;
@@ -33,11 +32,11 @@ export const GrayTxt = styled.p`
 `;
 
 export const ProductName = styled.p`
-    margin-bottom: 10px;
+    margin: 10px 0;
     font-size: 18px;
     font-weight: var(--regular);
     line-height: 22px;
-    color: var(--black);
+    color: var(--txt-color);
 `;
 
 export const Discount = styled.p`
@@ -51,9 +50,11 @@ export const Discount = styled.p`
         display: none;
     }
 `;
+
 export const PriceDiv = styled.div`
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 600px;
     line-height: 22.54px;
 
@@ -66,18 +67,18 @@ export const PriceDiv = styled.div`
 `;
 
 export const ShippingDiv = styled.div`
-    background-image: url(${LogisticsIcon});
-    background-repeat: no-repeat;
-    background-size: contain;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 
     @media screen and (max-width: 768px) {
-        width: 90px;
+        width: 130px;
         background-size: 25px;
     }
 `;
 
 export const Shipping = styled.p`
-    margin-left: 35px;
+    margin-left: 5px;
     font-size: 18px;
     font-weight: var(--regular);
     color: var(--dark-gray);
@@ -87,14 +88,30 @@ export const Shipping = styled.p`
     }
 `;
 
+export const ShippingPrice = ({ price }) => {
+    return (
+        <div style={{ marginLeft: '5px' }}>
+            <BasePrice
+                price={price}
+                numSize={18}
+                margin={0}
+                txtSize={18}
+                numColor={'--dark-gray'}
+                txtColor={'--dark-gray'}
+            />
+        </div>
+    );
+};
+
 export const Price = ({ price }) => {
     return (
         <BasePrice
             price={price}
-            numsize={20}
+            numSize={20}
             margin={0}
-            txtsize={18}
-            color={'--black'}
+            txtSize={18}
+            numColor={'--txt-color'}
+            txtColor={'--txt-color'}
         />
     );
 };
