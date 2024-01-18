@@ -51,10 +51,10 @@ export const ItemUl = styled.ul`
 export const TotalPriceDiv = styled.div`
     display: flex;
     justify-content: flex-end;
+    align-items: flex-end;
     max-width: 1280px;
     margin: 0 auto;
     padding-top: 14px;
-    align-items: center;
 
     @media screen and (max-width: 1280px) {
         width: 900px;
@@ -350,10 +350,11 @@ export const FinalInfo = ({ title, price }) => {
             <div>
                 <Price
                     price={price}
-                    numsize={18}
+                    numSize={18}
                     margin={4}
-                    txtsize={14}
-                    color={'--black'}
+                    txtSize={14}
+                    numColor={'--txt-color'}
+                    txtColor={'--txt-color'}
                 />
             </div>
         </FinalInfoDiv>
@@ -367,10 +368,11 @@ export const FinalPriceInfo = ({ title, price }) => {
             <div>
                 <Price
                     price={price}
-                    numsize={24}
+                    numSize={24}
                     margin={0}
-                    txtsize={24}
-                    color={'--main'}
+                    txtSize={24}
+                    numColor={'--main'}
+                    txtColor={'--txt-color'}
                 />
             </div>
         </FinalPriceInfoDiv>

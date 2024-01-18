@@ -178,10 +178,11 @@ const Payment = () => {
                 <S.TotalSpan>총 주문금액</S.TotalSpan>
                 <Price
                     price={total_price}
-                    numsize={24}
+                    numSize={24}
                     margin={0}
-                    txtsize={24}
-                    color={'--main'}
+                    txtSize={24}
+                    numColor={'--main'}
+                    txtColor={'--txt-color'}
                 />
             </S.TotalPriceDiv>
             <S.InfoInputDiv>
