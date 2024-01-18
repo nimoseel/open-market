@@ -4,6 +4,9 @@ export const Footer = styled.footer`
     background-color: var(--menu);
     padding: 60px 0 63px;
     font-size: 14px;
+    transition:
+        background-color 0.5s,
+        color 0.3s;
 `;
 
 export const FooterContentDiv = styled.div`
