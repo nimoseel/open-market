@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import CartCheckBoxImg from '../../../assets/cart-check-box-icon';
-import CartCheckBoxFillImg from '../../../assets/cart-check-box-fill-icon';
+import { ReactComponent as CheckBoxDefaultImg } from '../../../assets/icon-cart-check-box.svg';
+import { ReactComponent as CheckBoxFillImg } from '../../../assets/icon-cart-check-fill-box.svg';
 
 const CartCheckLabel = styled.label`
     display: inline-block;
@@ -10,11 +10,11 @@ const CartCheckLabel = styled.label`
 `;
 
 export const Checked = () => {
-    return <CartCheckBoxFillImg color={'var(--main)'} />;
+    return <CheckBoxFillImg fill={'var(--main)'} stroke={'var(--main)'} />;
 };
 
 export const UnChecked = () => {
-    return <CartCheckBoxImg color={'var(--main)'} />;
+    return <CheckBoxDefaultImg stroke={'var(--main)'} />;
 };
 
 const CartCheckInput = styled.input`

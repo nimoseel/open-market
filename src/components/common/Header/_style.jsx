@@ -1,19 +1,21 @@
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import SearchIconImg from '../../../assets/icon-search.svg';
-import mainLogo from '../../../assets/Logo-our.svg';
-import Menu from '../../../assets/icon-hamburger.svg';
-import Close from '../../../assets/icon-delete-colored.svg';
+import { ReactComponent as SearchImg } from '../../../assets/icon-search.svg';
+import { ReactComponent as LogoImg } from '../../../assets/icon-logo.svg';
+
 import Modal from '../Etc/Modal';
 
-export const HeaderDiv = styled.div`
+export const HeaderDiv = styled.header`
     display: flex;
+    position: sticky;
+    top: 0;
     justify-content: center;
     width: 100%;
     height: 90px;
-    padding-top: 20px;
+    padding-top: 18px;
     box-sizing: border-box;
-    box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 4px 0px var(--shadow);
+    z-index: 100;
 `;
 
 export const HeaderContent = styled.header`
@@ -38,7 +40,6 @@ export const MainDiv = styled.div`
     display: flex;
     align-items: center;
     gap: 30px;
-
     @media screen and (max-width: 768px) {
         gap: 0px;
     }
@@ -60,15 +61,11 @@ export const SearchInput = styled.input`
     }
 `;
 
-export const LogoIcon = styled.div`
+export const LogoDiv = styled.div`
     display: flex;
     align-items: center;
     width: 94px;
     height: 47px;
-    background-image: url(${mainLogo});
-    background-repeat: no-repeat;
-    background-size: contain;
-    vertical-align: middle;
 
     @media screen and (max-width: 768px) {
         width: 60px;
@@ -76,22 +73,37 @@ export const LogoIcon = styled.div`
     }
 `;
 
-export const SearchButton = styled.button`
+export const LogoIcon = () => {
+    return (
+        <LogoDiv>
+            <LogoImg fill={'var(--main)'} alt="로고 이미지" />
+        </LogoDiv>
+    );
+};
+
+export const SearchButtonWrapper = styled.button`
     display: inline-block;
     position: relative;
     right: 80px;
     width: 28px;
     height: 28px;
-    background-image: url(${SearchIconImg});
-    cursor: pointer;
 
     @media screen and (max-width: 768px) {
         right: 50px;
     }
 `;
 
+export const SearchButton = ({ onClick }) => {
+    return (
+        <SearchButtonWrapper onClick={onClick}>
+            <SearchImg stroke={'var(--main)'} alt="검색 버튼 이미지" />
+        </SearchButtonWrapper>
+    );
+};
+
 export const HeaderBtnDiv = styled.div`
     display: flex;
+    align-items: center;
     position: relative;
     gap: 26px;
 
@@ -100,14 +112,18 @@ export const HeaderBtnDiv = styled.div`
     }
 `;
 
-export const MenuBtn = styled.button`
+export const ToggleBtn = styled.button`
+    width: 28px;
+    height: 28px;
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+`;
+
+export const MenuBtnWrapper = styled.button`
     display: none;
     width: 30px;
     height: 30px;
-    background-image: url(${(props) => (props.isOpen ? Close : Menu)});
-    background-repeat: no-repeat;
-    background-size: contain;
-    cursor: pointer;
 
     @media screen and (max-width: 768px) {
         display: block;
@@ -178,7 +194,7 @@ export const MenuUl = styled.ul`
     transition:
         opacity 0.3s linear,
         height 0.3s linear;
-    background-color: var(--white);
+    background-color: var(--bg-color);
     box-shadow: 0px 10px 30px 0px rgba(121, 30, 247, 0.1);
     z-index: 1;
 
@@ -195,6 +211,6 @@ export const MenuLi = styled.li`
     cursor: pointer;
 
     &:hover {
-        background-color: var(--main-light);
+        background-color: var(--menu-main-light);
     }
 `;

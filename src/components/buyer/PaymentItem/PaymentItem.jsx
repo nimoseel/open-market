@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from '../PaymentItem/_style';
-import LogisticsImg from '../../../assets/logistics-icon';
+import { ReactComponent as LogisticsIcon } from '../../../assets/icon-logistics.svg';
 
 const PaymentItem = (props) => {
     const {
@@ -24,7 +24,7 @@ const PaymentItem = (props) => {
 
             <S.PriceDiv>
                 <S.ShippingDiv>
-                    <LogisticsImg color={'var(--main)'} />
+                    <LogisticsIcon stroke={'var(--main)'} />
                     {shipping_fee ? (
                         <S.ShippingPrice price={shipping_fee} />
                     ) : (

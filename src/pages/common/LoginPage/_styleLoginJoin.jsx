@@ -1,21 +1,10 @@
 import styled from 'styled-components';
-import LogoIconImg from '../../../assets/logo-icon';
-
+import { ReactComponent as LogoImg } from '../../../assets/icon-logo.svg';
 // 로그인과 회원가입 화면에서 공통적으로 사용하는 UI - SC.컴포넌트명으로 사용
 // S.컴포넌트명은 해당 페이지에서만 사용하는 UI에만 사용
 
-// export const LogoIcon2 = styled.div`
-//     display: inline-block;
-//     width: 256px;
-//     height: 130px;
-//     background-image: url(${Logo});
-//     background-repeat: no-repeat;
-//     background-size: contain;
-//     vertical-align: middle;
-// `;
-
 export const LogoIcon = () => {
-    return <LogoIconImg color={'var(--main)'} alt="로고 이미지" />;
+    return <LogoImg fill={'var(--main)'} alt="로고 이미지" />;
 };
 
 export const ContentSection = styled.section`

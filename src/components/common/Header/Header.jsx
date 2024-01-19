@@ -1,10 +1,16 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useTheme } from '../../../contexts/ThemeProvider';
 import { AuthContext } from '../../../contexts/AuthContext';
 import MyPageDropdown from '../../common/Etc/MyPageDropdown';
 import useInput from '../../../hooks/useInput';
 import * as Btn from '../HeaderBtn/HeaderBtn';
 import * as S from '../Header/_style';
+
+import { ReactComponent as MoonIcon } from '../../../assets/icon-moon.svg';
+import { ReactComponent as SunIcon } from '../../../assets/icon-sun.svg';
+import { ReactComponent as MenuIcon } from '../../../assets/icon-hamburger.svg';
+import { ReactComponent as CloseIcon } from '../../../assets/icon-delete-colored.svg';
 
 const Header = () => {
     const navigate = useNavigate();
@@ -15,6 +21,8 @@ const Header = () => {
     const [isOpenMenu, setIsOpenMenu] = useState(false);
 
     const searchWord = useInput('', null, 'searchWord');
+
+    const { toggleTheme, isDarkMode } = useTheme();
 
     useEffect(() => {
         const handleResize = () => {
@@ -136,10 +144,19 @@ const Header = () => {
                     <S.SearchButton onClick={searchData} />
                 </S.MainDiv>
 
-                <S.MenuBtn onClick={handleMenu} isOpen={isOpenMenu} />
+                <S.MenuBtnWrapper onClick={handleMenu}>
+                    {isOpenMenu ? (
+                        <CloseIcon stroke={'var(--main)'} />
+                    ) : (
+                        <MenuIcon stroke={'var(--main)'} fill={'var(--main)'} />
+                    )}
+                </S.MenuBtnWrapper>
                 {isSeller() ? (
                     <>
                         <S.HeaderBtnDiv>
+                            <S.ToggleBtn onClick={toggleTheme}>
+                                {isDarkMode ? <SunIcon /> : <MoonIcon />}
+                            </S.ToggleBtn>
                             <Btn.MyPage onClick={clickMyPageBtn} />
                             <Btn.Seller onClick={clickSellerBtn} />
                             <MyPageDropdown
@@ -152,6 +169,9 @@ const Header = () => {
                 ) : (
                     <>
                         <S.HeaderBtnDiv>
+                            <S.ToggleBtn onClick={toggleTheme}>
+                                {isDarkMode ? <SunIcon /> : <MoonIcon />}
+                            </S.ToggleBtn>
                             <Btn.Cart onClick={checkToken} />
                             {token ? (
                                 <Btn.MyPage onClick={clickMyPageBtn} />
