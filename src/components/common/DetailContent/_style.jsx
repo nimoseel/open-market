@@ -118,14 +118,10 @@ export const ProductName = styled.p`
 `;
 
 export const Shipping = styled.p`
-    margin: 138px 8px 20px 0;
+    margin-right: 8px;
     font-size: 16px;
     line-height: 20.03px;
     color: var(--dark-gray);
-
-    @media screen and (max-width: 1280px) {
-        margin-top: 20px;
-    }
 `;
 
 export const TotalPrice = styled(StoreName)`
@@ -175,8 +171,17 @@ export const CartBtn = styled(BtnM)`
 
 export const ShippingDiv = styled.div`
     display: flex;
+    margin: 138px 0 20px;
     justify-content: flex-start;
-    align-items: center;
+    align-items: baseline;
+
+    @media screen and (max-width: 1280px) {
+        margin-top: 25px;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-top: 60px;
+    }
 `;
 
 export const ShippingPrice = ({ price }) => {
