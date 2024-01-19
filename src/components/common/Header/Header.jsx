@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useTheme } from '../../../contexts/ThemeProvider';
+import { useTheme } from '../../../contexts/ThemeContext';
 import { AuthContext } from '../../../contexts/AuthContext';
 import MyPageDropdown from '../../common/Etc/MyPageDropdown';
 import useInput from '../../../hooks/useInput';

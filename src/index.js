@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { ThemeProvider } from '../src/contexts/ThemeProvider';
+import { ThemeProvider } from '../src/contexts/ThemeContext';
 import { AuthProvider } from '../src/contexts/AuthContext';
 import App from './App';
 
