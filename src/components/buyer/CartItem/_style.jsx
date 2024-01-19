@@ -25,6 +25,7 @@ export const Li = styled.li`
     @media screen and (max-width: 768px) {
         width: 450px;
         height: fit-content;
+        padding-left: 16px;
     }
 `;
 
@@ -38,7 +39,7 @@ export const Img = styled.img`
     @media screen and (max-width: 768px) {
         width: 110px;
         height: 110px;
-        margin: 0 10px;
+        margin: 0 16px;
     }
 `;
 
