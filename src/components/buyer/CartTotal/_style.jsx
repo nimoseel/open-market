@@ -3,7 +3,7 @@ import BasePrice from '../../common/Etc/Price';
 
 export const TotalUl = styled.ul`
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     width: 100%;
     max-width: 1280px;
@@ -46,28 +46,39 @@ export const TotalLi = styled.li`
     }
 `;
 
+const PriceDiv = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+`;
+
 export const Price = ({ price }) => {
     return (
-        <BasePrice
-            price={price}
-            numSize={24}
-            margin={2}
-            txtSize={16}
-            numColor={'--txt-color'}
-            txtColor={'--txt-color'}
-        />
+        <PriceDiv>
+            <BasePrice
+                price={price}
+                numSize={24}
+                margin={2}
+                txtSize={16}
+                numColor={'--txt-color'}
+                txtColor={'--txt-color'}
+            />
+        </PriceDiv>
     );
 };
 
 export const TotalPrice = ({ price }) => {
     return (
-        <BasePrice
-            price={price}
-            numSize={36}
-            margin={2}
-            txtSize={18}
-            numColor={'--main'}
-            txtColor={'--txt-color'}
-        />
+        <PriceDiv>
+            <BasePrice
+                price={price}
+                numSize={36}
+                margin={2}
+                txtSize={18}
+                numColor={'--main'}
+                txtColor={'--txt-color'}
+            />
+        </PriceDiv>
     );
 };
