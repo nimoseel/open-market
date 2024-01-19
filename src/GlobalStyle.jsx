@@ -10,6 +10,8 @@ export const GlobalStyle = createGlobalStyle`
         --main :${({ theme }) => (theme.isDarkMode ? '#8527ff' : '#5D23A8')};
         --main-light : ${({ theme }) =>
             theme.isDarkMode ? '#d1b9ea' : '#f7efff'};
+        --menu-main-light : ${({ theme }) =>
+            theme.isDarkMode ? '#6427b4' : '#f7efff'};
         --green : #21BF48;
         --red : #EB5757;
         --black : #000000;
