@@ -19,7 +19,7 @@ const StyledTxt = styled.span`
     color: var(${(props) => `${props.txtColor}`});
 
     @media screen and (max-width: 768px) {
-        font-size: ${(props) => `${props.numSize * 0.9}px`};
+        font-size: ${(props) => `${props.txtSize * 0.9}px`};
     }
 `;
 
@@ -38,7 +38,7 @@ export default function Price({
                     .toString()
                     .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}
             </StyledPrice>
-            <StyledTxt txtsize={txtSize} txtColor={txtColor}>
+            <StyledTxt txtSize={txtSize} txtColor={txtColor}>
                 원
             </StyledTxt>
         </>
