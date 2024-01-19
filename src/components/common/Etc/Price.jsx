@@ -9,7 +9,7 @@ const StyledPrice = styled.span`
     color: var(${(props) => `${props.numColor}`});
 
     @media screen and (max-width: 768px) {
-        font-size: ${(props) => `${props.numSize * 0.8}px`};
+        font-size: ${(props) => `${props.numSize * 0.9}px`};
     }
 `;
 
@@ -19,7 +19,7 @@ const StyledTxt = styled.span`
     color: var(${(props) => `${props.txtColor}`});
 
     @media screen and (max-width: 768px) {
-        font-size: 16px;
+        font-size: ${(props) => `${props.numSize * 0.9}px`};
     }
 `;
 
