@@ -25,7 +25,7 @@ export const Li = styled.li`
     @media screen and (max-width: 768px) {
         width: 450px;
         height: fit-content;
-        padding-left: 16px;
+        padding: 10px 16px;
     }
 `;
 
@@ -91,10 +91,6 @@ export const ShippingDiv = styled.div`
 export const Shipping = styled(StoreName)`
     display: inline-block;
     margin: 16px 6px 16px 0;
-
-    @media screen and (max-width: 768px) {
-        margin: 10px 0;
-    }
 `;
 
 export const EditBtn = styled(BtnS)`
@@ -102,9 +98,17 @@ export const EditBtn = styled(BtnS)`
     width: 90px;
     height: 30px;
     margin-top: 10px;
+    border: 2px solid var(--menu);
+    background-color: var(--bg-color);
+    color: var(--txt-color);
 
     @media screen and (max-width: 768px) {
         display: block;
+    }
+
+    &:hover {
+        border: 2px solid var(--main);
+        color: var(--main);
     }
 `;
 

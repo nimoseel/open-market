@@ -27,7 +27,7 @@ export const TotalUl = styled.ul`
 `;
 
 export const TotalTxt = styled.p`
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     font-size: 16px;
     font-weight: var(--regular);
     line-height: 20.03px;
@@ -60,7 +60,7 @@ export const Price = ({ price }) => {
                 price={price}
                 numSize={24}
                 margin={2}
-                txtSize={16}
+                txtSize={18}
                 numColor={'--txt-color'}
                 txtColor={'--txt-color'}
             />
@@ -73,7 +73,7 @@ export const TotalPrice = ({ price }) => {
         <PriceDiv>
             <BasePrice
                 price={price}
-                numSize={36}
+                numSize={30}
                 margin={2}
                 txtSize={18}
                 numColor={'--main'}
