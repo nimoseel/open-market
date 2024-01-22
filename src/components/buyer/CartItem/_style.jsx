@@ -30,22 +30,27 @@ export const Li = styled.li`
 `;
 
 export const Img = styled.img`
-    width: 160px;
+    min-width: 160px;
+    max-width: 160px;
     height: 160px;
     margin: 2px 36px 0 40px;
     border-radius: 10px;
     object-fit: cover;
 
     @media screen and (max-width: 768px) {
-        width: 110px;
+        min-width: 110px;
+        max-width: 110;
         height: 110px;
         margin: 0 16px;
     }
 `;
 
 export const TxtInfoDiv = styled.div`
-    width: 100%;
-    max-width: 468px;
+    width: 468px;
+
+    @media screen and (max-width: 1280px) {
+        min-width: 180px;
+    }
 
     @media screen and (max-width: 768px) {
         min-width: 120px;
