@@ -118,7 +118,7 @@ return (
 
 <br/>
 
-### 2. useContext 사용하여 컴포넌트에서 인증 관련 값 사용
+### 2. useContext를 활용한 인증 관련 값 관리
 
 -   사용자 인증 관련 값들을 관리합니다.
 -   토큰값 가져오기, token 설정하기, useType 확인하기, 로그아웃 하기가 필요한 컴포넌트에서
@@ -302,7 +302,88 @@ const handleKeyDown = (e) => {
 
 <br/>
 
-### 6. 기타
+### 6. svg 이미지를 다크모드 테마에 따라 색상 변경
+
+-   svg 파일에서 다크모드 값에 따라 변경할 속성에 current 값을 설정한다.
+
+```js
+<svg>
+    <g transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)"
+fill="current" stroke="none">
+</svg>
+```
+
+-   svg 파일을 컴포넌트처럼 사용하기 위해 ReactComponent로 임포트한다.
+
+```js
+import { ReactComponent as LogoImg } from '../../../assets/icon-logo.svg';
+```
+
+-   fill에 원하는 색상값을 넣어준다.
+
+```js
+export const LogoIcon = () => {
+    return <LogoImg fill={'var(--main)'} alt="로고 이미지" />;
+};
+```
+
+<br/>
+
+### 7. useContext를 활용한 다크 모드 테마 관리
+
+```js
+// useTheme을 통해 현재 ThemeContext 값을 가져옴
+export const useTheme = () => {
+    const theme = useContext(ThemeContext);
+    if (!theme) {
+        throw new Error('error');
+    }
+    return theme;
+};
+
+export const ThemeProvider = ({ children }) => {
+    const storedValue = localStorage.getItem('isDarkMode');
+
+    // 초기 다크모드 상태 설정, storedValue가 없다면 false값 설정.
+    const [isDarkMode, setIsDarkMode] = useState(() => {
+        return storedValue ? JSON.parse(storedValue) : false;
+    });
+
+    // toggle 함수, 다크 모드 상태를 토글하고 변경된 상태를 로컬 스토리지에 저장
+    const toggleTheme = () => {
+        setIsDarkMode((prevMode) => {
+            const newMode = !prevMode;
+            localStorage.setItem('isDarkMode', JSON.stringify(newMode));
+            return newMode;
+        });
+    };
+
+    // 컴포넌트가 마운트 될때, storedValue 바뀔 때 실행.
+    useEffect(() => {
+        if (storedValue !== null) {
+            setIsDarkMode(JSON.parse(storedValue));
+        }
+    }, [storedValue]);
+
+    // 테마 정보를 담은 객체 생성
+    const theme = {
+        isDarkMode,
+        toggleTheme,
+    };
+
+    // useContext를 사용하여 ThemeContext 값을 제공.
+    // isDarkMode, toggleTheme함수가 제공되고 이를 StyledProvider의 theme props로 전달
+    return (
+        <ThemeContext.Provider value={theme}>
+            <StyledProvider theme={theme}>{children}</StyledProvider>
+        </ThemeContext.Provider>
+    );
+};
+```
+
+<br/>
+
+### 8. 기타
 
 -   리액트 라이브러리를 사용했습니다.<br/>
     (react-slick, react-spinners, react-js-pagination, react-daum-postcode)
@@ -379,7 +460,8 @@ const handleKeyDown = (e) => {
  ┃ ┣ 📜API_URL.js
  ┃ ┗ 📜regex.js
  ┣ 📂contexts
- ┃ ┗ 📜AuthContext.js
+ ┃ ┣ 📜AuthContext.js
+ ┃ ┗ 📜ThemeContext.js
  ┣ 📂hooks
  ┃ ┗ 📜useInput.jsx
  ┣ 📂pages
