@@ -80,7 +80,7 @@
 
 |                                                      13. 반응형                                                      |
 | :------------------------------------------------------------------------------------------------------------------: |
-| <img src="https://velog.velcdn.com/images/miniso/post/4ef7fd40-dc6f-4ce6-bacc-200c046288b6/image.gif" width="70%" /> |
+| <img src="https://velog.velcdn.com/images/miniso/post/e1d0e5a1-db3b-4fc2-b136-d7b4e4ef29f6/image.gif" width="70%" /> |
 
 <br/>
 
