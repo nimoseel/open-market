@@ -56,31 +56,31 @@
 
 |                               1. 메인화면 ( + 로그인 전 상품 상세 페이지)                               |                                               2. 회원가입                                                |
 | :-----------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------: |
-| <img src="https://velog.velcdn.com/images/miniso/post/1246b302-c711-4fbf-9887-1eaaee3456f5/image.gif"/> | <img src="https://velog.velcdn.com/images/miniso/post/09dda4e4-2dcc-4650-acb5-ca0bee3a4813/image.gif" /> |
+| <img src="https://velog.velcdn.com/images/miniso/post/e7dfe743-15fd-4eba-a4af-5094f26aea65/image.gif"/> | <img src="https://velog.velcdn.com/images/miniso/post/760c7da9-e080-4430-879e-e306b5aed2c3/image.gif" /> |
 
 |                                                3. 로그인                                                |                                               4. 장바구니                                               |
 | :-----------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: |
-| <img src="https://velog.velcdn.com/images/miniso/post/c8c3b5fc-962f-4ccf-9728-8809c99ca2ac/image.gif"/> | <img src="https://velog.velcdn.com/images/miniso/post/0822aeb4-46ae-42c4-b804-a4fe777ff8c2/image.gif"/> |
+| <img src="https://velog.velcdn.com/images/miniso/post/1f30c758-bbee-4d95-86aa-2868aaa9f7d2/image.gif"/> | <img src="https://velog.velcdn.com/images/miniso/post/051b675c-6673-4f00-82f3-83c13307b55c/image.gif"/> |
 
 |                                                                                5. 상품 주문하기                                                                                |                                                               6. 상품 결제하기                                                                |
 | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: |
-| <img src="https://velog.velcdn.com/images/miniso/post/f64c526d-2e2f-4404-af24-0165f2c37c36/image.gif" /><span>상세 페이지 내 바로 주문, 장바구니내 개별 주문, 전체 주문</span> | <img src="https://velog.velcdn.com/images/miniso/post/8c4c86fa-8a7d-49be-8a6c-77e6c14231f0/image.gif"/> <span>react-daum-postcode 사용</span> |
+| <img src="https://velog.velcdn.com/images/miniso/post/27603a04-f9e4-48cf-b8cc-a5c3a48fca4f/image.gif" /><span>상세 페이지 내 바로 주문, 장바구니내 개별 주문, 전체 주문</span> | <img src="https://velog.velcdn.com/images/miniso/post/89e6edd0-fa3c-4703-b058-9ca9885fbd32/image.gif"/> <span>react-daum-postcode 사용</span> |
 
-|                                 7. 판매회원 홈 화면 + 상품 상세 페이지                                  |                                           8. 판매 상품 업로드                                           |
+|                          7. 판매회원 홈 화면 + 상품 상세 페이지 + 판매자 센터                           |                                           8. 판매 상품 업로드                                           |
 | :-----------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: |
-| <img src="https://velog.velcdn.com/images/miniso/post/4667536d-91c6-46f2-b985-cb6bc5708e59/image.gif"/> | <img src="https://velog.velcdn.com/images/miniso/post/3ed6339b-cedd-4b06-ba21-c92c296aaae9/image.gif"/> |
+| <img src="https://velog.velcdn.com/images/miniso/post/5d79b37b-58fe-4da1-9112-665ba7414ba3/image.gif"/> | <img src="https://velog.velcdn.com/images/miniso/post/56990375-108b-4aa6-a1e6-d303f082ee6d/image.gif"/> |
 
 |                                         9. 판매 상품 정보 수정                                          |                                           10. 판매 상품 삭제                                            |
 | :-----------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: |
-| <img src="https://velog.velcdn.com/images/miniso/post/4b293584-e08f-4f97-9945-27b8e27779f2/image.gif"/> | <img src="https://velog.velcdn.com/images/miniso/post/2d87b73a-fbf5-45ce-9abf-fd7e2c0dac83/image.gif"/> |
+| <img src="https://velog.velcdn.com/images/miniso/post/730241f1-61b3-42e8-b37f-adb6097a4415/image.gif"/> | <img src="https://velog.velcdn.com/images/miniso/post/9813535e-ce3a-423e-97e3-2322f81db25f/image.gif"/> |
 
 |                                                11. 검색                                                 |                                              12. 로그아웃                                               |
 | :-----------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: |
-| <img src="https://velog.velcdn.com/images/miniso/post/0c1bfccf-a3f4-47ad-a6f5-698593596dea/image.gif"/> | <img src="https://velog.velcdn.com/images/miniso/post/7b77d179-4376-48de-aff7-c1564ee3e9b2/image.gif"/> |
+| <img src="https://velog.velcdn.com/images/miniso/post/14146b3f-5012-44cf-80b7-44fc9da7b02b/image.gif"/> | <img src="https://velog.velcdn.com/images/miniso/post/88737117-d664-4230-ba59-5e6aaeb85a9f/image.gif"/> |
 
-|                                                     13. 반응형                                                      |
-| :-----------------------------------------------------------------------------------------------------------------: |
-| <img src="https://velog.velcdn.com/images/miniso/post/84d878e9-081b-4c79-b61f-4011a1f9ac6e/image.gif" width="70%"/> |
+|                                                      13. 반응형                                                      |
+| :------------------------------------------------------------------------------------------------------------------: |
+| <img src="https://velog.velcdn.com/images/miniso/post/4ef7fd40-dc6f-4ce6-bacc-200c046288b6/image.gif" width="70%" /> |
 
 <br/>
 
