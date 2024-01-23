@@ -391,6 +391,8 @@ export const ThemeProvider = ({ children }) => {
     (기존 디자인에서 최대 화면 너비를 1280px로 설정했기 때문에 미디어 쿼리에서도 max-width를 1280px로 설정)
 -   정규식을 const로 선언하여 여러 컴포넌트에서 재사용 가능하도록 했습니다.
 -   페이지 폴더 구조를 buyer, seller, common으로 분류하여 직관성을 높였습니다.
+-   React DOM은 JSX에 삽입된 모든 값을 렌더링하기 전에 이스케이프하여 XSS 공격을 방지할 수 있다는 것을 알게 되었습니다.
+    (https://ko.legacy.reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks)
 
 <br/>
 
