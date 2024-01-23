@@ -430,7 +430,7 @@ const Join = () => {
                 <CheckBox setIsCheck={setIsCheck} isCheck={isCheck} />
                 <S.Agreement>
                     {' '}
-                    호두샵의 <S.CheckLink href="#">
+                    아우어마켓의 <S.CheckLink href="#">
                         이용약관
                     </S.CheckLink> 및{' '}
                     <S.CheckLink href="#">개인정보처리방침</S.CheckLink>에 대한
